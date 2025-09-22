@@ -2,20 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:35627/about/</loc>
+    <loc>http://localhost:40981/about/</loc>
   </url><url>
-    <loc>http://localhost:35627/authors/</loc>
+    <loc>http://localhost:40981/authors/</loc>
   </url><url>
-    <loc>http://localhost:35627/categories/</loc>
+    <loc>http://localhost:40981/categories/best-practices/</loc>
   </url><url>
-    <loc>http://localhost:35627/contributors/</loc>
+    <loc>http://localhost:40981/categories/</loc>
   </url><url>
-    <loc>http://localhost:35627/</loc>
+    <loc>http://localhost:40981/contributors/</loc>
   </url><url>
-    <loc>http://localhost:35627/search/</loc>
+    <loc>http://localhost:40981/posts/</loc>
   </url><url>
-    <loc>http://localhost:35627/series/</loc>
+    <loc>http://localhost:40981/tags/sbom/</loc>
   </url><url>
-    <loc>http://localhost:35627/tags/</loc>
+    <loc>http://localhost:40981/</loc>
+  </url><url>
+    <loc>http://localhost:40981/search/</loc>
+  </url><url>
+    <loc>http://localhost:40981/tags/security/</loc>
+  </url><url>
+    <loc>http://localhost:40981/series/</loc>
+  </url><url>
+    <loc>http://localhost:40981/tags/supply-chain/</loc>
+  </url><url>
+    <loc>http://localhost:40981/tags/</loc>
   </url>
 </urlset>

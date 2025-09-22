@@ -28,6 +28,7 @@ defaultTheme = 'auto'
 disableThemeToggle = false
 ShowReadingTime = true
 ShowShareButtons = true
+ShareButtons = ['x', 'linkedin', 'reddit', 'ycombinator']
 ShowPostNavLinks = true
 ShowBreadCrumbs = true
 ShowCodeCopyButtons = true
