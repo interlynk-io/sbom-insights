@@ -1,6 +1,6 @@
 ---
 title: "What is an SBOM and Why is it Required?"
-date: 2024-01-15
+date: 2025-09-01
 draft: false
 tags: ["SBOM", "Security", "Supply Chain", "Compliance", "Best Practices"]
 categories: ["Fundamentals"]
