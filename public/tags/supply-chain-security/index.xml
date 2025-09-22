@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Supply Chain Security on SBOM Insights</title>
+    <link>http://localhost:35627/tags/supply-chain-security/</link>
+    <description>Recent content in Supply Chain Security on SBOM Insights</description>
+    <image>
+      <title>SBOM Insights</title>
+      <url>http://localhost:35627/logo.png</url>
+      <link>http://localhost:35627/logo.png</link>
+    </image>
+    <generator>Hugo -- 0.150.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 15 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:35627/tags/supply-chain-security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction to Software Bill of Materials (SBOM)</title>
+      <link>http://localhost:35627/posts/introduction-to-sbom/</link>
+      <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:35627/posts/introduction-to-sbom/</guid>
+      <description>Learn what an SBOM is, why it matters, and how it can improve your software supply chain security</description>
+    </item>
+  </channel>
+</rss>
