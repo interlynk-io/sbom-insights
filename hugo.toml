@@ -72,26 +72,7 @@ url = 'posts'
 name = 'Contributors'
 url = 'contributors'
 
-[params.homeInfoParams]
-Title = ''
-Content = '''
-'''
 
-[[params.socialIcons]]
-name = 'github'
-url = 'https://github.com/interlynk-io'
-
-[[params.socialIcons]]
-name = 'linkedin'
-url = 'https://linkedin.com/company/interlynk'
-
-[[params.socialIcons]]
-name = 'twitter'
-url = 'https://twitter.com/interlynk'
-
-[[params.socialIcons]]
-name = 'rss'
-url = '/index.xml'
 
 [params.analytics.google]
 SiteVerificationTag = ''

@@ -2,30 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Best Practices on SBOM Insights</title>
-    <link>http://localhost:35627/tags/best-practices/</link>
+    <link>http://localhost:1313/tags/best-practices/</link>
     <description>Recent content in Best Practices on SBOM Insights</description>
     <image>
       <title>SBOM Insights</title>
-      <url>http://localhost:35627/logo.png</url>
-      <link>http://localhost:35627/logo.png</link>
+      <url>http://localhost:1313/logo.png</url>
+      <link>http://localhost:1313/logo.png</link>
     </image>
     <generator>Hugo -- 0.150.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Jan 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:35627/tags/best-practices/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/best-practices/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Introduction to Software Bill of Materials (SBOM)</title>
-      <link>http://localhost:35627/posts/introduction-to-sbom/</link>
+      <title>What is an SBOM and Why is it Required?</title>
+      <link>http://localhost:1313/posts/what-is-sbom-why-required/</link>
       <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:35627/posts/introduction-to-sbom/</guid>
-      <description>Learn what an SBOM is, why it matters, and how it can improve your software supply chain security</description>
-    </item>
-    <item>
-      <title>CycloneDX vs SPDX: Choosing the Right SBOM Format</title>
-      <link>http://localhost:35627/posts/cyclonedx-vs-spdx/</link>
-      <pubDate>Sat, 20 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:35627/posts/cyclonedx-vs-spdx/</guid>
-      <description>A comprehensive comparison of CycloneDX and SPDX formats to help you choose the right SBOM standard for your needs</description>
+      <guid>http://localhost:1313/posts/what-is-sbom-why-required/</guid>
+      <description>Understanding Software Bill of Materials (SBOM): What it is, why it&amp;#39;s essential for modern software development, and how it enhances security and compliance</description>
     </item>
   </channel>
 </rss>

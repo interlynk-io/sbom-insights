@@ -1,0 +1,64 @@
+/* Custom CSS to reduce spacing and make layout more compact */
+
+/* Reduce padding in page header */
+.page-header {
+    padding-top: 20px !important;
+    padding-bottom: 10px !important;
+}
+
+/* Reduce top margin for main content */
+.main {
+    padding-top: 20px !important;
+}
+
+/* Reduce header padding */
+.header {
+    padding: 15px 0 !important;
+}
+
+/* Reduce breadcrumb spacing */
+.breadcrumbs {
+    margin-bottom: 10px !important;
+}
+
+/* Reduce h1 title spacing */
+.page-header h1 {
+    margin: 10px 0 !important;
+}
+
+/* Make post entries more compact */
+.post-entry {
+    padding: 15px 0 !important;
+    margin-bottom: 15px !important;
+}
+
+/* Reduce spacing for entry header */
+.entry-header {
+    margin-bottom: 8px !important;
+}
+
+/* Reduce spacing for entry footer */
+.entry-footer {
+    margin-top: 8px !important;
+}
+
+/* Reduce spacing in single post view */
+.post-single .post-header {
+    margin: 20px auto 15px !important;
+}
+
+/* Reduce TOC spacing */
+.toc {
+    margin: 15px 0 !important;
+}
+
+/* Make navigation more compact */
+.nav {
+    padding: 10px 0 !important;
+}
+
+/* Reduce footer spacing */
+.footer {
+    padding: 20px 0 !important;
+    margin-top: 30px !important;
+}

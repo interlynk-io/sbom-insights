@@ -5,7 +5,7 @@ draft: false
 tags: ["SBOM", "Security", "Supply Chain", "Compliance", "Best Practices"]
 categories: ["Fundamentals"]
 description: "Understanding Software Bill of Materials (SBOM): What it is, why it's essential for modern software development, and how it enhances security and compliance"
-author: "SBOM Community"
+author: "Ritesh Noronha"
 ---
 
 ## Introduction
