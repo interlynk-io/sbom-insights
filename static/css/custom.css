@@ -62,3 +62,44 @@
     padding: 20px 0 !important;
     margin-top: 30px !important;
 }
+
+/* Author info styling */
+.author-info {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--code-bg);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.author-info h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.author-info h4 {
+    margin: 0 0 0.5rem 0;
+}
+
+.author-info p {
+    margin: 0.5rem 0;
+    opacity: 0.9;
+}
+
+.author-info a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.author-info a:hover {
+    color: var(--primary);
+}
+
+.author-info svg {
+    fill: currentColor;
+}

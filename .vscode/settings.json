@@ -1,0 +1,10 @@
+{
+    "go.goroot": "/Users/riteshnoronha/.local/share/mise/installs/go/1.25.0",
+    "debug.javascript.defaultRuntimeExecutable": {
+        "pwa-node": "/Users/riteshnoronha/.local/share/mise/shims/node"
+    },
+    "go.alternateTools": {
+        "go": "/Users/riteshnoronha/.local/share/mise/shims/go",
+        "gopls": "/Users/riteshnoronha/.local/share/mise/shims/gopls"
+    }
+}

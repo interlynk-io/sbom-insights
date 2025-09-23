@@ -2,50 +2,50 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on SBOM Insights</title>
-    <link>https://sbom-insights.netlify.app/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on SBOM Insights</description>
     <image>
       <title>SBOM Insights</title>
-      <url>https://sbom-insights.netlify.app/logo.png</url>
-      <link>https://sbom-insights.netlify.app/logo.png</link>
+      <url>http://localhost:1313/logo.png</url>
+      <link>http://localhost:1313/logo.png</link>
     </image>
     <generator>Hugo -- 0.150.0</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 01 Sep 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://sbom-insights.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Best Practices</title>
-      <link>https://sbom-insights.netlify.app/tags/best-practices/</link>
+      <link>http://localhost:1313/tags/best-practices/</link>
       <pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>https://sbom-insights.netlify.app/tags/best-practices/</guid>
+      <guid>http://localhost:1313/tags/best-practices/</guid>
       <description></description>
     </item>
     <item>
       <title>Compliance</title>
-      <link>https://sbom-insights.netlify.app/tags/compliance/</link>
+      <link>http://localhost:1313/tags/compliance/</link>
       <pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>https://sbom-insights.netlify.app/tags/compliance/</guid>
+      <guid>http://localhost:1313/tags/compliance/</guid>
       <description></description>
     </item>
     <item>
       <title>SBOM</title>
-      <link>https://sbom-insights.netlify.app/tags/sbom/</link>
+      <link>http://localhost:1313/tags/sbom/</link>
       <pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>https://sbom-insights.netlify.app/tags/sbom/</guid>
+      <guid>http://localhost:1313/tags/sbom/</guid>
       <description></description>
     </item>
     <item>
       <title>Security</title>
-      <link>https://sbom-insights.netlify.app/tags/security/</link>
+      <link>http://localhost:1313/tags/security/</link>
       <pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>https://sbom-insights.netlify.app/tags/security/</guid>
+      <guid>http://localhost:1313/tags/security/</guid>
       <description></description>
     </item>
     <item>
       <title>Supply Chain</title>
-      <link>https://sbom-insights.netlify.app/tags/supply-chain/</link>
+      <link>http://localhost:1313/tags/supply-chain/</link>
       <pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>https://sbom-insights.netlify.app/tags/supply-chain/</guid>
+      <guid>http://localhost:1313/tags/supply-chain/</guid>
       <description></description>
     </item>
   </channel>

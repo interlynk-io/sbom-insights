@@ -27,7 +27,7 @@ This site is built with [Hugo](https://gohugo.io/) using the PaperMod theme. To 
 git clone https://github.com/interlynk-io/sbom-insights.git
 cd sbom-insights
 
-# Initialize submodules (PaperMod theme)
+# Initialize submodules (PaperMod theme) - already done
 git submodule update --init --recursive
 
 # Install Hugo (optional, for local preview)
@@ -39,6 +39,27 @@ snap install hugo
 
 # On Windows
 choco install hugo-extended
+```
+
+### Using the Makefile
+
+We provide a Makefile with common commands:
+
+```bash
+# View all available commands
+make help
+
+# Start development server
+make serve
+
+# Build the site
+make build
+
+# Create a new post
+make new-post TITLE="Your Post Title"
+
+# Deploy to Netlify
+make deploy
 ```
 
 ## Adding a New Post
@@ -139,29 +160,24 @@ Wrap up your post...
 
 ### Step 1: Create Author Data File
 
-Create a JSON file in `data/authors/` directory:
+Create a YAML file in `data/authors/` directory:
 
 ```bash
 mkdir -p data/authors
-touch data/authors/your-name.json
+touch data/authors/your-name.yaml
 ```
 
 ### Step 2: Add Author Details
 
-```json
-{
-  "name": "Your Full Name",
-  "bio": "Brief bio about yourself and your expertise in SBOM/security",
-  "avatar": "/images/authors/your-photo.jpg",
-  "social": {
-    "github": "https://github.com/yourusername",
-    "linkedin": "https://linkedin.com/in/yourusername",
-    "twitter": "https://twitter.com/yourusername",
-    "website": "https://yourwebsite.com"
-  },
-  "company": "Your Company Name",
-  "role": "Your Job Title"
-}
+```yaml
+name: "Your Full Name"
+bio: "Brief bio about yourself and your expertise in SBOM/security"
+email: "your.email@example.com"
+company: "Your Company Name"
+github: "yourusername"
+linkedin: "yourusername"
+twitter: "yourusername"
+website: "https://yourwebsite.com"
 ```
 
 ### Step 3: Add Your Photo
@@ -209,7 +225,10 @@ Use relevant tags from this list (you can add new ones if needed):
 ### Running the Development Server
 
 ```bash
-# Start Hugo server with drafts
+# Start Hugo server with drafts (using Makefile)
+make serve
+
+# Or directly with Hugo
 hugo server -D
 
 # Without drafts
@@ -221,11 +240,17 @@ hugo server
 ### Building the Site
 
 ```bash
-# Build the static site
-hugo
+# Build the static site (using Makefile)
+make build
+
+# Or directly with Hugo
+hugo --minify
 
 # Build with drafts included
 hugo -D
+
+# Clean build artifacts
+make clean
 
 # The built site will be in the public/ directory
 ```
@@ -324,13 +349,15 @@ sbom-insights/
 │   ├── about.md     # About page
 │   └── contributors.md # Contributors page
 ├── data/
-│   └── authors/     # Author profiles (JSON)
+│   └── authors/     # Author profiles (YAML)
 ├── static/          # Static assets
 │   └── images/      # Images
 │       └── authors/ # Author avatars
 ├── themes/
 │   └── PaperMod/    # Hugo theme
 ├── hugo.toml        # Hugo configuration
+├── Makefile         # Build automation
+├── netlify.toml     # Netlify configuration  
 └── CONTRIBUTING.md  # Contribution guidelines
 ```
 
