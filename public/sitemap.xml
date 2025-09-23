@@ -2,47 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/best-practices/</loc>
+    <loc>https://sbom-insights.netlify.app/tags/best-practices/</loc>
     <lastmod>2025-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://sbom-insights.netlify.app/categories/</loc>
     <lastmod>2025-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/compliance/</loc>
+    <loc>https://sbom-insights.netlify.app/tags/compliance/</loc>
     <lastmod>2025-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/fundamentals/</loc>
+    <loc>https://sbom-insights.netlify.app/categories/fundamentals/</loc>
     <lastmod>2025-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://sbom-insights.netlify.app/posts/</loc>
     <lastmod>2025-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sbom/</loc>
+    <loc>https://sbom-insights.netlify.app/tags/sbom/</loc>
     <lastmod>2025-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://sbom-insights.netlify.app/</loc>
     <lastmod>2025-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/security/</loc>
+    <loc>https://sbom-insights.netlify.app/tags/security/</loc>
     <lastmod>2025-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/supply-chain/</loc>
+    <loc>https://sbom-insights.netlify.app/tags/supply-chain/</loc>
     <lastmod>2025-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://sbom-insights.netlify.app/tags/</loc>
     <lastmod>2025-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/what-is-sbom-why-required/</loc>
+    <loc>https://sbom-insights.netlify.app/posts/what-is-sbom-why-required/</loc>
     <lastmod>2025-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://sbom-insights.netlify.app/about/</loc>
   </url><url>
-    <loc>http://localhost:1313/authors/</loc>
+    <loc>https://sbom-insights.netlify.app/authors/</loc>
   </url><url>
-    <loc>http://localhost:1313/contributors/</loc>
+    <loc>https://sbom-insights.netlify.app/contributors/</loc>
   </url><url>
-    <loc>http://localhost:1313/search/</loc>
+    <loc>https://sbom-insights.netlify.app/search/</loc>
   </url><url>
-    <loc>http://localhost:1313/series/</loc>
+    <loc>https://sbom-insights.netlify.app/series/</loc>
   </url>
 </urlset>
