@@ -2,6 +2,38 @@
 
 Welcome to SBOM Insights! This guide will help you contribute to our blog about Software Bill of Materials (SBOM), supply chain security, and related topics.
 
+## Quick Start: Add and Test a Blog Post
+
+Want to quickly add a blog post? Follow these steps:
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/interlynk-io/sbom-insights.git
+cd sbom-insights
+
+# 2. Create a new post (replace with your title)
+make new-post TITLE="My SBOM Journey"
+
+# 3. Edit your post
+# Open content/posts/my-sbom-journey.md in your editor
+# Add your content after the front matter
+
+# 4. Test your post locally
+make serve
+# Open http://localhost:1313 in your browser
+
+# 5. When ready, build the site
+make build
+
+# 6. Create a PR with your changes
+git checkout -b post/my-sbom-journey
+git add .
+git commit -m "Add post: My SBOM Journey"
+git push origin post/my-sbom-journey
+```
+
+That's it! Your post will be reviewed and published. For more details, see the sections below.
+
 ## Table of Contents
 
 - [Getting Started](#getting-started)
@@ -43,23 +75,43 @@ choco install hugo-extended
 
 ### Using the Makefile
 
-We provide a Makefile with common commands:
+We provide a Makefile with helpful automation commands:
 
 ```bash
 # View all available commands
 make help
+```
 
-# Start development server
-make serve
+#### Available Makefile Commands
 
-# Build the site
-make build
+| Command | Description | Usage |
+|---------|-------------|-------|
+| `make help` | Display all available commands | `make help` |
+| `make serve` | Run Hugo development server with drafts on http://localhost:1313 | `make serve` |
+| `make build` | Build production site with minification | `make build` |
+| `make clean` | Remove build artifacts (public/ and resources/) | `make clean` |
+| `make new-post` | Create a new blog post with automatic filename formatting | `make new-post TITLE="Your Post Title"` |
+| `make deploy` | Build and deploy to Netlify production | `make deploy` |
+| `make preview` | Deploy a preview to Netlify | `make preview` |
+| `make update-theme` | Update PaperMod theme to latest version | `make update-theme` |
+| `make check-links` | Check for broken links in built site (requires htmltest) | `make check-links` |
+| `make format` | Format all markdown files with prettier | `make format` |
 
-# Create a new post
-make new-post TITLE="Your Post Title"
+#### Quick Examples
 
-# Deploy to Netlify
-make deploy
+```bash
+# Start writing a new post
+make new-post TITLE="Understanding SBOM Formats"
+make serve  # Preview at http://localhost:1313
+
+# Ready to submit?
+make format  # Clean up formatting
+make check-links  # Verify all links work
+make build  # Final build check
+
+# Deploy (for maintainers)
+make preview  # Test deployment
+make deploy  # Production deployment
 ```
 
 ## Adding a New Post
@@ -178,6 +230,7 @@ github: "yourusername"
 linkedin: "yourusername"
 twitter: "yourusername"
 website: "https://yourwebsite.com"
+copyright: "© 2025 Your Name"  # Optional: custom copyright for your posts
 ```
 
 ### Step 3: Add Your Photo
@@ -393,9 +446,18 @@ If you need assistance:
 3. Open an issue with your question
 4. Contact the maintainers
 
-## License
+## License and Copyright
 
-By contributing to SBOM Insights, you agree that your contributions will be licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+### License
+All content in SBOM Insights is licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+
+### Copyright
+- Copyright © 2025 Interlynk.io and Contributors
+- Individual authors retain copyright to their contributions
+- By contributing, you grant Interlynk.io rights under CC BY 4.0 to publish and distribute your content
+- Proper attribution to original authors is required for any use
+
+See [CONTRIBUTORS.md](CONTRIBUTORS.md) for a list of all contributors.
 
 ## Contact
 
