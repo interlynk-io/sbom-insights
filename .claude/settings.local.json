@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(hugo:*)",
+      "Bash(git submodule:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

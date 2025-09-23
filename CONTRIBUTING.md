@@ -27,15 +27,20 @@ choco install hugo-extended
 ### 2. Fork and Clone
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/sbom-blog.git
-cd sbom-blog
+git clone https://github.com/YOUR-USERNAME/sbom-insights.git
+cd sbom-insights
 git submodule update --init --recursive
 ```
 
 ### 3. Run Local Server
 
 ```bash
+# Using Makefile (recommended)
+make serve
+
+# Or directly with Hugo
 hugo server -D
+
 # Visit http://localhost:1313
 ```
 
@@ -44,7 +49,10 @@ hugo server -D
 ### New Blog Post
 
 ```bash
-# Create new post
+# Using Makefile (recommended)
+make new-post TITLE="Your Post Title"
+
+# Or using Hugo directly
 hugo new posts/your-post-title.md
 
 # Edit the post
@@ -207,14 +215,14 @@ authors: ["your-id"]  # For multiple authors: ["id1", "id2"]
 ### Build Site
 
 ```bash
-# Build site
-hugo
+# Using Makefile
+make build       # Production build
+make clean       # Clean build artifacts
 
-# Build with drafts
-hugo -D
-
-# Check for errors
-hugo --verbose
+# Or using Hugo directly
+hugo --minify    # Production build
+hugo -D          # Build with drafts
+hugo --verbose   # Check for errors
 ```
 
 ### Check Links
@@ -305,9 +313,26 @@ images/your-image.png   # Wrong
 - [Markdown Guide](https://www.markdownguide.org/)
 - [SBOM Standards](https://www.cisa.gov/sbom)
 
+## Makefile Commands
+
+Available Makefile targets for common tasks:
+
+```bash
+make help         # Show all available commands
+make serve        # Run development server with drafts
+make build        # Build production site
+make clean        # Clean public directory
+make deploy       # Deploy to Netlify (requires Netlify CLI)
+make preview      # Preview Netlify deploy
+make new-post TITLE="..."  # Create new blog post
+make update-theme # Update PaperMod theme
+make check-links  # Check for broken links
+make format       # Format markdown files
+```
+
 ## Contact
 
-- GitHub Issues: [github.com/YOUR-REPO/sbom-blog/issues](https://github.com/YOUR-REPO/sbom-blog/issues)
+- GitHub Issues: [github.com/interlynk-io/sbom-insights/issues](https://github.com/interlynk-io/sbom-insights/issues)
 - Email: contributors@sbominsights.com
 
 Thank you for contributing to SBOM Insights!
