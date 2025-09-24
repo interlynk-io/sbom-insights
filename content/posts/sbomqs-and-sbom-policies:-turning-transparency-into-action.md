@@ -2,9 +2,11 @@
 date = '2025-09-23T17:36:55+05:30'
 draft = true
 title = 'Sbomqs and Sbom Policies: Turning Transparency Into Action'
+categories = ['Compliance', 'Quality', 'Tools']
+tags = ['SBOM', 'sbomqs', 'Policy', 'Compliance', 'Supply Chain', 'Risk Management', 'Security', 'Vulnerability Management']
 +++
 
-![alt text](image-25.png)
+![alt text](/posts/image-25.png)
 
 Hey SBOM enthusiasts 👋
 
@@ -178,7 +180,7 @@ We will run this policy against incomplete which has license value as "NOASSERTI
 sbomqs policy -f samples/policy/whitelist/approved-licenses.yaml samples/policy/in-complete.spdx.sbom.json
 ```
 
-![alt text](image-26.png)
+![alt text](/posts/image-26.png)
 
 The output shows that the policy check failed. Here’s why:
 
@@ -193,7 +195,7 @@ Now, will run the same command against complete SBOM, which contain license with
 sbomqs policy -f samples/policy/whitelist/approved-licenses.yaml samples/policy/complete-sbom.spdx.json
 ```
 
-![alt text](image-27.png)
+![alt text](/posts/image-27.png)
 
 The output shows that the policy check failed. Here’s why:
 
@@ -219,7 +221,7 @@ sbomqs policy \
 samples/policy/in-complete.spdx.sbom.json
 ```
 
-![alt text](image-28.png)
+![alt text](/posts/image-28.png)
 
 The outcome shows that the SBOM had 6 components, and all 6 failed the whitelist rule (none matched MIT or Apache-2.0). Since the action was set to fail, the final result is also fail.
 
@@ -266,7 +268,7 @@ Now, let’s run it:
 sbomqs policy -f samples/policy/custom/custom-policies.yaml samples/policy/in-complete.spdx.sbom.json
 ```
 
-![alt text](image-29.png)
+![alt text](/posts/image-29.png)
 
 Breaking it down:
 

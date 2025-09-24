@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Sbomqs on SBOM Insights</title>
+    <link>http://localhost:1313/tags/sbomqs/</link>
+    <description>Recent content in Sbomqs on SBOM Insights</description>
+    <image>
+      <title>SBOM Insights</title>
+      <url>http://localhost:1313/logo.png</url>
+      <link>http://localhost:1313/logo.png</link>
+    </image>
+    <generator>Hugo -- 0.150.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 23 Sep 2025 17:36:55 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/sbomqs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sbomqs and Sbom Policies: Turning Transparency Into Action</title>
+      <link>http://localhost:1313/posts/sbomqs-and-sbom-policies-turning-transparency-into-action/</link>
+      <pubDate>Tue, 23 Sep 2025 17:36:55 +0530</pubDate>
+      <guid>http://localhost:1313/posts/sbomqs-and-sbom-policies-turning-transparency-into-action/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/posts/image-25.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Hey SBOM enthusiasts 👋&lt;/p&gt;
+&lt;p&gt;An SBOM isn’t just a list of components anymore — it has detailed information of your software, which contains hundreds of components. And that&amp;rsquo;s what gives you the transparency of each and every component: such as, who authored it, who supplies it, under what license it’s released, and even what known vulnerabilities it carries. In other words, it’s not just an inventory — it’s visibility into the very DNA of your software.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sbomqs Scoring Support for Bsi 1.1 and Bsi 2.0 in a Summarized Way</title>
+      <link>http://localhost:1313/posts/sbomqs-scoring-support-for-bsi-1.1-and-bsi-2.0-in-a-summarized-way/</link>
+      <pubDate>Tue, 23 Sep 2025 16:49:26 +0530</pubDate>
+      <guid>http://localhost:1313/posts/sbomqs-scoring-support-for-bsi-1.1-and-bsi-2.0-in-a-summarized-way/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/posts/image-15.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Hey SBOM community,&lt;/p&gt;
+&lt;p&gt;Love to see you back here learning something new. If you’re working with SBOMs, you probably know that generating SBOM is just a first step. What you get after generating SBOM is just a raw SBOM ? And the raw SBOM is incomplete, inaccurate sometime and most importantly not even comply with NTIA minimum element according to this research &lt;a href=&#34;https://github.com/SBOM-Community/SBOM-Generation/blob/main/whitepaper/Draft-SBOM-Generation-White-Paper-Feb-25-2025.pdf&#34;&gt;whitepaper&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;And that&amp;rsquo;s exactly where your involvement comes to enrich the SBOM, augument the SBOM, etc to make a better quality SBOM with completeness, accuracy and enriched data.  At the end the real power of SBOM lies within itself i.e data. Because at the end these SBOM will be feeded to SBOM platform which perform complete analysis of the SBOM. The more complete and correct the data is, the more it helps you understand and reduce risk in your software supply chain.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>What’s Missing in Your Sbom? Sbomqs List Can Help You in Inspecting...</title>
+      <link>http://localhost:1313/posts/whats-missing-in-your-sbom-sbomqs-list-can-help-you-in-inspecting.../</link>
+      <pubDate>Tue, 23 Sep 2025 15:19:04 +0530</pubDate>
+      <guid>http://localhost:1313/posts/whats-missing-in-your-sbom-sbomqs-list-can-help-you-in-inspecting.../</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/posts/image-8.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Hey there 👋 SBOM practitioners, compliance engineers, and open-source watchers!&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;ve been working with SBOMs lately—whether you&amp;rsquo;re producing them or consuming them—you’ve probably noticed how quickly they’ve gone from “nice to have” to absolutely essential. I hope now your getting comfortable on working with SBOMs and familiar with software supply chain security terminologies.&lt;/p&gt;
+&lt;p&gt;We all are well-known about the wake-up call on SBOMs,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;First one was SolarWinds attack(and later on log4j attack) and&lt;/li&gt;
+&lt;li&gt;US Executive Order 14028 by Biden Govt.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And since then, the communities started stepping into this complex world wired with complex software( in form of dependencies) to secure software supply chain security from software supply chain attacks. Next step towards it taken by big organization like OpenSSF and countries by showing up their interest towards it, which resulted into various SBOM guidelines, SBOM related tools, SBOM compliances, SBOM platforms, SCA tools, etc were born.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

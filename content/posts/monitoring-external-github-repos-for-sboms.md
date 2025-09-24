@@ -2,9 +2,11 @@
 date = '2025-09-23T16:39:52+05:30'
 draft = true
 title = 'Monitoring External Github Repos for Sboms'
+categories = ['Automation', 'Tools']
+tags = ['SBOM', 'GitHub', 'Monitoring', 'sbommv', 'Open Source', 'Supply Chain', 'Automation']
 +++
 
-![alt text](image-14.png)
+![alt text](/posts/image-14.png)
 
 **GitHub Release Monitoring: SBOM Automation for External Repos** 🚀
 

@@ -2,9 +2,11 @@
 date = '2025-09-23T17:12:44+05:30'
 draft = true
 title = 'Sbomasm Enriches Licenses Using Clearlydefined Datasets'
+categories = ['Tools', 'Quality']
+tags = ['SBOM', 'sbomasm', 'License Management', 'ClearlyDefined', 'SBOM Quality', 'Open Source', 'Enrichment']
 +++
 
-![alt text](image-24.png)
+![alt text](/posts/image-24.png)
 
 Hey SBOM enthusiasts 👋,
 
