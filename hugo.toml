@@ -9,7 +9,7 @@ enableRobotsTXT = true
 buildDrafts = false
 buildFuture = false
 buildExpired = false
-googleAnalytics = ''
+googleAnalytics = 'G-ZWMS311EG2'
 pygmentsUseClasses = true
 
 [minify]
