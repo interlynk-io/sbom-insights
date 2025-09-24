@@ -2,9 +2,11 @@
 date = '2025-09-23T15:30:57+05:30'
 draft = true
 title = 'Modular Sbom Automation: Now With Aws S3 Support'
+categories = ['Automation', 'Tools', 'Cloud']
+tags = ['SBOM', 'AWS', 'S3', 'Cloud Storage', 'sbommv', 'Automation', 'Dependency-Track']
 +++
 
-![alt text](image-9.png)
+![alt text](/posts/image-9.png)
 
 In our previous posts, we streamlined SBOM workflows by moving them from GitHub releases or local folders directly into platforms like Dependency-Track and then, we took it one step further with folder continuous monitoring—continuous fetching and uploading via sbommv’s daemon mode, which runs in the background and keeps an eye on target folders for any incoming or modified SBOMs.
 
@@ -38,7 +40,7 @@ We have done with theory part, now let's proceed with hands-on part:
 
 Let's say you already have SBOMs either in a folder, GitHub, or any other input system. Now, you want to push them to an S3 bucket.
 
-![alt text](image-10.png)
+![alt text](/posts/image-10.png)
 
 Make sure your AWS credentials are already configured locally and present at `~/aws/credential` path.
 
@@ -90,7 +92,7 @@ Now, you have SBOMs on S3 bucket, let's fetch from here and upload to SBOM platf
 
 Let's fetch SBOMs stored in S3 and upload them into Dependency-Track or any other system?
 
-![alt text](image-11.png)
+![alt text](/posts/image-11.png)
 
 Let's see what it fetched and what it would upload to Dependency Track:
 
@@ -133,7 +135,7 @@ sbommv  transfer  \
 
 ```
 
-![alt text](image-12.png)
+![alt text](/posts/image-12.png)
 
 To setup Dependency-Track locally follow this [guide](https://github.com/interlynk-io/sbommv/blob/main/examples/setup_dependency_track.md).
 
@@ -149,7 +151,7 @@ sbommv  transfer  \
 --out-dtrack-url="http://localhost:8081"
 ```
 
-![alt text](image-13.png)
+![alt text](/posts/image-13.png)
 
 **What's happening:**
 

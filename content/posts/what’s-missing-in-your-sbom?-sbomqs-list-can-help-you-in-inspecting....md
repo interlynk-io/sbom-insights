@@ -2,9 +2,11 @@
 date = '2025-09-23T15:19:04+05:30'
 draft = true
 title = 'What’s Missing in Your Sbom? Sbomqs List Can Help You in Inspecting...'
+categories = ['Quality', 'Compliance', 'Tools']
+tags = ['SBOM', 'sbomqs', 'Compliance', 'SBOM Quality', 'Validation', 'NTIA', 'BSI', 'Component Analysis']
 +++
 
-![alt text](image-8.png)
+![alt text](/posts/image-8.png)
 
 Hey there 👋 SBOM practitioners, compliance engineers, and open-source watchers!
 

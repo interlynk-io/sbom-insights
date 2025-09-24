@@ -2,9 +2,11 @@
 date = '2025-09-23T14:09:20+05:30'
 draft = false
 title = 'Github Releases Are Where Sboms Goto Die'
+categories = ['Automation', 'Tools']
+tags = ['SBOM', 'GitHub', 'Automation', 'sbommv', 'Dependency-Track', 'Supply Chain', 'CI/CD']
 +++
 
-![alt text](image-30.png)
+![alt text](/posts/image-30.png)
 
 Hey there 👋, SBOM enthusiasts ! Since the [2021 Cyber security Executive Order](https://www.nist.gov/itl/executive-order-14028-improving-nations-cybersecurity) by Joe Biden. SBOMs (Software Bill of Materials) have become essential for software security and compliance. With countries like the [EU](https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act), [US](https://www.ntia.gov/sites/default/files/publications/sbom_minimum_elements_report_0.pdf), [Germany](https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/Publications/TechGuidelines/TR03183/BSI-TR-03183-2-2_0_0.pdf?__blob=publicationFile&v=3), and [India](https://www.cert-in.org.in/PDF/SBOM_Guidelines.pdf) introducing their own SBOM regulations, it’s clear:
 
@@ -130,7 +132,7 @@ sbommv transfer \
 --out-folder-path="demo"
 ```
 
-![alt text](image-31.png)
+![alt text](/posts/image-31.png)
 
 Now that we have a collection of SBOMs in our local folder demo, the next step is to seamlessly transfer them to Dependency-Track using sbommv.
 
@@ -144,9 +146,9 @@ sbommv transfer \
 --out-dtrack-url="http://localhost:8081"
 ```
 
-![alt text](image-32.png)
+![alt text](/posts/image-32.png)
 
-![alt text](image-33.png)
+![alt text](/posts/image-33.png)
 
 **After execution**:
 
@@ -171,7 +173,7 @@ sbommv transfer \
 --dry-run
 ```
 
-![alt text](image-34.png)
+![alt text](/posts/image-34.png)
 
 - Displays the list of SBOMs that would be fetched from which all repo and their formats.
 - Ensures project names and formats are correctly identified before execution.
@@ -190,7 +192,7 @@ sbommv transfer \
 --dry-run
 ```
 
-![alt text](image-35.png)
+![alt text](/posts/image-35.png)
 
 - Lists valid SBOM files detected in the folder.
 - Confirms format, project name with it will be uploaded to DTrack, Spec-Version and filename.

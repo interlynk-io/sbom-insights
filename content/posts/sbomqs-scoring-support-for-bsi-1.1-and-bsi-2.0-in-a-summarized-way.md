@@ -2,9 +2,11 @@
 date = '2025-09-23T16:49:26+05:30'
 draft = true
 title = 'Sbomqs Scoring Support for Bsi 1.1 and Bsi 2.0 in a Summarized Way'
+categories = ['Compliance', 'Quality', 'Tools']
+tags = ['SBOM', 'sbomqs', 'BSI', 'Compliance', 'NTIA', 'SBOM Quality', 'Standards', 'Security']
 +++
 
-![alt text](image-15.png)
+![alt text](/posts/image-15.png)
 
 Hey SBOM community,
 
@@ -28,7 +30,7 @@ This made it easier to get a fast, visual understanding of where your SBOM stand
 
 Before we get into the new additions, let’s look at how a summarized score for NTIA looks like.
 
-![alt text](image-16.png)
+![alt text](/posts/image-16.png)
 
 The score output gives you a clear table showing which key fields from the NTIA guidelines are present across your SBOM. For example, `component_with_name` checks whether each listed component includes a name. If all components are named, you’ll see a 100% score for that field. Other fields, like `comp_with_version`, `comp_with_uniq_ids`, and `comp_with_supplier`, follow the same idea—scanning for completeness based on NTIA expectations.
 
@@ -49,11 +51,11 @@ We’ve now expanded the score command to include [BSI-v1.1](https://www.bsi.bun
 
 Let's quickly see a summarized score against BSI-v1.1:
 
-![alt text](image-17.png)
+![alt text](/posts/image-17.png)
 
 Similarly scoring for BSI-v2.0:
 
-![alt text](image-18.png)
+![alt text](/posts/image-18.png)
 
 As compare to NTIA, bsi has more number of features to check. Now, once you get a summary of this score. Along with score you get to know how many number of components missing what features and how many have. This helps you better understanding of you SBOM overall. Now accordingly, you can update your SBOM with adding more values to it.
 
@@ -63,21 +65,21 @@ After identifying the overall gaps, you might want to dig deeper and see exactly
 
 Let's quickly look at the command and it's o/p and see how many components have feature, comp_with_name.
 
-![alt text](image-19.png)
+![alt text](/posts/image-19.png)
 
 If you see the o/p, it shows that 38/38 components contains component name. Now let's see the value of each feature that components have. To do so, add a --show flag in the list command:
 
-![alt text](image-20.png)
+![alt text](/posts/image-20.png)
 
 By default, the list command shows which all components has a particular feature. To flip the view and see which components are missing it, just add the `--missing` flag.
 
-![alt text](image-21.png)
+![alt text](/posts/image-21.png)
 
 For example, if all components already have a name, the output will confirm that none are missing the `comp_with_name` field. Simple and direct.
 
 Similarly, let see how many component is missing the feature `comp_with_suppplier`. 
 
-![alt text](image-22.png)
+![alt text](/posts/image-22.png)
 
 So, all components are missing this feature. Now, you can enrich the values accordingly. You can use tools like [sbomasm](https://github.com/interlynk-io/sbomasm) and [parlay](https://github.com/snyk/parlay) tool for augmentation and enrichment respectively.
 

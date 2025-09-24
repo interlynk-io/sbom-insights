@@ -2,9 +2,11 @@
 date = '2025-09-23T14:40:15+05:30'
 draft = false
 title = 'Folder Monitoring: Sbom Automation That Never Sleeps'
+categories = ['Automation', 'Tools']
+tags = ['SBOM', 'Automation', 'sbommv', 'Monitoring', 'CI/CD', 'Dependency-Track', 'DevOps']
 +++
 
-![alt text](image-7.png)
+![alt text](/posts/image-7.png)
 
 ## Introduction
 
@@ -24,7 +26,7 @@ Now we’re taking it a step further, **SBOM automation that doesn’t wait for 
 
 Imagine a workflow where you don’t even have to run a command when source of SBOM is a folder(i.e input system/adapter is folder). SBOMs just shown up in a folder—maybe from your CI pipeline, a nightly build job, or a dev tool—and sbommv running in the daemon mode, instantly detects it, validates it, convert it to CycloneDX spec and ships them off to SBOM platforms.
 
-![alt text](image.png)
+![alt text](/posts/image.png)
 
 In theory, SBOM automation should “just work.” But in reality, users are still asking [this](https://github.com/DependencyTrack/dependency-track/discussions/4256):
 
@@ -92,13 +94,13 @@ $ sbommv transfer \
 
 Immediately, the following happens: detects SBOM and uploaded it to dependency track
 
-![alt text](image-3.png)
+![alt text](/posts/image-3.png)
 
 Let's check dependency-track platform, whether SBOM is uploaded or not? Yeah, it's uploaded...
 
-![alt text](image-1.png)
+![alt text](/posts/image-1.png)
 
-![alt text](image-2.png)
+![alt text](/posts/image-2.png)
 
 Let's understand what happens:
 
@@ -134,11 +136,11 @@ $ sbommv transfer \
 --out-folder-path=demo/again
 ```
 
-![alt text](image-4.png)
+![alt text](/posts/image-4.png)
 
 Immediately, the following logs appeared: detects SBOM and skip uploading  to dependency track. This is because same SBOM is trying to get uploaded in same project. Will talk about this in next section.
 
-![alt text](image-5.png)
+![alt text](/posts/image-5.png)
 
 Each nested directory is auto-watched. Each SBOM is independently tracked and uploaded as it's added.
 
@@ -194,7 +196,7 @@ $ sbommv transfer \
 --dry-run
 ```
 
-![alt text](image-6.png)
+![alt text](/posts/image-6.png)
 
 This outputs:
 
