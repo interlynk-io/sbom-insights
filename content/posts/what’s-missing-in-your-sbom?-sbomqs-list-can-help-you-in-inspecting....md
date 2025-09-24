@@ -1,6 +1,6 @@
 +++
 date = '2025-09-23T15:19:04+05:30'
-draft = true
+draft = false
 title = 'What’s Missing in Your Sbom? Sbomqs List Can Help You in Inspecting...'
 categories = ['Quality', 'Compliance', 'Tools']
 tags = ['SBOM', 'sbomqs', 'Compliance', 'SBOM Quality', 'Validation', 'NTIA', 'BSI', 'Component Analysis']

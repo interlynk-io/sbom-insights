@@ -1,6 +1,6 @@
 +++
 date = '2025-09-23T17:36:55+05:30'
-draft = true
+draft = false
 title = 'Sbomqs and Sbom Policies: Turning Transparency Into Action'
 categories = ['Compliance', 'Quality', 'Tools']
 tags = ['SBOM', 'sbomqs', 'Policy', 'Compliance', 'Supply Chain', 'Risk Management', 'Security', 'Vulnerability Management']
