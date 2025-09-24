@@ -1,6 +1,6 @@
 +++
 date = '2025-09-23T15:30:57+05:30'
-draft = true
+draft = false
 title = 'Modular Sbom Automation: Now With Aws S3 Support'
 categories = ['Automation', 'Tools', 'Cloud']
 tags = ['SBOM', 'AWS', 'S3', 'Cloud Storage', 'sbommv', 'Automation', 'Dependency-Track']

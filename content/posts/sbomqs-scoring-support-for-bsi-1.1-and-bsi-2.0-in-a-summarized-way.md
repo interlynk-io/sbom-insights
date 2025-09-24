@@ -1,6 +1,6 @@
 +++
 date = '2025-09-23T16:49:26+05:30'
-draft = true
+draft = false
 title = 'Sbomqs Scoring Support for Bsi 1.1 and Bsi 2.0 in a Summarized Way'
 categories = ['Compliance', 'Quality', 'Tools']
 tags = ['SBOM', 'sbomqs', 'BSI', 'Compliance', 'NTIA', 'SBOM Quality', 'Standards', 'Security']
