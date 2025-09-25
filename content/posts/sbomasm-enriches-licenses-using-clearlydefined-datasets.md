@@ -1,7 +1,7 @@
 +++
 date = '2025-09-23T17:12:44+05:30'
 draft = false
-title = 'Sbomasm Enriches Licenses Using Clearlydefined Datasets'
+title = 'sbomasm Enriches Licenses Using Clearlydefined Datasets'
 categories = ['Tools', 'Quality']
 tags = ['SBOM', 'sbomasm', 'License Management', 'ClearlyDefined', 'SBOM Quality', 'Open Source', 'Enrichment']
 author = 'Vivek Sahu'

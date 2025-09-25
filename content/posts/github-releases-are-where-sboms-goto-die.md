@@ -1,7 +1,7 @@
 +++
 date = '2025-09-23T14:09:20+05:30'
 draft = false
-title = 'Github Releases Are Where Sboms Goto Die'
+title = 'Github Releases Are Where SBOMs Goto Die'
 categories = ['Automation', 'Tools']
 tags = ['SBOM', 'GitHub', 'Automation', 'sbommv', 'Dependency-Track', 'Supply Chain', 'CI/CD']
 author = 'Vivek Sahu'
