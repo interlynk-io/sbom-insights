@@ -4,6 +4,7 @@ draft = false
 title = "Lean, Clean, and Compliance Ready: Sbomasm's New Removal Capabilities"
 categories = ['Tools', 'Compliance']
 tags = ['SBOM', 'sbomasm', 'Data Privacy', 'Compliance', 'SBOM Editing', 'Best Practices']
+author = 'Vivek Sahu'
 +++
 
 ![alt text](/posts/image-23.png)

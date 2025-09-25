@@ -4,6 +4,7 @@ draft = false
 title = 'Sbomqs and Sbom Policies: Turning Transparency Into Action'
 categories = ['Compliance', 'Quality', 'Tools']
 tags = ['SBOM', 'sbomqs', 'Policy', 'Compliance', 'Supply Chain', 'Risk Management', 'Security', 'Vulnerability Management']
+author = 'Vivek Sahu'
 +++
 
 ![alt text](/posts/image-25.png)

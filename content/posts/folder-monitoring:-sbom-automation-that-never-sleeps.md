@@ -4,6 +4,7 @@ draft = false
 title = 'Folder Monitoring: Sbom Automation That Never Sleeps'
 categories = ['Automation', 'Tools']
 tags = ['SBOM', 'Automation', 'sbommv', 'Monitoring', 'CI/CD', 'Dependency-Track', 'DevOps']
+author = 'Vivek Sahu'
 +++
 
 ![alt text](/posts/image-7.png)

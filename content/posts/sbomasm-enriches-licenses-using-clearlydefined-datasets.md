@@ -4,6 +4,7 @@ draft = false
 title = 'Sbomasm Enriches Licenses Using Clearlydefined Datasets'
 categories = ['Tools', 'Quality']
 tags = ['SBOM', 'sbomasm', 'License Management', 'ClearlyDefined', 'SBOM Quality', 'Open Source', 'Enrichment']
+author = 'Vivek Sahu'
 +++
 
 ![alt text](/posts/image-24.png)
