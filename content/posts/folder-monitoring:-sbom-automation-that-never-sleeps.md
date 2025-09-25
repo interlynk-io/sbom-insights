@@ -105,8 +105,8 @@ Let's check dependency-track platform, whether SBOM is uploaded or not? Yeah, it
 
 Let's understand what happens:
 
-- Ran sboomv in daemon mode, monitoring folder
-- Drop a SBOM with the help of sboomv from fetching it from github to demo folder
+- Ran sbommv in daemon mode, monitoring folder
+- Drop a SBOM with the help of sbommv from fetching it from github to demo folder
 - 📂 Event triggered: CREATE & WRITE → demo/<SBOM-FILE>.json
 - ✅ Detected as SBOM
 - 🚀 Uploaded to Dependency-Track
@@ -147,8 +147,8 @@ Each nested directory is auto-watched. Each SBOM is independently tracked and up
 
 Let's understand what happens:
 
-- Ran sboomv in daemon mode, monitoring folder
-- Drop a SBOM with the help of sboomv from fetching it from github to demo/again folder
+- Ran sbommv in daemon mode, monitoring folder
+- Drop a SBOM with the help of sbommv from fetching it from github to demo/again folder
 - 📂 Event triggered: CREATE & WRITE → demo/<SBOM-FILE>.json
 - ✅ Detected as SBOM
 - 🚀 Skipped uploading to Dependency-Track
