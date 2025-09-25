@@ -1,4 +1,4 @@
-baseURL = 'https://sbom-insights.netlify.app/'
+baseURL = 'https://sbom-insights.dev/'
 title = 'SBOM Insights'
 languageCode = 'en-us'
 theme = 'PaperMod'

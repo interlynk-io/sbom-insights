@@ -2,239 +2,239 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on SBOM Insights</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://sbom-insights.dev/tags/</link>
     <description>Recent content in Tags on SBOM Insights</description>
     <image>
       <title>SBOM Insights</title>
-      <url>http://localhost:1313/logo.png</url>
-      <link>http://localhost:1313/logo.png</link>
+      <url>https://sbom-insights.dev/logo.png</url>
+      <link>https://sbom-insights.dev/logo.png</link>
     </image>
     <generator>Hugo -- 0.150.0</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 23 Sep 2025 17:36:55 +0530</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://sbom-insights.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Compliance</title>
-      <link>http://localhost:1313/tags/compliance/</link>
+      <link>https://sbom-insights.dev/tags/compliance/</link>
       <pubDate>Tue, 23 Sep 2025 17:36:55 +0530</pubDate>
-      <guid>http://localhost:1313/tags/compliance/</guid>
+      <guid>https://sbom-insights.dev/tags/compliance/</guid>
       <description></description>
     </item>
     <item>
       <title>Policy</title>
-      <link>http://localhost:1313/tags/policy/</link>
+      <link>https://sbom-insights.dev/tags/policy/</link>
       <pubDate>Tue, 23 Sep 2025 17:36:55 +0530</pubDate>
-      <guid>http://localhost:1313/tags/policy/</guid>
+      <guid>https://sbom-insights.dev/tags/policy/</guid>
       <description></description>
     </item>
     <item>
       <title>Risk Management</title>
-      <link>http://localhost:1313/tags/risk-management/</link>
+      <link>https://sbom-insights.dev/tags/risk-management/</link>
       <pubDate>Tue, 23 Sep 2025 17:36:55 +0530</pubDate>
-      <guid>http://localhost:1313/tags/risk-management/</guid>
+      <guid>https://sbom-insights.dev/tags/risk-management/</guid>
       <description></description>
     </item>
     <item>
       <title>SBOM</title>
-      <link>http://localhost:1313/tags/sbom/</link>
+      <link>https://sbom-insights.dev/tags/sbom/</link>
       <pubDate>Tue, 23 Sep 2025 17:36:55 +0530</pubDate>
-      <guid>http://localhost:1313/tags/sbom/</guid>
+      <guid>https://sbom-insights.dev/tags/sbom/</guid>
       <description></description>
     </item>
     <item>
       <title>Sbomqs</title>
-      <link>http://localhost:1313/tags/sbomqs/</link>
+      <link>https://sbom-insights.dev/tags/sbomqs/</link>
       <pubDate>Tue, 23 Sep 2025 17:36:55 +0530</pubDate>
-      <guid>http://localhost:1313/tags/sbomqs/</guid>
+      <guid>https://sbom-insights.dev/tags/sbomqs/</guid>
       <description></description>
     </item>
     <item>
       <title>Security</title>
-      <link>http://localhost:1313/tags/security/</link>
+      <link>https://sbom-insights.dev/tags/security/</link>
       <pubDate>Tue, 23 Sep 2025 17:36:55 +0530</pubDate>
-      <guid>http://localhost:1313/tags/security/</guid>
+      <guid>https://sbom-insights.dev/tags/security/</guid>
       <description></description>
     </item>
     <item>
       <title>Supply Chain</title>
-      <link>http://localhost:1313/tags/supply-chain/</link>
+      <link>https://sbom-insights.dev/tags/supply-chain/</link>
       <pubDate>Tue, 23 Sep 2025 17:36:55 +0530</pubDate>
-      <guid>http://localhost:1313/tags/supply-chain/</guid>
+      <guid>https://sbom-insights.dev/tags/supply-chain/</guid>
       <description></description>
     </item>
     <item>
       <title>Vulnerability Management</title>
-      <link>http://localhost:1313/tags/vulnerability-management/</link>
+      <link>https://sbom-insights.dev/tags/vulnerability-management/</link>
       <pubDate>Tue, 23 Sep 2025 17:36:55 +0530</pubDate>
-      <guid>http://localhost:1313/tags/vulnerability-management/</guid>
+      <guid>https://sbom-insights.dev/tags/vulnerability-management/</guid>
       <description></description>
     </item>
     <item>
       <title>ClearlyDefined</title>
-      <link>http://localhost:1313/tags/clearlydefined/</link>
+      <link>https://sbom-insights.dev/tags/clearlydefined/</link>
       <pubDate>Tue, 23 Sep 2025 17:12:44 +0530</pubDate>
-      <guid>http://localhost:1313/tags/clearlydefined/</guid>
+      <guid>https://sbom-insights.dev/tags/clearlydefined/</guid>
       <description></description>
     </item>
     <item>
       <title>Enrichment</title>
-      <link>http://localhost:1313/tags/enrichment/</link>
+      <link>https://sbom-insights.dev/tags/enrichment/</link>
       <pubDate>Tue, 23 Sep 2025 17:12:44 +0530</pubDate>
-      <guid>http://localhost:1313/tags/enrichment/</guid>
+      <guid>https://sbom-insights.dev/tags/enrichment/</guid>
       <description></description>
     </item>
     <item>
       <title>License Management</title>
-      <link>http://localhost:1313/tags/license-management/</link>
+      <link>https://sbom-insights.dev/tags/license-management/</link>
       <pubDate>Tue, 23 Sep 2025 17:12:44 +0530</pubDate>
-      <guid>http://localhost:1313/tags/license-management/</guid>
+      <guid>https://sbom-insights.dev/tags/license-management/</guid>
       <description></description>
     </item>
     <item>
       <title>Open Source</title>
-      <link>http://localhost:1313/tags/open-source/</link>
+      <link>https://sbom-insights.dev/tags/open-source/</link>
       <pubDate>Tue, 23 Sep 2025 17:12:44 +0530</pubDate>
-      <guid>http://localhost:1313/tags/open-source/</guid>
+      <guid>https://sbom-insights.dev/tags/open-source/</guid>
       <description></description>
     </item>
     <item>
       <title>SBOM Quality</title>
-      <link>http://localhost:1313/tags/sbom-quality/</link>
+      <link>https://sbom-insights.dev/tags/sbom-quality/</link>
       <pubDate>Tue, 23 Sep 2025 17:12:44 +0530</pubDate>
-      <guid>http://localhost:1313/tags/sbom-quality/</guid>
+      <guid>https://sbom-insights.dev/tags/sbom-quality/</guid>
       <description></description>
     </item>
     <item>
       <title>Sbomasm</title>
-      <link>http://localhost:1313/tags/sbomasm/</link>
+      <link>https://sbom-insights.dev/tags/sbomasm/</link>
       <pubDate>Tue, 23 Sep 2025 17:12:44 +0530</pubDate>
-      <guid>http://localhost:1313/tags/sbomasm/</guid>
+      <guid>https://sbom-insights.dev/tags/sbomasm/</guid>
       <description></description>
     </item>
     <item>
       <title>Best Practices</title>
-      <link>http://localhost:1313/tags/best-practices/</link>
+      <link>https://sbom-insights.dev/tags/best-practices/</link>
       <pubDate>Tue, 23 Sep 2025 17:01:06 +0530</pubDate>
-      <guid>http://localhost:1313/tags/best-practices/</guid>
+      <guid>https://sbom-insights.dev/tags/best-practices/</guid>
       <description></description>
     </item>
     <item>
       <title>Data Privacy</title>
-      <link>http://localhost:1313/tags/data-privacy/</link>
+      <link>https://sbom-insights.dev/tags/data-privacy/</link>
       <pubDate>Tue, 23 Sep 2025 17:01:06 +0530</pubDate>
-      <guid>http://localhost:1313/tags/data-privacy/</guid>
+      <guid>https://sbom-insights.dev/tags/data-privacy/</guid>
       <description></description>
     </item>
     <item>
       <title>SBOM Editing</title>
-      <link>http://localhost:1313/tags/sbom-editing/</link>
+      <link>https://sbom-insights.dev/tags/sbom-editing/</link>
       <pubDate>Tue, 23 Sep 2025 17:01:06 +0530</pubDate>
-      <guid>http://localhost:1313/tags/sbom-editing/</guid>
+      <guid>https://sbom-insights.dev/tags/sbom-editing/</guid>
       <description></description>
     </item>
     <item>
       <title>BSI</title>
-      <link>http://localhost:1313/tags/bsi/</link>
+      <link>https://sbom-insights.dev/tags/bsi/</link>
       <pubDate>Tue, 23 Sep 2025 16:49:26 +0530</pubDate>
-      <guid>http://localhost:1313/tags/bsi/</guid>
+      <guid>https://sbom-insights.dev/tags/bsi/</guid>
       <description></description>
     </item>
     <item>
       <title>NTIA</title>
-      <link>http://localhost:1313/tags/ntia/</link>
+      <link>https://sbom-insights.dev/tags/ntia/</link>
       <pubDate>Tue, 23 Sep 2025 16:49:26 +0530</pubDate>
-      <guid>http://localhost:1313/tags/ntia/</guid>
+      <guid>https://sbom-insights.dev/tags/ntia/</guid>
       <description></description>
     </item>
     <item>
       <title>Standards</title>
-      <link>http://localhost:1313/tags/standards/</link>
+      <link>https://sbom-insights.dev/tags/standards/</link>
       <pubDate>Tue, 23 Sep 2025 16:49:26 +0530</pubDate>
-      <guid>http://localhost:1313/tags/standards/</guid>
+      <guid>https://sbom-insights.dev/tags/standards/</guid>
       <description></description>
     </item>
     <item>
       <title>Automation</title>
-      <link>http://localhost:1313/tags/automation/</link>
+      <link>https://sbom-insights.dev/tags/automation/</link>
       <pubDate>Tue, 23 Sep 2025 16:39:52 +0530</pubDate>
-      <guid>http://localhost:1313/tags/automation/</guid>
+      <guid>https://sbom-insights.dev/tags/automation/</guid>
       <description></description>
     </item>
     <item>
       <title>GitHub</title>
-      <link>http://localhost:1313/tags/github/</link>
+      <link>https://sbom-insights.dev/tags/github/</link>
       <pubDate>Tue, 23 Sep 2025 16:39:52 +0530</pubDate>
-      <guid>http://localhost:1313/tags/github/</guid>
+      <guid>https://sbom-insights.dev/tags/github/</guid>
       <description></description>
     </item>
     <item>
       <title>Monitoring</title>
-      <link>http://localhost:1313/tags/monitoring/</link>
+      <link>https://sbom-insights.dev/tags/monitoring/</link>
       <pubDate>Tue, 23 Sep 2025 16:39:52 +0530</pubDate>
-      <guid>http://localhost:1313/tags/monitoring/</guid>
+      <guid>https://sbom-insights.dev/tags/monitoring/</guid>
       <description></description>
     </item>
     <item>
       <title>Sbommv</title>
-      <link>http://localhost:1313/tags/sbommv/</link>
+      <link>https://sbom-insights.dev/tags/sbommv/</link>
       <pubDate>Tue, 23 Sep 2025 16:39:52 +0530</pubDate>
-      <guid>http://localhost:1313/tags/sbommv/</guid>
+      <guid>https://sbom-insights.dev/tags/sbommv/</guid>
       <description></description>
     </item>
     <item>
       <title>AWS</title>
-      <link>http://localhost:1313/tags/aws/</link>
+      <link>https://sbom-insights.dev/tags/aws/</link>
       <pubDate>Tue, 23 Sep 2025 15:30:57 +0530</pubDate>
-      <guid>http://localhost:1313/tags/aws/</guid>
+      <guid>https://sbom-insights.dev/tags/aws/</guid>
       <description></description>
     </item>
     <item>
       <title>Cloud Storage</title>
-      <link>http://localhost:1313/tags/cloud-storage/</link>
+      <link>https://sbom-insights.dev/tags/cloud-storage/</link>
       <pubDate>Tue, 23 Sep 2025 15:30:57 +0530</pubDate>
-      <guid>http://localhost:1313/tags/cloud-storage/</guid>
+      <guid>https://sbom-insights.dev/tags/cloud-storage/</guid>
       <description></description>
     </item>
     <item>
       <title>Dependency-Track</title>
-      <link>http://localhost:1313/tags/dependency-track/</link>
+      <link>https://sbom-insights.dev/tags/dependency-track/</link>
       <pubDate>Tue, 23 Sep 2025 15:30:57 +0530</pubDate>
-      <guid>http://localhost:1313/tags/dependency-track/</guid>
+      <guid>https://sbom-insights.dev/tags/dependency-track/</guid>
       <description></description>
     </item>
     <item>
       <title>S3</title>
-      <link>http://localhost:1313/tags/s3/</link>
+      <link>https://sbom-insights.dev/tags/s3/</link>
       <pubDate>Tue, 23 Sep 2025 15:30:57 +0530</pubDate>
-      <guid>http://localhost:1313/tags/s3/</guid>
+      <guid>https://sbom-insights.dev/tags/s3/</guid>
       <description></description>
     </item>
     <item>
       <title>Component Analysis</title>
-      <link>http://localhost:1313/tags/component-analysis/</link>
+      <link>https://sbom-insights.dev/tags/component-analysis/</link>
       <pubDate>Tue, 23 Sep 2025 15:19:04 +0530</pubDate>
-      <guid>http://localhost:1313/tags/component-analysis/</guid>
+      <guid>https://sbom-insights.dev/tags/component-analysis/</guid>
       <description></description>
     </item>
     <item>
       <title>Validation</title>
-      <link>http://localhost:1313/tags/validation/</link>
+      <link>https://sbom-insights.dev/tags/validation/</link>
       <pubDate>Tue, 23 Sep 2025 15:19:04 +0530</pubDate>
-      <guid>http://localhost:1313/tags/validation/</guid>
+      <guid>https://sbom-insights.dev/tags/validation/</guid>
       <description></description>
     </item>
     <item>
       <title>CI/CD</title>
-      <link>http://localhost:1313/tags/ci/cd/</link>
+      <link>https://sbom-insights.dev/tags/ci/cd/</link>
       <pubDate>Tue, 23 Sep 2025 14:40:15 +0530</pubDate>
-      <guid>http://localhost:1313/tags/ci/cd/</guid>
+      <guid>https://sbom-insights.dev/tags/ci/cd/</guid>
       <description></description>
     </item>
     <item>
       <title>DevOps</title>
-      <link>http://localhost:1313/tags/devops/</link>
+      <link>https://sbom-insights.dev/tags/devops/</link>
       <pubDate>Tue, 23 Sep 2025 14:40:15 +0530</pubDate>
-      <guid>http://localhost:1313/tags/devops/</guid>
+      <guid>https://sbom-insights.dev/tags/devops/</guid>
       <description></description>
     </item>
   </channel>

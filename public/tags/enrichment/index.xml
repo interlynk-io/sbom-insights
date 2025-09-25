@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Enrichment on SBOM Insights</title>
-    <link>http://localhost:1313/tags/enrichment/</link>
+    <link>https://sbom-insights.dev/tags/enrichment/</link>
     <description>Recent content in Enrichment on SBOM Insights</description>
     <image>
       <title>SBOM Insights</title>
-      <url>http://localhost:1313/logo.png</url>
-      <link>http://localhost:1313/logo.png</link>
+      <url>https://sbom-insights.dev/logo.png</url>
+      <link>https://sbom-insights.dev/logo.png</link>
     </image>
     <generator>Hugo -- 0.150.0</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 23 Sep 2025 17:12:44 +0530</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/enrichment/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://sbom-insights.dev/tags/enrichment/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Sbomasm Enriches Licenses Using Clearlydefined Datasets</title>
-      <link>http://localhost:1313/posts/sbomasm-enriches-licenses-using-clearlydefined-datasets/</link>
+      <title>sbomasm Enriches Licenses Using Clearlydefined Datasets</title>
+      <link>https://sbom-insights.dev/posts/sbomasm-enriches-licenses-using-clearlydefined-datasets/</link>
       <pubDate>Tue, 23 Sep 2025 17:12:44 +0530</pubDate>
-      <guid>http://localhost:1313/posts/sbomasm-enriches-licenses-using-clearlydefined-datasets/</guid>
-      <description>&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/posts/image-24.png&#34;&gt;&lt;/p&gt;
+      <guid>https://sbom-insights.dev/posts/sbomasm-enriches-licenses-using-clearlydefined-datasets/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://sbom-insights.dev/posts/image-24.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Hey SBOM enthusiasts 👋,&lt;/p&gt;
 &lt;p&gt;These are common challenges faced by all SBOM authors. How can  fields such as &amp;ldquo;NOASSERTION&amp;rdquo;, &amp;ldquo;NONE&amp;rdquo; be filled at a scale ? This issue is widespread because SBOM generation tools often have gaps and limitation. I do not blame any tool for this; it is  beyond their capability, as these tools are primarily design to capture the dependencies of a software. SBOM generation depends on various factors, such as the programming language, the package manager used, the type of SBOM build( source build, build time or post build)  and the information provided by the software author on their site.&lt;/p&gt;</description>
     </item>

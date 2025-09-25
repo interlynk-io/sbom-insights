@@ -1,7 +1,7 @@
 +++
 date = '2025-09-23T17:01:06+05:30'
 draft = false
-title = "Lean, Clean, and Compliance Ready: Sbomasm's New Removal Capabilities"
+title = "Lean, Clean, and Compliance Ready: sbomasm's New Removal Capabilities"
 categories = ['Tools', 'Compliance']
 tags = ['SBOM', 'sbomasm', 'Data Privacy', 'Compliance', 'SBOM Editing', 'Best Practices']
 +++

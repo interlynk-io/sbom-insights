@@ -2,57 +2,57 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Categories on SBOM Insights</title>
-    <link>http://localhost:1313/categories/</link>
+    <link>https://sbom-insights.dev/categories/</link>
     <description>Recent content in Categories on SBOM Insights</description>
     <image>
       <title>SBOM Insights</title>
-      <url>http://localhost:1313/logo.png</url>
-      <link>http://localhost:1313/logo.png</link>
+      <url>https://sbom-insights.dev/logo.png</url>
+      <link>https://sbom-insights.dev/logo.png</link>
     </image>
     <generator>Hugo -- 0.150.0</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 23 Sep 2025 17:36:55 +0530</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://sbom-insights.dev/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Compliance</title>
-      <link>http://localhost:1313/categories/compliance/</link>
+      <link>https://sbom-insights.dev/categories/compliance/</link>
       <pubDate>Tue, 23 Sep 2025 17:36:55 +0530</pubDate>
-      <guid>http://localhost:1313/categories/compliance/</guid>
+      <guid>https://sbom-insights.dev/categories/compliance/</guid>
       <description></description>
     </item>
     <item>
       <title>Quality</title>
-      <link>http://localhost:1313/categories/quality/</link>
+      <link>https://sbom-insights.dev/categories/quality/</link>
       <pubDate>Tue, 23 Sep 2025 17:36:55 +0530</pubDate>
-      <guid>http://localhost:1313/categories/quality/</guid>
+      <guid>https://sbom-insights.dev/categories/quality/</guid>
       <description></description>
     </item>
     <item>
       <title>Tools</title>
-      <link>http://localhost:1313/categories/tools/</link>
+      <link>https://sbom-insights.dev/categories/tools/</link>
       <pubDate>Tue, 23 Sep 2025 17:36:55 +0530</pubDate>
-      <guid>http://localhost:1313/categories/tools/</guid>
+      <guid>https://sbom-insights.dev/categories/tools/</guid>
       <description></description>
     </item>
     <item>
       <title>Automation</title>
-      <link>http://localhost:1313/categories/automation/</link>
+      <link>https://sbom-insights.dev/categories/automation/</link>
       <pubDate>Tue, 23 Sep 2025 16:39:52 +0530</pubDate>
-      <guid>http://localhost:1313/categories/automation/</guid>
+      <guid>https://sbom-insights.dev/categories/automation/</guid>
       <description></description>
     </item>
     <item>
       <title>Cloud</title>
-      <link>http://localhost:1313/categories/cloud/</link>
+      <link>https://sbom-insights.dev/categories/cloud/</link>
       <pubDate>Tue, 23 Sep 2025 15:30:57 +0530</pubDate>
-      <guid>http://localhost:1313/categories/cloud/</guid>
+      <guid>https://sbom-insights.dev/categories/cloud/</guid>
       <description></description>
     </item>
     <item>
       <title>Fundamentals</title>
-      <link>http://localhost:1313/categories/fundamentals/</link>
+      <link>https://sbom-insights.dev/categories/fundamentals/</link>
       <pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/fundamentals/</guid>
+      <guid>https://sbom-insights.dev/categories/fundamentals/</guid>
       <description></description>
     </item>
   </channel>

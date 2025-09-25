@@ -1,7 +1,7 @@
 +++
 date = '2025-09-23T16:39:52+05:30'
 draft = false
-title = 'Monitoring External Github Repos for Sboms'
+title = 'Monitoring External Github Repos for SBOMs'
 categories = ['Automation', 'Tools']
 tags = ['SBOM', 'GitHub', 'Monitoring', 'sbommv', 'Open Source', 'Supply Chain', 'Automation']
 +++

@@ -1,5 +1,17 @@
 {{- /* Google Analytics */ -}}
-{{ partial "google_analytics.html" . }}
+{{- if not hugo.IsServer -}}
+{{- $ga := "G-ZWMS311EG2" -}}
+{{- if $ga -}}
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ $ga }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ $ga }}');
+</script>
+{{- end -}}
+{{- end -}}
 
 {{- /* Custom CSS for compact layout */ -}}
 <link rel="stylesheet" href="{{ "css/custom.css" | absURL }}">

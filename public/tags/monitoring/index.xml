@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Monitoring on SBOM Insights</title>
-    <link>http://localhost:1313/tags/monitoring/</link>
+    <link>https://sbom-insights.dev/tags/monitoring/</link>
     <description>Recent content in Monitoring on SBOM Insights</description>
     <image>
       <title>SBOM Insights</title>
-      <url>http://localhost:1313/logo.png</url>
-      <link>http://localhost:1313/logo.png</link>
+      <url>https://sbom-insights.dev/logo.png</url>
+      <link>https://sbom-insights.dev/logo.png</link>
     </image>
     <generator>Hugo -- 0.150.0</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 23 Sep 2025 16:39:52 +0530</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/monitoring/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://sbom-insights.dev/tags/monitoring/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Monitoring External Github Repos for Sboms</title>
-      <link>http://localhost:1313/posts/monitoring-external-github-repos-for-sboms/</link>
+      <title>Monitoring External Github Repos for SBOMs</title>
+      <link>https://sbom-insights.dev/posts/monitoring-external-github-repos-for-sboms/</link>
       <pubDate>Tue, 23 Sep 2025 16:39:52 +0530</pubDate>
-      <guid>http://localhost:1313/posts/monitoring-external-github-repos-for-sboms/</guid>
-      <description>&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/posts/image-14.png&#34;&gt;&lt;/p&gt;
+      <guid>https://sbom-insights.dev/posts/monitoring-external-github-repos-for-sboms/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://sbom-insights.dev/posts/image-14.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;GitHub Release Monitoring: SBOM Automation for External Repos&lt;/strong&gt; 🚀&lt;/p&gt;
 &lt;p&gt;If you’ve been following our sbommv blog series, welcome to the fourth one—each post tackling a new challenge around SBOM automation. Here’s a quick recap of what we’ve covered so far:&lt;/p&gt;
 &lt;ul&gt;
@@ -29,11 +29,11 @@
 &lt;p&gt;In short, sbommv is a tool built for automation—designed to seamlessly move SBOMs across systems, with support for format conversion, metadata enrichment, and monitoring workflows like folders.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Folder Monitoring: Sbom Automation That Never Sleeps</title>
-      <link>http://localhost:1313/posts/folder-monitoring-sbom-automation-that-never-sleeps/</link>
+      <title>Folder Monitoring: SBOM Automation That Never Sleeps</title>
+      <link>https://sbom-insights.dev/posts/folder-monitoring-sbom-automation-that-never-sleeps/</link>
       <pubDate>Tue, 23 Sep 2025 14:40:15 +0530</pubDate>
-      <guid>http://localhost:1313/posts/folder-monitoring-sbom-automation-that-never-sleeps/</guid>
-      <description>&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/posts/image-7.png&#34;&gt;&lt;/p&gt;
+      <guid>https://sbom-insights.dev/posts/folder-monitoring-sbom-automation-that-never-sleeps/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://sbom-insights.dev/posts/image-7.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;In our previous post(GitHub Releases are where SBOM&amp;rsquo;s goto die), we tackled a growing pain in modern software security: SBOMs stuck in GitHub Releases. We showed how sbommv streamlines the manual mess—automating the movement of SBOMs from GitHub or local folders directly into SBOM platforms like Dependency-Track, Interlynk(next blog will show demo on this).&lt;/p&gt;
 &lt;p&gt;We covered:&lt;/p&gt;

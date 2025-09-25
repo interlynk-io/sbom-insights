@@ -2,170 +2,170 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://sbom-insights.dev/categories/</loc>
     <lastmod>2025-09-23T17:36:55+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/compliance/</loc>
+    <loc>https://sbom-insights.dev/categories/compliance/</loc>
     <lastmod>2025-09-23T17:36:55+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/compliance/</loc>
+    <loc>https://sbom-insights.dev/tags/compliance/</loc>
     <lastmod>2025-09-23T17:36:55+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/policy/</loc>
+    <loc>https://sbom-insights.dev/tags/policy/</loc>
     <lastmod>2025-09-23T17:36:55+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://sbom-insights.dev/posts/</loc>
     <lastmod>2025-09-23T17:36:55+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/quality/</loc>
+    <loc>https://sbom-insights.dev/categories/quality/</loc>
     <lastmod>2025-09-23T17:36:55+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/risk-management/</loc>
+    <loc>https://sbom-insights.dev/tags/risk-management/</loc>
     <lastmod>2025-09-23T17:36:55+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sbom/</loc>
+    <loc>https://sbom-insights.dev/tags/sbom/</loc>
     <lastmod>2025-09-23T17:36:55+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://sbom-insights.dev/</loc>
     <lastmod>2025-09-23T17:36:55+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sbomqs/</loc>
+    <loc>https://sbom-insights.dev/tags/sbomqs/</loc>
     <lastmod>2025-09-23T17:36:55+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/sbomqs-and-sbom-policies-turning-transparency-into-action/</loc>
+    <loc>https://sbom-insights.dev/posts/sbomqs-and-sbom-policies-turning-transparency-into-action/</loc>
     <lastmod>2025-09-23T17:36:55+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/security/</loc>
+    <loc>https://sbom-insights.dev/tags/security/</loc>
     <lastmod>2025-09-23T17:36:55+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/supply-chain/</loc>
+    <loc>https://sbom-insights.dev/tags/supply-chain/</loc>
     <lastmod>2025-09-23T17:36:55+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://sbom-insights.dev/tags/</loc>
     <lastmod>2025-09-23T17:36:55+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/tools/</loc>
+    <loc>https://sbom-insights.dev/categories/tools/</loc>
     <lastmod>2025-09-23T17:36:55+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/vulnerability-management/</loc>
+    <loc>https://sbom-insights.dev/tags/vulnerability-management/</loc>
     <lastmod>2025-09-23T17:36:55+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/clearlydefined/</loc>
+    <loc>https://sbom-insights.dev/tags/clearlydefined/</loc>
     <lastmod>2025-09-23T17:12:44+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/enrichment/</loc>
+    <loc>https://sbom-insights.dev/tags/enrichment/</loc>
     <lastmod>2025-09-23T17:12:44+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/license-management/</loc>
+    <loc>https://sbom-insights.dev/tags/license-management/</loc>
     <lastmod>2025-09-23T17:12:44+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/open-source/</loc>
+    <loc>https://sbom-insights.dev/tags/open-source/</loc>
     <lastmod>2025-09-23T17:12:44+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sbom-quality/</loc>
+    <loc>https://sbom-insights.dev/tags/sbom-quality/</loc>
     <lastmod>2025-09-23T17:12:44+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sbomasm/</loc>
+    <loc>https://sbom-insights.dev/tags/sbomasm/</loc>
     <lastmod>2025-09-23T17:12:44+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/sbomasm-enriches-licenses-using-clearlydefined-datasets/</loc>
+    <loc>https://sbom-insights.dev/posts/sbomasm-enriches-licenses-using-clearlydefined-datasets/</loc>
     <lastmod>2025-09-23T17:12:44+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/best-practices/</loc>
+    <loc>https://sbom-insights.dev/tags/best-practices/</loc>
     <lastmod>2025-09-23T17:01:06+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/data-privacy/</loc>
+    <loc>https://sbom-insights.dev/tags/data-privacy/</loc>
     <lastmod>2025-09-23T17:01:06+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/lean-clean-and-compliance-ready-sbomasm-new-removal-capabilities/</loc>
+    <loc>https://sbom-insights.dev/posts/lean-clean-and-compliance-ready-sbomasm-new-removal-capabilities/</loc>
     <lastmod>2025-09-23T17:01:06+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sbom-editing/</loc>
+    <loc>https://sbom-insights.dev/tags/sbom-editing/</loc>
     <lastmod>2025-09-23T17:01:06+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/bsi/</loc>
+    <loc>https://sbom-insights.dev/tags/bsi/</loc>
     <lastmod>2025-09-23T16:49:26+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ntia/</loc>
+    <loc>https://sbom-insights.dev/tags/ntia/</loc>
     <lastmod>2025-09-23T16:49:26+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/sbomqs-scoring-support-for-bsi-1.1-and-bsi-2.0-in-a-summarized-way/</loc>
+    <loc>https://sbom-insights.dev/posts/sbomqs-scoring-support-for-bsi-1.1-and-bsi-2.0-in-a-summarized-way/</loc>
     <lastmod>2025-09-23T16:49:26+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/standards/</loc>
+    <loc>https://sbom-insights.dev/tags/standards/</loc>
     <lastmod>2025-09-23T16:49:26+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/automation/</loc>
+    <loc>https://sbom-insights.dev/categories/automation/</loc>
     <lastmod>2025-09-23T16:39:52+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/automation/</loc>
+    <loc>https://sbom-insights.dev/tags/automation/</loc>
     <lastmod>2025-09-23T16:39:52+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/github/</loc>
+    <loc>https://sbom-insights.dev/tags/github/</loc>
     <lastmod>2025-09-23T16:39:52+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/monitoring/</loc>
+    <loc>https://sbom-insights.dev/tags/monitoring/</loc>
     <lastmod>2025-09-23T16:39:52+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/monitoring-external-github-repos-for-sboms/</loc>
+    <loc>https://sbom-insights.dev/posts/monitoring-external-github-repos-for-sboms/</loc>
     <lastmod>2025-09-23T16:39:52+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sbommv/</loc>
+    <loc>https://sbom-insights.dev/tags/sbommv/</loc>
     <lastmod>2025-09-23T16:39:52+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/aws/</loc>
+    <loc>https://sbom-insights.dev/tags/aws/</loc>
     <lastmod>2025-09-23T15:30:57+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/cloud/</loc>
+    <loc>https://sbom-insights.dev/categories/cloud/</loc>
     <lastmod>2025-09-23T15:30:57+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cloud-storage/</loc>
+    <loc>https://sbom-insights.dev/tags/cloud-storage/</loc>
     <lastmod>2025-09-23T15:30:57+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/dependency-track/</loc>
+    <loc>https://sbom-insights.dev/tags/dependency-track/</loc>
     <lastmod>2025-09-23T15:30:57+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/modular-sbom-automation-now-with-aws-s3-support/</loc>
+    <loc>https://sbom-insights.dev/posts/modular-sbom-automation-now-with-aws-s3-support/</loc>
     <lastmod>2025-09-23T15:30:57+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/s3/</loc>
+    <loc>https://sbom-insights.dev/tags/s3/</loc>
     <lastmod>2025-09-23T15:30:57+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/component-analysis/</loc>
+    <loc>https://sbom-insights.dev/tags/component-analysis/</loc>
     <lastmod>2025-09-23T15:19:04+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/validation/</loc>
+    <loc>https://sbom-insights.dev/tags/validation/</loc>
     <lastmod>2025-09-23T15:19:04+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/whats-missing-in-your-sbom-sbomqs-list-can-help-you-in-inspecting.../</loc>
+    <loc>https://sbom-insights.dev/posts/whats-missing-in-your-sbom-sbomqs-list-can-help-you-in-inspecting.../</loc>
     <lastmod>2025-09-23T15:19:04+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ci/cd/</loc>
+    <loc>https://sbom-insights.dev/tags/ci/cd/</loc>
     <lastmod>2025-09-23T14:40:15+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/devops/</loc>
+    <loc>https://sbom-insights.dev/tags/devops/</loc>
     <lastmod>2025-09-23T14:40:15+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/folder-monitoring-sbom-automation-that-never-sleeps/</loc>
+    <loc>https://sbom-insights.dev/posts/folder-monitoring-sbom-automation-that-never-sleeps/</loc>
     <lastmod>2025-09-23T14:40:15+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/github-releases-are-where-sboms-goto-die/</loc>
+    <loc>https://sbom-insights.dev/posts/github-releases-are-where-sboms-goto-die/</loc>
     <lastmod>2025-09-23T14:09:20+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/fundamentals/</loc>
+    <loc>https://sbom-insights.dev/categories/fundamentals/</loc>
     <lastmod>2025-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/what-is-sbom-why-required/</loc>
+    <loc>https://sbom-insights.dev/posts/what-is-sbom-why-required/</loc>
     <lastmod>2025-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://sbom-insights.dev/about/</loc>
   </url><url>
-    <loc>http://localhost:1313/authors/</loc>
+    <loc>https://sbom-insights.dev/authors/</loc>
   </url><url>
-    <loc>http://localhost:1313/contributors/</loc>
+    <loc>https://sbom-insights.dev/contributors/</loc>
   </url><url>
-    <loc>http://localhost:1313/search/</loc>
+    <loc>https://sbom-insights.dev/search/</loc>
   </url><url>
-    <loc>http://localhost:1313/series/</loc>
+    <loc>https://sbom-insights.dev/series/</loc>
   </url>
 </urlset>

@@ -8,7 +8,8 @@
       "Bash(head:*)",
       "Bash(break)",
       "Bash(done)",
-      "Bash(sed:*)"
+      "Bash(sed:*)",
+      "Bash(grep:*)"
     ],
     "deny": [],
     "ask": []

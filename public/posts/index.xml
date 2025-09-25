@@ -2,61 +2,61 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on SBOM Insights</title>
-    <link>http://localhost:1313/posts/</link>
+    <link>https://sbom-insights.dev/posts/</link>
     <description>Recent content in Posts on SBOM Insights</description>
     <image>
       <title>SBOM Insights</title>
-      <url>http://localhost:1313/logo.png</url>
-      <link>http://localhost:1313/logo.png</link>
+      <url>https://sbom-insights.dev/logo.png</url>
+      <link>https://sbom-insights.dev/logo.png</link>
     </image>
     <generator>Hugo -- 0.150.0</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 23 Sep 2025 17:36:55 +0530</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://sbom-insights.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Sbomqs and Sbom Policies: Turning Transparency Into Action</title>
-      <link>http://localhost:1313/posts/sbomqs-and-sbom-policies-turning-transparency-into-action/</link>
+      <title>sbomqs and SBOM Policies: Turning Transparency Into Action</title>
+      <link>https://sbom-insights.dev/posts/sbomqs-and-sbom-policies-turning-transparency-into-action/</link>
       <pubDate>Tue, 23 Sep 2025 17:36:55 +0530</pubDate>
-      <guid>http://localhost:1313/posts/sbomqs-and-sbom-policies-turning-transparency-into-action/</guid>
-      <description>&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/posts/image-25.png&#34;&gt;&lt;/p&gt;
+      <guid>https://sbom-insights.dev/posts/sbomqs-and-sbom-policies-turning-transparency-into-action/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://sbom-insights.dev/posts/image-25.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Hey SBOM enthusiasts 👋&lt;/p&gt;
 &lt;p&gt;An SBOM isn’t just a list of components anymore — it has detailed information of your software, which contains hundreds of components. And that&amp;rsquo;s what gives you the transparency of each and every component: such as, who authored it, who supplies it, under what license it’s released, and even what known vulnerabilities it carries. In other words, it’s not just an inventory — it’s visibility into the very DNA of your software.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Sbomasm Enriches Licenses Using Clearlydefined Datasets</title>
-      <link>http://localhost:1313/posts/sbomasm-enriches-licenses-using-clearlydefined-datasets/</link>
+      <title>sbomasm Enriches Licenses Using Clearlydefined Datasets</title>
+      <link>https://sbom-insights.dev/posts/sbomasm-enriches-licenses-using-clearlydefined-datasets/</link>
       <pubDate>Tue, 23 Sep 2025 17:12:44 +0530</pubDate>
-      <guid>http://localhost:1313/posts/sbomasm-enriches-licenses-using-clearlydefined-datasets/</guid>
-      <description>&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/posts/image-24.png&#34;&gt;&lt;/p&gt;
+      <guid>https://sbom-insights.dev/posts/sbomasm-enriches-licenses-using-clearlydefined-datasets/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://sbom-insights.dev/posts/image-24.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Hey SBOM enthusiasts 👋,&lt;/p&gt;
 &lt;p&gt;These are common challenges faced by all SBOM authors. How can  fields such as &amp;ldquo;NOASSERTION&amp;rdquo;, &amp;ldquo;NONE&amp;rdquo; be filled at a scale ? This issue is widespread because SBOM generation tools often have gaps and limitation. I do not blame any tool for this; it is  beyond their capability, as these tools are primarily design to capture the dependencies of a software. SBOM generation depends on various factors, such as the programming language, the package manager used, the type of SBOM build( source build, build time or post build)  and the information provided by the software author on their site.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Lean, Clean, and Compliance Ready: Sbomasm&#39;s New Removal Capabilities</title>
-      <link>http://localhost:1313/posts/lean-clean-and-compliance-ready-sbomasm-new-removal-capabilities/</link>
+      <title>Lean, Clean, and Compliance Ready: sbomasm&#39;s New Removal Capabilities</title>
+      <link>https://sbom-insights.dev/posts/lean-clean-and-compliance-ready-sbomasm-new-removal-capabilities/</link>
       <pubDate>Tue, 23 Sep 2025 17:01:06 +0530</pubDate>
-      <guid>http://localhost:1313/posts/lean-clean-and-compliance-ready-sbomasm-new-removal-capabilities/</guid>
-      <description>&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/posts/image-23.png&#34;&gt;&lt;/p&gt;
+      <guid>https://sbom-insights.dev/posts/lean-clean-and-compliance-ready-sbomasm-new-removal-capabilities/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://sbom-insights.dev/posts/image-23.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Hey SBOM enthusiasts 👋,&lt;/p&gt;
 &lt;p&gt;we all know by now — SBOMs aren’t optional anymore. They’ve become a standard part of the software supply chain, and there’s a lot you can do with them: augmenting, enriching, editing, validating… the list keeps growing.&lt;/p&gt;
 &lt;p&gt;But here’s the thing — while adding and improving data in SBOMs gets most of the attention, sometimes the real power comes from removing what you don’t need. Maybe it’s for privacy, maybe for cleanup, maybe to keep your SBOM lean before sharing it.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Sbomqs Scoring Support for Bsi 1.1 and Bsi 2.0 in a Summarized Way</title>
-      <link>http://localhost:1313/posts/sbomqs-scoring-support-for-bsi-1.1-and-bsi-2.0-in-a-summarized-way/</link>
+      <title>sbomqs Scoring Support for Bsi 1.1 and Bsi 2.0 in a Summarized Way</title>
+      <link>https://sbom-insights.dev/posts/sbomqs-scoring-support-for-bsi-1.1-and-bsi-2.0-in-a-summarized-way/</link>
       <pubDate>Tue, 23 Sep 2025 16:49:26 +0530</pubDate>
-      <guid>http://localhost:1313/posts/sbomqs-scoring-support-for-bsi-1.1-and-bsi-2.0-in-a-summarized-way/</guid>
-      <description>&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/posts/image-15.png&#34;&gt;&lt;/p&gt;
+      <guid>https://sbom-insights.dev/posts/sbomqs-scoring-support-for-bsi-1.1-and-bsi-2.0-in-a-summarized-way/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://sbom-insights.dev/posts/image-15.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Hey SBOM community,&lt;/p&gt;
 &lt;p&gt;Love to see you back here learning something new. If you’re working with SBOMs, you probably know that generating SBOM is just a first step. What you get after generating SBOM is just a raw SBOM ? And the raw SBOM is incomplete, inaccurate sometime and most importantly not even comply with NTIA minimum element according to this research &lt;a href=&#34;https://github.com/SBOM-Community/SBOM-Generation/blob/main/whitepaper/Draft-SBOM-Generation-White-Paper-Feb-25-2025.pdf&#34;&gt;whitepaper&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;And that&amp;rsquo;s exactly where your involvement comes to enrich the SBOM, augument the SBOM, etc to make a better quality SBOM with completeness, accuracy and enriched data.  At the end the real power of SBOM lies within itself i.e data. Because at the end these SBOM will be feeded to SBOM platform which perform complete analysis of the SBOM. The more complete and correct the data is, the more it helps you understand and reduce risk in your software supply chain.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Monitoring External Github Repos for Sboms</title>
-      <link>http://localhost:1313/posts/monitoring-external-github-repos-for-sboms/</link>
+      <title>Monitoring External Github Repos for SBOMs</title>
+      <link>https://sbom-insights.dev/posts/monitoring-external-github-repos-for-sboms/</link>
       <pubDate>Tue, 23 Sep 2025 16:39:52 +0530</pubDate>
-      <guid>http://localhost:1313/posts/monitoring-external-github-repos-for-sboms/</guid>
-      <description>&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/posts/image-14.png&#34;&gt;&lt;/p&gt;
+      <guid>https://sbom-insights.dev/posts/monitoring-external-github-repos-for-sboms/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://sbom-insights.dev/posts/image-14.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;GitHub Release Monitoring: SBOM Automation for External Repos&lt;/strong&gt; 🚀&lt;/p&gt;
 &lt;p&gt;If you’ve been following our sbommv blog series, welcome to the fourth one—each post tackling a new challenge around SBOM automation. Here’s a quick recap of what we’ve covered so far:&lt;/p&gt;
 &lt;ul&gt;
@@ -67,20 +67,20 @@
 &lt;p&gt;In short, sbommv is a tool built for automation—designed to seamlessly move SBOMs across systems, with support for format conversion, metadata enrichment, and monitoring workflows like folders.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Modular Sbom Automation: Now With Aws S3 Support</title>
-      <link>http://localhost:1313/posts/modular-sbom-automation-now-with-aws-s3-support/</link>
+      <title>Modular SBOM Automation: Now With Aws S3 Support</title>
+      <link>https://sbom-insights.dev/posts/modular-sbom-automation-now-with-aws-s3-support/</link>
       <pubDate>Tue, 23 Sep 2025 15:30:57 +0530</pubDate>
-      <guid>http://localhost:1313/posts/modular-sbom-automation-now-with-aws-s3-support/</guid>
-      <description>&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/posts/image-9.png&#34;&gt;&lt;/p&gt;
+      <guid>https://sbom-insights.dev/posts/modular-sbom-automation-now-with-aws-s3-support/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://sbom-insights.dev/posts/image-9.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;In our previous posts, we streamlined SBOM workflows by moving them from GitHub releases or local folders directly into platforms like Dependency-Track and then, we took it one step further with folder continuous monitoring—continuous fetching and uploading via sbommv’s daemon mode, which runs in the background and keeps an eye on target folders for any incoming or modified SBOMs.&lt;/p&gt;
 &lt;p&gt;As we know, sbommv is a modular system that seamlessly integrates multiple input systems like folders, GitHub, and multiple output systems like Dependency-Track, Interlynk, and folders—allowing SBOMs to move effortlessly from one system to another. Building on that foundation, it&amp;rsquo;s time for another leap forward: &lt;strong&gt;Integrating AWS S3 with sbommv&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>What’s Missing in Your Sbom? Sbomqs List Can Help You in Inspecting...</title>
-      <link>http://localhost:1313/posts/whats-missing-in-your-sbom-sbomqs-list-can-help-you-in-inspecting.../</link>
+      <title>What&#39;s Missing in Your SBOM? sbomqs List Can Help You in Inspecting...</title>
+      <link>https://sbom-insights.dev/posts/whats-missing-in-your-sbom-sbomqs-list-can-help-you-in-inspecting.../</link>
       <pubDate>Tue, 23 Sep 2025 15:19:04 +0530</pubDate>
-      <guid>http://localhost:1313/posts/whats-missing-in-your-sbom-sbomqs-list-can-help-you-in-inspecting.../</guid>
-      <description>&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/posts/image-8.png&#34;&gt;&lt;/p&gt;
+      <guid>https://sbom-insights.dev/posts/whats-missing-in-your-sbom-sbomqs-list-can-help-you-in-inspecting.../</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://sbom-insights.dev/posts/image-8.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Hey there 👋 SBOM practitioners, compliance engineers, and open-source watchers!&lt;/p&gt;
 &lt;p&gt;If you&amp;rsquo;ve been working with SBOMs lately—whether you&amp;rsquo;re producing them or consuming them—you’ve probably noticed how quickly they’ve gone from “nice to have” to absolutely essential. I hope now your getting comfortable on working with SBOMs and familiar with software supply chain security terminologies.&lt;/p&gt;
 &lt;p&gt;We all are well-known about the wake-up call on SBOMs,&lt;/p&gt;
@@ -91,11 +91,11 @@
 &lt;p&gt;And since then, the communities started stepping into this complex world wired with complex software( in form of dependencies) to secure software supply chain security from software supply chain attacks. Next step towards it taken by big organization like OpenSSF and countries by showing up their interest towards it, which resulted into various SBOM guidelines, SBOM related tools, SBOM compliances, SBOM platforms, SCA tools, etc were born.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Folder Monitoring: Sbom Automation That Never Sleeps</title>
-      <link>http://localhost:1313/posts/folder-monitoring-sbom-automation-that-never-sleeps/</link>
+      <title>Folder Monitoring: SBOM Automation That Never Sleeps</title>
+      <link>https://sbom-insights.dev/posts/folder-monitoring-sbom-automation-that-never-sleeps/</link>
       <pubDate>Tue, 23 Sep 2025 14:40:15 +0530</pubDate>
-      <guid>http://localhost:1313/posts/folder-monitoring-sbom-automation-that-never-sleeps/</guid>
-      <description>&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/posts/image-7.png&#34;&gt;&lt;/p&gt;
+      <guid>https://sbom-insights.dev/posts/folder-monitoring-sbom-automation-that-never-sleeps/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://sbom-insights.dev/posts/image-7.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;In our previous post(GitHub Releases are where SBOM&amp;rsquo;s goto die), we tackled a growing pain in modern software security: SBOMs stuck in GitHub Releases. We showed how sbommv streamlines the manual mess—automating the movement of SBOMs from GitHub or local folders directly into SBOM platforms like Dependency-Track, Interlynk(next blog will show demo on this).&lt;/p&gt;
 &lt;p&gt;We covered:&lt;/p&gt;
@@ -107,11 +107,11 @@
 &lt;p&gt;And transferring those fetched SBOMs to dependency-track platform smoothly and seamlessly. That was the start. But it still required you to trigger the command each time, especially when input adapter or input system(source of SBOMs) is folder.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Github Releases Are Where Sboms Goto Die</title>
-      <link>http://localhost:1313/posts/github-releases-are-where-sboms-goto-die/</link>
+      <title>Github Releases Are Where SBOMs Goto Die</title>
+      <link>https://sbom-insights.dev/posts/github-releases-are-where-sboms-goto-die/</link>
       <pubDate>Tue, 23 Sep 2025 14:09:20 +0530</pubDate>
-      <guid>http://localhost:1313/posts/github-releases-are-where-sboms-goto-die/</guid>
-      <description>&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/posts/image-30.png&#34;&gt;&lt;/p&gt;
+      <guid>https://sbom-insights.dev/posts/github-releases-are-where-sboms-goto-die/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://sbom-insights.dev/posts/image-30.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Hey there 👋, SBOM enthusiasts ! Since the &lt;a href=&#34;https://www.nist.gov/itl/executive-order-14028-improving-nations-cybersecurity&#34;&gt;2021 Cyber security Executive Order&lt;/a&gt; by Joe Biden. SBOMs (Software Bill of Materials) have become essential for software security and compliance. With countries like the &lt;a href=&#34;https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act&#34;&gt;EU&lt;/a&gt;, &lt;a href=&#34;https://www.ntia.gov/sites/default/files/publications/sbom_minimum_elements_report_0.pdf&#34;&gt;US&lt;/a&gt;, &lt;a href=&#34;https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/Publications/TechGuidelines/TR03183/BSI-TR-03183-2-2_0_0.pdf?__blob=publicationFile&amp;amp;v=3&#34;&gt;Germany&lt;/a&gt;, and &lt;a href=&#34;https://www.cert-in.org.in/PDF/SBOM_Guidelines.pdf&#34;&gt;India&lt;/a&gt; introducing their own SBOM regulations, it’s clear:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;SBOMs aren’t optional anymore—they&amp;rsquo;re the new standard.&lt;/p&gt;&lt;/blockquote&gt;
@@ -119,9 +119,9 @@
     </item>
     <item>
       <title>What is an SBOM and Why is it Required?</title>
-      <link>http://localhost:1313/posts/what-is-sbom-why-required/</link>
+      <link>https://sbom-insights.dev/posts/what-is-sbom-why-required/</link>
       <pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/what-is-sbom-why-required/</guid>
+      <guid>https://sbom-insights.dev/posts/what-is-sbom-why-required/</guid>
       <description>Understanding Software Bill of Materials (SBOM): What it is, why it&amp;#39;s essential for modern software development, and how it enhances security and compliance</description>
     </item>
   </channel>
