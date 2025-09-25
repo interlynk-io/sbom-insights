@@ -4,6 +4,7 @@ draft = false
 title = 'Github Releases Are Where Sboms Goto Die'
 categories = ['Automation', 'Tools']
 tags = ['SBOM', 'GitHub', 'Automation', 'sbommv', 'Dependency-Track', 'Supply Chain', 'CI/CD']
+author = 'Vivek Sahu'
 +++
 
 ![alt text](/posts/image-30.png)

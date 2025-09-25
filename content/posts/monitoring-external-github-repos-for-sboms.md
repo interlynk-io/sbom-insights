@@ -4,6 +4,7 @@ draft = false
 title = 'Monitoring External Github Repos for Sboms'
 categories = ['Automation', 'Tools']
 tags = ['SBOM', 'GitHub', 'Monitoring', 'sbommv', 'Open Source', 'Supply Chain', 'Automation']
+author = 'Vivek Sahu'
 +++
 
 ![alt text](/posts/image-14.png)

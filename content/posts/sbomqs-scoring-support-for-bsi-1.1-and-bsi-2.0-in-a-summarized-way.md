@@ -4,6 +4,7 @@ draft = false
 title = 'Sbomqs Scoring Support for Bsi 1.1 and Bsi 2.0 in a Summarized Way'
 categories = ['Compliance', 'Quality', 'Tools']
 tags = ['SBOM', 'sbomqs', 'BSI', 'Compliance', 'NTIA', 'SBOM Quality', 'Standards', 'Security']
+author = 'Vivek Sahu'
 +++
 
 ![alt text](/posts/image-15.png)

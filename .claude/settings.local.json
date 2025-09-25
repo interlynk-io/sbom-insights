@@ -8,7 +8,10 @@
       "Bash(head:*)",
       "Bash(break)",
       "Bash(done)",
-      "Bash(sed:*)"
+      "Bash(sed:*)",
+      "Bash(for:*)",
+      "Bash(do echo \"File: $file\")",
+      "Bash(mv:*)"
     ],
     "deny": [],
     "ask": []
