@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/be21e0f3-c745-4d90-9920-0b86b1043074/deploy-status)](https://app.netlify.com/projects/sbom-insights/deploys)
+
 # SBOM Insights - Contributor Guide
 
 Welcome to SBOM Insights! This guide will help you contribute to our blog about Software Bill of Materials (SBOM), supply chain security, and related topics.
