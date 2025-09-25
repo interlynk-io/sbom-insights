@@ -9,7 +9,7 @@ enableRobotsTXT = true
 buildDrafts = false
 buildFuture = false
 buildExpired = false
-googleAnalytics = 'G-ZWMS311EG2'
+# googleAnalytics = 'G-ZWMS311EG2' # Deprecated - moved to params
 pygmentsUseClasses = true
 
 [minify]
@@ -25,6 +25,7 @@ author = 'SBOM Community'
 images = ['/logo.png']
 DateFormat = 'January 2, 2006'
 copyright = '© 2025 Interlynk.io and Contributors | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)'
+googleAnalytics = 'G-ZWMS311EG2'
 defaultTheme = 'auto'
 disableThemeToggle = false
 ShowReadingTime = true
