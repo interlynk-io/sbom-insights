@@ -30,22 +30,17 @@ We commend CISA for its iterative approach to refining SBOM requirements. Howeve
 ### Question 1: Elements to Remove
 **Should any elements be removed from the 2025 CISA SBOM Minimum Elements, meaning the element should not be required for all SBOMs? Which elements, and why?**
 
-[Interlynk's response regarding any elements that should be removed]
+At Interlynk we support the removal of SWID as an SBOM format. 
 
 ### Question 2: Additional Elements to Include
 **Should CISA include any additional elements in the 2025 CISA SBOM Minimum Elements, meaning the element should be a requirement for all SBOMs? Which elements, and why?**
 
-[Interlynk's recommendations for additional elements]
+Interlynk would recommend the following additions
 
-### Question 3: Clarity for Automation
-**Are the definitions and defined processes and practices in the 2025 CISA SBOM Minimum Elements sufficiently clear to support automated creation and consumption? How can these definitions be improved?**
-
-[Specific suggestions for improving definitions and processes]
-
-### Question 4: Feasibility Concerns
-**Are there specific contexts, technologies, or sectors where these proposed minimum elements are not feasible? Please provide as much detail as possible.**
-
-[Industry-specific challenges and recommendations]
+- Requiring Data Licenses for publicly available SBOMS, similar to SPDX 2.3 CC0-1.0.
+- Support Level for Components as required by the FDA. (Unspecified, Actively Maintained, Unmaintained, Abandoned)
+- Signatures for verification.
+- Minimum versions for supported SBOM formats. CycloneDX 1.5+ and SPDX 2.3+
 
 ---
 
@@ -65,7 +60,7 @@ We commend CISA for its iterative approach to refining SBOM requirements. Howeve
 - Components obtained in multiple forms (source archives vs. pre-built binaries) create uncertainty about which artifact should be hashed
 - Missing guidance on standardized hashing procedures limits interoperability between SBOM producers and consumers
 
-Interlynk endorses mandating cryptographic hashes as they form the cornerstone of component traceability and supply chain integrity. To maximize practical adoption, CISA should define explicit hashing conventions that address source-versus-binary scenarios and reference established standards that specify hash computation methods, ensuring consistency across the tooling ecosystem.
+Interlynk endorses requiring cryptographic hashes as they form the cornerstone of component traceability and supply chain integrity. To maximize practical adoption, CISA should define explicit hashing conventions that address source-versus-binary scenarios and reference established standards that specify hash computation methods, ensuring consistency across the tooling ecosystem.
 
 ### License Information
 
@@ -76,7 +71,7 @@ Interlynk strongly advocates for making license information mandatory in SBOMs, 
 Interlynk strongly advocates for making tool name mandatory and recommends also requiring tool version, as both specifications provide native support for this data. CISA should additionally define conventions for representing multi-tool workflows where several tools contribute to or modify a single SBOM.
 
 ### Generation Context
-Interlynk Strongly supports the inclusion of this field. Knowing when an SBOM was generated, benefits the consumer with little overhead on the producer. This context allows consumers to make better decisions. 
+Interlynk Strongly supports the inclusion of this field. Knowing when an SBOM was generated, benefits the consumer with little overhead on the producer. This context allows consumers to make better decisions. For C/C++ based projects this make the most sense, as the linked library on the build system, might have a different version as compared to the runtime. 
 
 ---
 
