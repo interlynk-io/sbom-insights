@@ -52,59 +52,47 @@ We commend CISA for its iterative approach to refining SBOM requirements. Howeve
 ## Comments on New 2025 Elements
 
 ### Component Hash
-[Feedback on the component hash requirement]
+
+**Pros:**
+- Establishes definitive component identity through cryptographic fingerprints
+- Critical foundation for verifying software authenticity and detecting tampering
+- Allows correlation between SBOMs and external security intelligence (CVE databases, provenance records, vulnerability feeds)
+- Supports automated security workflows and component verification pipelines
+
+**Cons:**
+- Different build configurations, compression methods, and toolchains can produce varying hash values for functionally identical components
+- Current SBOM generation tools lack consensus on hashing methodology and target artifacts
+- Components obtained in multiple forms (source archives vs. pre-built binaries) create uncertainty about which artifact should be hashed
+- Missing guidance on standardized hashing procedures limits interoperability between SBOM producers and consumers
+
+Interlynk endorses mandating cryptographic hashes as they form the cornerstone of component traceability and supply chain integrity. To maximize practical adoption, CISA should define explicit hashing conventions that address source-versus-binary scenarios and reference established standards that specify hash computation methods, ensuring consistency across the tooling ecosystem.
 
 ### License Information
-[Feedback on license information requirement]
+
+Interlynk strongly advocates for making license information mandatory in SBOMs, as it addresses a critical compliance gap for organizations managing complex software dependencies. To ensure consistent implementation, spelling out guidelines for custom license would be great. Also standardize on SPDX license format would go a step further. 
 
 ### Tool Name
-[Feedback on tool name requirement]
+
+Interlynk strongly advocates for making tool name mandatory and recommends also requiring tool version, as both specifications provide native support for this data. CISA should additionally define conventions for representing multi-tool workflows where several tools contribute to or modify a single SBOM.
 
 ### Generation Context
-[Feedback on generation context requirement]
+Interlynk Strongly supports the inclusion of this field. Knowing when an SBOM was generated, benefits the consumer with little overhead on the producer. This context allows consumers to make better decisions. 
 
 ---
 
 ## Comments on Updated Elements
 
 ### Known Unknowns
-[Feedback on the distinction between redacted vs unknown information]
+Interlynk is in agreement with these requirements.  
 
 ### Distribution and Delivery
-[Feedback on the integration of access control into distribution and delivery]
-
----
-
-## Additional Recommendations
-
-### Implementation Timeline
-[Concerns or suggestions regarding implementation timeline]
-
-### Tool Ecosystem Readiness
-[Assessment of current tooling capabilities]
-
-### Industry Adoption Considerations
-[Practical considerations for widespread adoption]
+Interlynk is in agreement with these requirements. In addition to SBOM distribution & delivery it should also call out the distribution of VEX. 
 
 ---
 
 ## Conclusion
 
 [Summary of key points and overall recommendation]
-
----
-
-## How to Submit Your Comments
-
-Comments on the 2025 CISA SBOM Minimum Elements are due by **October 3, 2025**.
-
-Submit comments via:
-- Federal eRulemaking Portal: [regulations.gov](https://www.regulations.gov)
-- Reference Docket Number: **CISA-2025-0007**
-
-For more information, visit: [CISA SBOM Resources](https://www.cisa.gov/resources-tools/resources/2025-minimum-elements-software-bill-materials-sbom)
-
-
 
 
 
