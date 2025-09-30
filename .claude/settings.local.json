@@ -1,17 +1,7 @@
 {
   "permissions": {
     "allow": [
-      "Bash(hugo:*)",
-      "Bash(git submodule:*)",
-      "Bash(for file in *missing*)",
-      "Bash(do echo \"Reading: $file\")",
-      "Bash(head:*)",
-      "Bash(break)",
-      "Bash(done)",
-      "Bash(sed:*)",
-      "Bash(for:*)",
-      "Bash(do echo \"File: $file\")",
-      "Bash(mv:*)"
+      "WebFetch(domain:www.federalregister.gov)"
     ],
     "deny": [],
     "ask": []
