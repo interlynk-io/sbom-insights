@@ -65,18 +65,18 @@ vim content/posts/your-post-title.md
 ---
 title: "Your Post Title"
 date: 2024-01-30
-draft: false  # Set to false when ready
+draft: false # Set to false when ready
 author: "author-id"
 authors: ["author-id"]
 tags: ["tag1", "tag2", "tag3"]
 categories: ["Category1"]
 summary: "Brief description for listings"
-weight: 10  # Optional: for ordering
+weight: 10 # Optional: for ordering
 cover:
-    image: "images/cover.jpg"  # Optional
-    alt: "Cover alt text"
-    caption: "Image caption"
-    relative: false
+  image: "images/cover.jpg" # Optional
+  alt: "Cover alt text"
+  caption: "Image caption"
+  relative: false
 ---
 ```
 
@@ -142,7 +142,7 @@ In your post front matter:
 
 ```yaml
 author: "your-id"
-authors: ["your-id"]  # For multiple authors: ["id1", "id2"]
+authors: ["your-id"] # For multiple authors: ["id1", "id2"]
 ```
 
 ## Categories and Tags
@@ -198,7 +198,7 @@ authors: ["your-id"]  # For multiple authors: ["id1", "id2"]
 
 ```markdown
 | Header 1 | Header 2 | Header 3 |
-|----------|----------|----------|
+| -------- | -------- | -------- |
 | Cell 1   | Cell 2   | Cell 3   |
 | Cell 4   | Cell 5   | Cell 6   |
 ```
@@ -253,15 +253,18 @@ refactor: Reorganize content structure
 
 ```markdown
 ## Description
+
 Brief description of changes
 
 ## Type of Change
+
 - [ ] New blog post
 - [ ] Content update
 - [ ] Bug fix
 - [ ] Documentation
 
 ## Checklist
+
 - [ ] Tested locally with `hugo server`
 - [ ] No broken links
 - [ ] Added author profile (if new author)
@@ -269,6 +272,7 @@ Brief description of changes
 - [ ] Added appropriate tags and categories
 
 ## Screenshots (if applicable)
+
 Add screenshots here
 ```
 
@@ -287,12 +291,14 @@ Your contribution will be reviewed for:
 ### Common Issues
 
 **Problem**: Hugo server not starting
+
 ```bash
 # Solution: Update submodules
 git submodule update --init --recursive
 ```
 
 **Problem**: Theme not loading
+
 ```bash
 # Solution: Check theme in config
 grep theme hugo.toml
@@ -300,6 +306,7 @@ grep theme hugo.toml
 ```
 
 **Problem**: Images not showing
+
 ```bash
 # Solution: Use absolute paths from static/
 /images/your-image.png  # Correct

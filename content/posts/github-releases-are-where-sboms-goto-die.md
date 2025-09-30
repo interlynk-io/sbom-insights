@@ -92,7 +92,7 @@ sbommv transfer \
 
 - The SBOM is fetched --> converted to CycloneDX --> uploaded to Dependency-Track.
 - If the project doesn’t exist, it is auto-created in Dependency-Track. Above it is created with a name interlynk-io/sbommv-latest.
-- Along with project creation it adds description and tags.  Above the description is added as - "Created & uploaded by sbommv" and tags as "github" and "sbommv".
+- Along with project creation it adds description and tags. Above the description is added as - "Created & uploaded by sbommv" and tags as "github" and "sbommv".
 
 #### Pros & Cons of Using GitHub API Method for SBOM Transfer
 
@@ -137,7 +137,7 @@ sbommv transfer \
 
 Now that we have a collection of SBOMs in our local folder demo, the next step is to seamlessly transfer them to Dependency-Track using sbommv.
 
-Run the following command to upload all SBOMs from the local  demo folder to Dependency-Track:
+Run the following command to upload all SBOMs from the local demo folder to Dependency-Track:
 
 ```bash
 sbommv transfer \
@@ -224,7 +224,7 @@ Manually transferring SBOMs is no longer a viable approach, especially as softwa
 
 With sbommv, SBOM movement is seamless—whether pulling directly from GitHub or transferring pre-existing SBOMs from local folders to Dependency-Track. By eliminating manual handling, organizations can ensure that SBOMs are always up to date, integrated into security tools, and readily available for analysis.
 
-> The shift towards automated SBOM management isn’t just a convenience—it’s a necessity. 
+> The shift towards automated SBOM management isn’t just a convenience—it’s a necessity.
 
 "Start using sbommv today and bring automation to your SBOM lifecycle
 

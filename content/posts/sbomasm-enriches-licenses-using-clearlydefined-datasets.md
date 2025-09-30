@@ -11,9 +11,9 @@ author = 'Vivek Sahu'
 
 Hey SBOM enthusiasts 👋,
 
-These are common challenges faced by all SBOM authors. How can  fields such as "NOASSERTION", "NONE" be filled at a scale ? This issue is widespread because SBOM generation tools often have gaps and limitation. I do not blame any tool for this; it is  beyond their capability, as these tools are primarily design to capture the dependencies of a software. SBOM generation depends on various factors, such as the programming language, the package manager used, the type of SBOM build( source build, build time or post build)  and the information provided by the software author on their site. 
+These are common challenges faced by all SBOM authors. How can fields such as "NOASSERTION", "NONE" be filled at a scale ? This issue is widespread because SBOM generation tools often have gaps and limitation. I do not blame any tool for this; it is beyond their capability, as these tools are primarily design to capture the dependencies of a software. SBOM generation depends on various factors, such as the programming language, the package manager used, the type of SBOM build( source build, build time or post build) and the information provided by the software author on their site.
 
-Let's quickly remember why we create SBOMs.  
+Let's quickly remember why we create SBOMs.
 
 > An SBOM is meant to provides transparency across your all software dependencies. More broadly, it brings visibility to the entire software supply chain...
 
@@ -27,23 +27,23 @@ That’s why,
 
 > Post-processing of SBOM is so important.
 
-To make an SBOM truly valuable and high quality, it needs to undergo process beyond intial generation. This is where augmentation and enrichment comes in; these are the steps that  fills the gaps and correct missing details after the SBOM is created.
+To make an SBOM truly valuable and high quality, it needs to undergo process beyond intial generation. This is where augmentation and enrichment comes in; these are the steps that fills the gaps and correct missing details after the SBOM is created.
 
-Take a real world example. Imagine your project has hundreds of components, and a few lack  license information. What do you do?  You could spend hours manually tracking down the license for each one — but that’s not scalable, especially with modern automation. So, the question arises, **How do you fill those fields ?**
+Take a real world example. Imagine your project has hundreds of components, and a few lack license information. What do you do? You could spend hours manually tracking down the license for each one — but that’s not scalable, especially with modern automation. So, the question arises, **How do you fill those fields ?**
 
-The solution is augmentation and enrichment. Augmentation involves adding crucial information to the SBOM document and it's components provided by the SBOM authors or other trusted sources such as [ecosystm.ms](http://ecosystm.ms/),  ClearlyDefined, etc. Some of the critical fields are license, copyright, download location, author, purl ID, etc.  Whereas Enrichment refers to the process of adding additional values, from package manages, and external datasets, expanding beyond what’s provided during initial creation.
+The solution is augmentation and enrichment. Augmentation involves adding crucial information to the SBOM document and it's components provided by the SBOM authors or other trusted sources such as [ecosystm.ms](http://ecosystm.ms/), ClearlyDefined, etc. Some of the critical fields are license, copyright, download location, author, purl ID, etc. Whereas Enrichment refers to the process of adding additional values, from package manages, and external datasets, expanding beyond what’s provided during initial creation.
 
-Okay, now we know what needs to be done to fill the gaps after SBOM generation.  And then the next question comes up: **Who provides the values of these missing fields, and how can those values be trusted ?**
+Okay, now we know what needs to be done to fill the gaps after SBOM generation. And then the next question comes up: **Who provides the values of these missing fields, and how can those values be trusted ?**
 
-The answer lies in centralized, community-driven open source datasets. Projects like [ClearlyDefined](https://clearlydefined.io/) collect and curate license, copyright, download location and metadata information for thousands of open-source components. Instead of manually searching each component,  enrichment tools can automatically pull data from these trusted sources and fill in the gaps. This is exactly what Interlynk augmentation tool is addressing in it's new features or latest release.
+The answer lies in centralized, community-driven open source datasets. Projects like [ClearlyDefined](https://clearlydefined.io/) collect and curate license, copyright, download location and metadata information for thousands of open-source components. Instead of manually searching each component, enrichment tools can automatically pull data from these trusted sources and fill in the gaps. This is exactly what Interlynk augmentation tool is addressing in it's new features or latest release.
 
-sbomasm is the augmentation tool from Interlynk. So far, it has helped SBOM authors and to add critical values or corrected exiting information and remove invalid data. These are done only when SBOM author is totally aware of the provided values.  But with many missing values or unknown values especially critical fields at scale, then it becomes necessary to use the centralized database to efficiently enrich important fields details in bulk. Now, sbomasm is coming up with new feature to automatically enrich SBOMs using community data source.
+sbomasm is the augmentation tool from Interlynk. So far, it has helped SBOM authors and to add critical values or corrected exiting information and remove invalid data. These are done only when SBOM author is totally aware of the provided values. But with many missing values or unknown values especially critical fields at scale, then it becomes necessary to use the centralized database to efficiently enrich important fields details in bulk. Now, sbomasm is coming up with new feature to automatically enrich SBOMs using community data source.
 
 ## sbomasm enrichment
 
 While mainy tools aims to enrich SBOMs with every possible piece of metadata, but here sbomasm takes a different approach. It's focus is to enrich only the important fields — such as license information. In future, sbomasm will support enrichment of other fields like copyright, download location, etc — whereever reliable, centralized datasets exists.
 
-Currently sbomasm supports license enrichment only. By default, it enriches only those components that have missing license fields. If you want to overwrite and refresh license information for all components, you can use the  --force flag.
+Currently sbomasm supports license enrichment only. By default, it enriches only those components that have missing license fields. If you want to overwrite and refresh license information for all components, you can use the --force flag.
 
 Let's quickly proceed with hands-on:
 
@@ -75,7 +75,7 @@ The o/p says,
 
 Those 16 components were skipped ? Usually because ClearlyDefined did not have license data for them, or even if license data exist, it might have non-standard(e.g., 'NOASSERTION' or 'OTHERS' licenses), or because the component lacked PURL information.
 
-One thing to note: enrichment can take a bit of time, and that is purely intentional. By default, sbomasm process 100 components at a time to avoid overloading ClearlyDefined's servers with large payloads. You can adjust these numbers using  --chunk-size flag to increase or decrease how many components are processed in each batch.
+One thing to note: enrichment can take a bit of time, and that is purely intentional. By default, sbomasm process 100 components at a time to avoid overloading ClearlyDefined's servers with large payloads. You can adjust these numbers using --chunk-size flag to increase or decrease how many components are processed in each batch.
 
 ```bash
 sbomasm enrich --fields="license" sbom.cdx.json -o enriched-sbom.cdx.json --chunk-size 500

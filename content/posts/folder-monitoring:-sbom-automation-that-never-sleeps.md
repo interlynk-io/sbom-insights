@@ -64,7 +64,7 @@ Here’s what a real-world setup looks like. Let's switch on to some hands-on wo
 
 ### 1️⃣ Monitoring a Local Folder (Flat Structure)
 
-Let’s start with the simplest case: watch a single-level folder named  demo, and upload any SBOM that shows up there.
+Let’s start with the simplest case: watch a single-level folder named demo, and upload any SBOM that shows up there.
 
 ```bash
 $ mkdir demo
@@ -82,7 +82,7 @@ Once started, sbommv enters daemon mode—actively listening for events in demo 
 Now, let's drop an SBOM in demo (or use sbommv to fetch one and drop it to folder):
 
 ```bash
-# fetch SBOM from input adapter github and save it to output adapter folder 
+# fetch SBOM from input adapter github and save it to output adapter folder
 $ sbommv transfer \
 --input-adapter=github \
 --in-github-url="https://github.com/interlynk-io/sbomqs" \
@@ -116,7 +116,7 @@ Let's understand what happens:
 Need to monitor sub-folders too? Add one flag --in-folder-recursive=true
 
 ```bash
-$ mkdir  -p  demo/again 
+$ mkdir  -p  demo/again
 
 $ sbommv transfer \
 --input-adapter=folder \
@@ -139,7 +139,7 @@ $ sbommv transfer \
 
 ![alt text](/posts/image-4.png)
 
-Immediately, the following logs appeared: detects SBOM and skip uploading  to dependency track. This is because same SBOM is trying to get uploaded in same project. Will talk about this in next section.
+Immediately, the following logs appeared: detects SBOM and skip uploading to dependency track. This is because same SBOM is trying to get uploaded in same project. Will talk about this in next section.
 
 ![alt text](/posts/image-5.png)
 
@@ -202,7 +202,7 @@ $ sbommv transfer \
 This outputs:
 
 - 👁️ SBOMs detected in preview mode
-- 📝 For Input adapter preview mode it shows:  Format, spec version, and file names
+- 📝 For Input adapter preview mode it shows: Format, spec version, and file names
 - 📦 And for Output adapter preview mode shows: Project names & versions that would be created
 - 📊 Total count
 
@@ -220,7 +220,7 @@ You’ll see clean logs showing every step—what was detected, what was uploade
 
 ## Why This Matters
 
-> SBOMs are no longer one-time artifacts. They evolve with every commit, build, patch and new version. 
+> SBOMs are no longer one-time artifacts. They evolve with every commit, build, patch and new version.
 
 Real-time folder monitoring brings SBOM automation closer to how modern dev and DevSecOps teams actually work.
 
@@ -237,11 +237,11 @@ No more missed uploads. No more backlogs.
 Now that folder monitoring is live, we’re already looking ahead:
 
 - Interlynk Platform demo: blog on using Interlynk as a destination system covering both sbommv use-cases.
-- ☁️ S3 Bucket Integration:  as input as well as output system for source as well as destination.
+- ☁️ S3 Bucket Integration: as input as well as output system for source as well as destination.
 - ☁️ S3 Bucket Monitoring – Watch S3 for incoming SBOMs and upload automatically
 
 We’re just getting warmed up.
 
-Stay tuned for hands-on guides with Interlynk Platform + folder monitoring workflows. Want early access?  
+Stay tuned for hands-on guides with Interlynk Platform + folder monitoring workflows. Want early access?
 
 ⭐ Star the repo: https://github.com/interlynk-io/sbommv and drop us a message for your use s like integration your SBOM source systems or SBOM platform system, will love to integrate them.
