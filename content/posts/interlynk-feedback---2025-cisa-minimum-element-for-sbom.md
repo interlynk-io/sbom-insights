@@ -75,13 +75,24 @@ Interlynk would recommend the following additions
 
 ---
 
-## Comments on Updated Elements
+## Comments on Practices and Processes
 
-### Known Unknowns
-[Interlynk](https://interlynk.io) is in agreement with these requirements.  
+### Coverage (full depth, transitive dependencies)
+The addition of this requirement, is great for vulnerability management. As you are probably aware but capturing this information for languages with package-managers is doable, however C/C++ could be a non-trivial effort.
+
+### Known Unknowns & Redactions
+[Interlynk](https://interlynk.io) is in agreement with these requirements for large organizations. Small and Midsize organizations may struggle to manage these requests or justify redactions. 
 
 ### Distribution and Delivery
 [Interlynk](https://interlynk.io) is in agreement with these requirements. In addition to SBOM distribution & delivery it should also call out the distribution of VEX. 
+
+### Practical Takeaways 
+Based on all the guidelines provided, teams would require the following tooling at a minimum, which might be challenging to small teams
+- Automated SBOM generation using CI/CD (Frequency)
+- SBOM generator for package mangager or Custom Scripts for C/C++ (Coverage)
+- Known/Unknown Handling using post-processing. (Known/Unknown)
+- Artifact Storage for SBOM & VEX documents, Public or Auth access to these files (Distribution & Delivery)
+
 
 ---
 
