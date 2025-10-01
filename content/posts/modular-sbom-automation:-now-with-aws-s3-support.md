@@ -55,7 +55,7 @@ sbommv transfer \
 --out-s3-prefix="releases"
 ```
 
-Or, if you want to provide the AWS_ACCESS_KEY and AWS_SECRET_ KEY on the go, then follow below command:
+Or, if you want to provide the AWS*ACCESS_KEY and AWS_SECRET* KEY on the go, then follow below command:
 
 ```bash
 export AWS_ACCESS_KEY="dkke,kekffkee"
@@ -77,7 +77,7 @@ sbommv transfer  \
 It will fetch all SBOMs from github release page of sbomqs repository for latest releases, and move them to demo-sbom-bucket S3 bucket under the prefix release. To check run the command:
 
 ```bash
-$ aws s3 ls s3://demo-sbom-bucket/releases/ 
+$ aws s3 ls s3://demo-sbom-bucket/releases/
 
 2025-04-26 22:09:11      65430 sbomqs-darwin-amd64.spdx.sbom
 2025-04-26 22:09:12      65430 sbomqs-darwin-arm64.spdx.sbom
@@ -98,7 +98,7 @@ Let's fetch SBOMs stored in S3 and upload them into Dependency-Track or any othe
 Let's see what it fetched and what it would upload to Dependency Track:
 
 ```bash
-sbommv  transfer  \ 
+sbommv  transfer  \
 --input-adapter=s3 \
 --in-s3-bucket-name="vivek-test-sbom" \
 --in-s3-prefix="releases" \
@@ -143,7 +143,7 @@ To setup Dependency-Track locally follow this [guide](https://github.com/interly
 Now, let's execute the actual command to transfer SBOM from S3 to Dependency-Track:
 
 ```bash
-sbommv  transfer  \ 
+sbommv  transfer  \
 --input-adapter=s3 \
 --in-s3-bucket-name="vivek-test-sbom" \
 --in-s3-prefix="releases" \

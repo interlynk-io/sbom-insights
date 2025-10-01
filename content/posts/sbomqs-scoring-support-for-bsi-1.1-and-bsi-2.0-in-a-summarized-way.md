@@ -13,9 +13,9 @@ Hey SBOM community,
 
 Love to see you back here learning something new. If you’re working with SBOMs, you probably know that generating SBOM is just a first step. What you get after generating SBOM is just a raw SBOM ? And the raw SBOM is incomplete, inaccurate sometime and most importantly not even comply with NTIA minimum element according to this research [whitepaper](https://github.com/SBOM-Community/SBOM-Generation/blob/main/whitepaper/Draft-SBOM-Generation-White-Paper-Feb-25-2025.pdf).
 
-And that's exactly where your involvement comes to enrich the SBOM, augument the SBOM, etc to make a better quality SBOM with completeness, accuracy and enriched data.  At the end the real power of SBOM lies within itself i.e data. Because at the end these SBOM will be feeded to SBOM platform which perform complete analysis of the SBOM. The more complete and correct the data is, the more it helps you understand and reduce risk in your software supply chain.
+And that's exactly where your involvement comes to enrich the SBOM, augument the SBOM, etc to make a better quality SBOM with completeness, accuracy and enriched data. At the end the real power of SBOM lies within itself i.e data. Because at the end these SBOM will be feeded to SBOM platform which perform complete analysis of the SBOM. The more complete and correct the data is, the more it helps you understand and reduce risk in your software supply chain.
 
-To unleash the power of  SBOMs, it needs to go through process like augmentation, enrichment, etc — adding missing fields, improving accuracy, aligning with compliance frameworks. And to check if your SBOM has made some improvements towards better quality, you want to check its quality, and for that there's a tool: [sbomqs](https://github.com/interlynk-io/sbomqs).
+To unleash the power of SBOMs, it needs to go through process like augmentation, enrichment, etc — adding missing fields, improving accuracy, aligning with compliance frameworks. And to check if your SBOM has made some improvements towards better quality, you want to check its quality, and for that there's a tool: [sbomqs](https://github.com/interlynk-io/sbomqs).
 
 sbomqs is a lightweight open source CLI tool that helps you measure the quality and compliance of SBOMs. To know more about refer to the [repo](https://github.com/interlynk-io/sbomqs).
 
@@ -60,7 +60,7 @@ Similarly scoring for BSI-v2.0:
 
 As compare to NTIA, bsi has more number of features to check. Now, once you get a summary of this score. Along with score you get to know how many number of components missing what features and how many have. This helps you better understanding of you SBOM overall. Now accordingly, you can update your SBOM with adding more values to it.
 
-After identifying the overall gaps, you might want to dig deeper and see exactly which components are missing which fields. This helps you decide what needs to be added or enriched to improve the quality of your SBOM. To support this, sbomqs provides a list command that breaks it down component by component. 
+After identifying the overall gaps, you might want to dig deeper and see exactly which components are missing which fields. This helps you decide what needs to be added or enriched to improve the quality of your SBOM. To support this, sbomqs provides a list command that breaks it down component by component.
 
 ## sbomqs list command
 
@@ -78,7 +78,7 @@ By default, the list command shows which all components has a particular feature
 
 For example, if all components already have a name, the output will confirm that none are missing the `comp_with_name` field. Simple and direct.
 
-Similarly, let see how many component is missing the feature `comp_with_suppplier`. 
+Similarly, let see how many component is missing the feature `comp_with_suppplier`.
 
 ![alt text](/posts/image-22.png)
 

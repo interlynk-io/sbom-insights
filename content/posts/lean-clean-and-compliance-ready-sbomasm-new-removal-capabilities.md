@@ -26,7 +26,7 @@ That’s where sbomasm’s new removal features come in.
 
 **Example**: maybe you want to remove every field with value "NOASSERTION". Or hide a license before sending the SBOM to a partner. Or drop a hash that could expose internal build details.
 
-Until now,  sbomasm allows to edit SBOM common fields. In addition to that, it will now supports removing them — in both SPDX and CycloneDX formats — without making you wrestle with each format’s schema. 
+Until now, sbomasm allows to edit SBOM common fields. In addition to that, it will now supports removing them — in both SPDX and CycloneDX formats — without making you wrestle with each format’s schema.
 
 ## Why we choosen Common Field over Schema Field ?
 
@@ -39,7 +39,7 @@ We initially considered two approaches for field removal:
 
 The new remove command supports two types of removal:
 
-1. **Field Removal** – Take out specific fields, either from the SBOM’s document metadata or from individual components metadata.  Example: remove license from a single component, or strip author from the document, or remove license having value "Apache-2.0" field from all components.
+1. **Field Removal** – Take out specific fields, either from the SBOM’s document metadata or from individual components metadata. Example: remove license from a single component, or strip author from the document, or remove license having value "Apache-2.0" field from all components.
 2. **Component Removal** – Remove one or more components entirely, along with their linked dependencies and files.
 
 Both work for SPDX and CycloneDX — and both keep your SBOM valid.
@@ -91,7 +91,7 @@ sbomasm rm --field license --scope component --name "nginx" --version "v1.21.0" 
 - Remove "purl" field with value "pkg:golang/github.com/fluxcd/pkg/oci@v0.45.0" from a specific component having name "github.com/fluxcd/pkg/oci" and version "v0.45.0".
 
 ```bash
-sbomasm rm --field purl --value "pkg:golang/github.com/fluxcd/pkg/oci@v0.45.0" --scope component 
+sbomasm rm --field purl --value "pkg:golang/github.com/fluxcd/pkg/oci@v0.45.0" --scope component
 --name "github.com/fluxcd/pkg/oci" --version "v0.45.0" sbom.json -o new-sbom.json
 ```
 
@@ -118,7 +118,7 @@ sbomasm rm --field license --value "Apache-2.0" --scope component -a  sbom.json 
 
 **NOTE**:
 
-- Support fields for document are: author, supplier, tool, lifecycle, license, description, repository, timestamp 
+- Support fields for document are: author, supplier, tool, lifecycle, license, description, repository, timestamp
 - Similarly, supported fields for component are: copyright, cpe, description, hash, license, purl, repo, supplier, type
 
 ## Component Removal in sbomasm
@@ -186,7 +186,7 @@ sbomasm rm --components --field license --value "Apache-2.0"  sbom.json -o new-s
 sbomasm rm --components --field type --value "library"  sbom.json -o new-sbom.json
 ```
 
-So, these were sorts of examples on both "field removal" as well as "component removal". For more example refer [doc](https://github.com/interlynk-io/sbomasm/blob/main/docs/removal.md).  If yours use-case is similar or even different or any issues or features related to it, simply file up an [issue](https://github.com/interlynk-io/sbomasm/issues/new) here. We would love to help.
+So, these were sorts of examples on both "field removal" as well as "component removal". For more example refer [doc](https://github.com/interlynk-io/sbomasm/blob/main/docs/removal.md). If yours use-case is similar or even different or any issues or features related to it, simply file up an [issue](https://github.com/interlynk-io/sbomasm/issues/new) here. We would love to help.
 
 ## Conclusion
 

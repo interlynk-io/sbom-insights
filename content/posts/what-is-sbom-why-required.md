@@ -49,6 +49,7 @@ Governments and regulatory bodies increasingly require SBOMs:
 ### 3. License Compliance
 
 Open source components come with various licenses - GPL, MIT, Apache, and others. Each has different obligations. SBOMs help organizations:
+
 - Track license obligations across all components
 - Avoid legal risks from license violations
 - Ensure compliance with open source policies
@@ -56,6 +57,7 @@ Open source components come with various licenses - GPL, MIT, Apache, and others
 ### 4. Supply Chain Risk Management
 
 Software supply chain attacks increased by 650% in 2021. SBOMs provide:
+
 - **Visibility**: Know exactly what's in your software
 - **Traceability**: Track the origin of each component
 - **Risk Assessment**: Identify components from high-risk sources
@@ -75,11 +77,13 @@ Beyond security and compliance, SBOMs offer practical advantages:
 Two primary standards dominate the SBOM landscape:
 
 ### SPDX (Software Package Data Exchange)
+
 - Developed by the Linux Foundation
 - ISO/IEC 5962:2021 international standard
 - Comprehensive format covering licensing, security, and provenance
 
 ### CycloneDX
+
 - Created by OWASP
 - Designed for security use cases
 - Native support for vulnerability tracking
@@ -87,14 +91,17 @@ Two primary standards dominate the SBOM landscape:
 ## Who Needs SBOMs?
 
 ### Software Producers
+
 - **Responsibility**: Generate and maintain accurate SBOMs
 - **Benefit**: Demonstrate security maturity and compliance
 
 ### Software Consumers
+
 - **Responsibility**: Request and analyze SBOMs from vendors
 - **Benefit**: Understand and manage software risks
 
 ### DevOps Teams
+
 - **Responsibility**: Integrate SBOM generation into CI/CD pipelines
 - **Benefit**: Automate vulnerability scanning and compliance checks
 
@@ -135,6 +142,7 @@ The question is no longer whether you need an SBOM, but how quickly you can impl
 ## Next Steps
 
 Ready to implement SBOMs in your organization? Stay tuned for our upcoming posts on:
+
 - How to Generate Your First SBOM
 - SBOM Tools Comparison Guide
 - Best Practices for SBOM Management
@@ -142,4 +150,4 @@ Ready to implement SBOMs in your organization? Stay tuned for our upcoming posts
 
 ---
 
-*Have questions about SBOMs? Join the discussion in our community forums or reach out to our contributors.*
+_Have questions about SBOMs? Join the discussion in our community forums or reach out to our contributors._

@@ -86,18 +86,18 @@ make help
 
 #### Available Makefile Commands
 
-| Command | Description | Usage |
-|---------|-------------|-------|
-| `make help` | Display all available commands | `make help` |
-| `make serve` | Run Hugo development server with drafts on http://localhost:1313 | `make serve` |
-| `make build` | Build production site with minification | `make build` |
-| `make clean` | Remove build artifacts (public/ and resources/) | `make clean` |
-| `make new-post` | Create a new blog post with automatic filename formatting | `make new-post TITLE="Your Post Title"` |
-| `make deploy` | Build and deploy to Netlify production | `make deploy` |
-| `make preview` | Deploy a preview to Netlify | `make preview` |
-| `make update-theme` | Update PaperMod theme to latest version | `make update-theme` |
-| `make check-links` | Check for broken links in built site (requires htmltest) | `make check-links` |
-| `make format` | Format all markdown files with prettier | `make format` |
+| Command             | Description                                                      | Usage                                   |
+| ------------------- | ---------------------------------------------------------------- | --------------------------------------- |
+| `make help`         | Display all available commands                                   | `make help`                             |
+| `make serve`        | Run Hugo development server with drafts on http://localhost:1313 | `make serve`                            |
+| `make build`        | Build production site with minification                          | `make build`                            |
+| `make clean`        | Remove build artifacts (public/ and resources/)                  | `make clean`                            |
+| `make new-post`     | Create a new blog post with automatic filename formatting        | `make new-post TITLE="Your Post Title"` |
+| `make deploy`       | Build and deploy to Netlify production                           | `make deploy`                           |
+| `make preview`      | Deploy a preview to Netlify                                      | `make preview`                          |
+| `make update-theme` | Update PaperMod theme to latest version                          | `make update-theme`                     |
+| `make check-links`  | Check for broken links in built site (requires htmltest)         | `make check-links`                      |
+| `make format`       | Format all markdown files with prettier                          | `make format`                           |
 
 #### Quick Examples
 
@@ -232,7 +232,7 @@ github: "yourusername"
 linkedin: "yourusername"
 twitter: "yourusername"
 website: "https://yourwebsite.com"
-copyright: "© 2025 Your Name"  # Optional: custom copyright for your posts
+copyright: "© 2025 Your Name" # Optional: custom copyright for your posts
 ```
 
 ### Step 3: Add Your Photo
@@ -412,7 +412,7 @@ sbom-insights/
 │   └── PaperMod/    # Hugo theme
 ├── hugo.toml        # Hugo configuration
 ├── Makefile         # Build automation
-├── netlify.toml     # Netlify configuration  
+├── netlify.toml     # Netlify configuration
 └── CONTRIBUTING.md  # Contribution guidelines
 ```
 
@@ -451,9 +451,11 @@ If you need assistance:
 ## License and Copyright
 
 ### License
+
 All content in SBOM Insights is licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
 
 ### Copyright
+
 - Copyright © 2025 Interlynk.io and Contributors
 - Individual authors retain copyright to their contributions
 - By contributing, you grant Interlynk.io rights under CC BY 4.0 to publish and distribute your content

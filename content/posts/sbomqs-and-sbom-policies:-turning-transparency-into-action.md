@@ -107,7 +107,7 @@ policy:
     action: fail
 ```
 
-- ✔ Components with MIT or Apache-2.0 → no violation  → pass
+- ✔ Components with MIT or Apache-2.0 → no violation → pass
 - ✘ Components with GPL-3.0 → violation, → action → fail
 
 ### 2. Blacklist
@@ -239,20 +239,20 @@ policy:
     rules:
       - field: license
         values:
-        - MIT
-        - Apache-2.0
-        - BSD-3-Clause
-    action: warn  # or 'fail'
-    
+          - MIT
+          - Apache-2.0
+          - BSD-3-Clause
+    action: warn # or 'fail'
+
   - name: banned_components
     type: blacklist
     rules:
       - field: name
         patterns:
-        - "log4j*"
-        - "commons-collections-3.2.1"
+          - "log4j*"
+          - "commons-collections-3.2.1"
     action: fail
-    
+
   - name: required_metadata
     type: required
     rules:
@@ -274,7 +274,7 @@ sbomqs policy -f samples/policy/custom/custom-policies.yaml samples/policy/in-co
 Breaking it down:
 
 - **approved_licenses** (whitelist) → All 6 components failed to match the approved licenses (MIT, Apache-2.0, BSD-3-Clause). Since the action is set to warn, the policy result is warn, not fail.
-- **banned_components** (blacklist) → 1 of the 6 components matched a banned pattern (log4j* or commons-collections-3.2.1). Because the action is set to fail, this caused the policy to fail.
+- **banned_components** (blacklist) → 1 of the 6 components matched a banned pattern (log4j\* or commons-collections-3.2.1). Because the action is set to fail, this caused the policy to fail.
 - **required_metadata** (required) → All components had the required fields (supplier, version, license, checksum), so this policy passed with no violations. And the total rules applied to it are 4 in total. Basically the components has values such as "NOASSERTION" or "NONE", but not empty or nil.
 
 ## Wrapping It Up

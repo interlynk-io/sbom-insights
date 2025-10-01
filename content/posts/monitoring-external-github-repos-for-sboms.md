@@ -25,13 +25,13 @@ Moving one step ahead to deal with real problem,
 
 ## The Problem: Watching External Repos for SBOM Updates
 
-As a platform or security engineer, you likely rely on external open-source components like sigstore/cosign, interlynk-io/sbomqs, etc. It's important for an company or organization to keep eye on Open Source dependencies because "**According to a survey 70-80% code are from Open Source**".  When these projects cut a new release, many now publish a digital artifacts along with other artifacts such as binaries, signatures, etc known as SBOMs.  
+As a platform or security engineer, you likely rely on external open-source components like sigstore/cosign, interlynk-io/sbomqs, etc. It's important for an company or organization to keep eye on Open Source dependencies because "**According to a survey 70-80% code are from Open Source**". When these projects cut a new release, many now publish a digital artifacts along with other artifacts such as binaries, signatures, etc known as SBOMs.
 
 Ideally, you'd want to:
 
 - Detect when external OSS projects cut new releases
 - Fetch their latest SBOMs
-- And transfer it into platforms like SBOM Platforms such as Dependency-Track, Interlynk, or  even to your cloud storage AWS S3 storage, or even local folder, etc
+- And transfer it into platforms like SBOM Platforms such as Dependency-Track, Interlynk, or even to your cloud storage AWS S3 storage, or even local folder, etc
 
 But here’s the issue:
 
