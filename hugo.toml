@@ -91,7 +91,7 @@ hiddenInList = false
 hiddenInSingle = false
 
 [params.editPost]
-URL = 'https://github.com/YOUR-REPO/sbom-blog/content'
+URL = 'https://github.com/interlynk-io/sbom-insights/tree/main/content'
 Text = 'Suggest Changes'
 appendFilePath = true
 

@@ -9,9 +9,9 @@ author = "Ritesh Noronha"
 
 +++
 
-**Docket Number:** CISA-2025-0007
-**Comment Deadline:** October 3, 2025
-**Submission Portal:** [regulations.gov](https://www.regulations.gov)
+- **Docket Number:** [CISA-2025-0007](https://www.regulations.gov/document/CISA-2025-0007-0001)
+- **Comment Deadline:** [October 3, 2025](https://www.regulations.gov/document/CISA-2025-0007-0001/comment)
+- **Submission Portal:** [regulations.gov](https://www.regulations.gov/document/CISA-2025-0007-0001)
 
 ---
 
@@ -19,7 +19,7 @@ author = "Ritesh Noronha"
 
 [Interlynk](https://interlynk.io/) appreciates the opportunity to provide feedback on CISA's proposed "2025 Minimum Elements for a Software Bill of Materials (SBOM)." As developers of open-source SBOM quality and management tools, we bring a unique perspective grounded in practical implementation experience across diverse enterprise environments.
 
-Through our work on **[sbomqs](https://github.com/interlynk-io/sbomqs)** (SBOM Quality Score) and **[sbomasm](https://github.com/interlynk-io/sbomasm)** (SBOM Assembler), we have analyzed thousands of SBOMs from various industries and toolchains, giving us deep insights into the real-world challenges of SBOM creation, validation, and consumption. Our tools help organizations assess SBOM completeness, manage multi-format SBOMs, and ensure compliance with evolving standards—experience that directly informs our response to these proposed minimum elements.
+Through our work on **[sbomqs](https://github.com/interlynk-io/sbomqs)** (SBOM Quality Score) and **[sbomasm](https://github.com/interlynk-io/sbomasm)** (SBOM Assembler), we have analyzed millions of SBOMs from various industries and toolchains, giving us deep insights into the real-world challenges of SBOM creation, validation, and consumption. Our tools help organizations assess SBOM completeness, manage multi-format SBOMs, and ensure compliance with evolving standards—experience that directly informs our response to these proposed minimum elements.
 
 We commend CISA for its iterative approach to refining SBOM requirements. However, we have identified several areas where clarification or adjustment would significantly improve adoption and implementation success. Our recommendations focus on balancing comprehensive security requirements with practical feasibility, ensuring that the minimum elements drive meaningful improvements in software supply chain transparency without creating insurmountable barriers for software producers and consumers alike.
 
@@ -37,9 +37,9 @@ At [Interlynk](https://interlynk.io) we support the removal of SWID as an SBOM f
 
 Interlynk would recommend the following additions
 
-- Requiring Data Licenses for publicly available SBOMS, similar to SPDX 2.3 CC0-1.0.
 - Support Level for Components as required by the FDA. (Unspecified, Actively Maintained, Unmaintained, Abandoned)
-- Signatures for verification.
+- Signatures for authenticity & verification.
+- Requiring Data Licenses for publicly available SBOMS, similar to SPDX 2.3 CC0-1.0.
 - Minimum versions for supported SBOM formats. CycloneDX 1.5+ and SPDX 2.3+
 
 ---
@@ -92,7 +92,6 @@ Based on all the guidelines provided, teams would require the following tooling 
 - SBOM generator for package mangager or Custom Scripts for C/C++ (Coverage)
 - Known/Unknown Handling using post-processing. (Known/Unknown)
 - Artifact Storage for SBOM & VEX documents, Public or Auth access to these files (Distribution & Delivery)
-
 
 ---
 
