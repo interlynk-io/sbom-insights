@@ -1,6 +1,6 @@
 +++
 date = '2025-11-11T19:47:27-08:00'
-draft = true
+draft = false
 title = 'OWASP A03:2025: Why Supply Chain Security Is Now Ranked #3 (and What Operators Must Do)'
 tags = ["SBOM", "DevSecOps", "Software Supply Chain"]
 categories = ["DevSecOps", "OWASP"]
