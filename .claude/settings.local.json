@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:www.federalregister.gov)"
+      "WebFetch(domain:www.federalregister.gov)",
+      "Bash(python3:*)"
     ],
     "deny": [],
     "ask": []
