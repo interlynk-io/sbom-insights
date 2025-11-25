@@ -7,241 +7,105 @@ tags = ['SBOM', 'sbomq', 'sbom', 'scoring', 'dependency-track', 'Dependency-Trac
 author = 'Vivek Sahu'
 +++
 
-![alt text](/posts/image-7.png)
 
 ## Introduction
 
-In our previous post(GitHub Releases are where SBOM's goto die), we tackled a growing pain in modern software security: SBOMs stuck in GitHub Releases. We showed how sbommv streamlines the manual mess—automating the movement of SBOMs from GitHub or local folders directly into SBOM platforms like Dependency-Track, Interlynk(next blog will show demo on this).
+Hey Everyone !!
 
-We covered:
+Today I will be discussing through a very specific practical, real-world use case, something that shows up the moment an organization starts taking software supply chain security seriously. Whether it’s because of internal security, or government push through compliance (like NTIA, BSI), or upcoming regulations like the EU CRA… sooner or later, SBOM quality becomes a question you have to answer.
 
-- 🔄 Pulling SBOMs straight from GitHub via API or releases
-- 🧳 Uploading pre-existing SBOMs from local folders
-- 🔍 Using dry-run mode to validate before uploading
+If you work with SBOMs, chances are your team is using an SBOM platform like Dependency-Track (or a similar one). These platforms help you monitor vulnerabilities, track licenses, and keep an eye on everything happening inside your software supply chain.
 
-And transferring those fetched SBOMs to dependency-track platform smoothly and seamlessly. That was the start. But it still required you to trigger the command each time, especially when input adapter or input system(source of SBOMs) is folder.
+All these powerful analysis, vulnerability detection, risk scoring, compliance checks is only as good as the quality of the SBOM you upload. If the SBOM is incomplete, inconsistent, or missing critical metadata, the platform’s insights start falling apart. In simple terms:
 
-Now we’re taking it a step further, **SBOM automation that doesn’t wait for you when SBOMs are present in the folders.**
+**Poor SBOM** → **Poor analysis** → **Poor decisions**.
 
-## Introducing: Folder Monitoring 📁⚡
+That’s why understanding the quality of an SBOM matters just as much as generating the SBOM itself. And to measure that quality, you need a clear, objective score that tells you:
 
-Imagine a workflow where you don’t even have to run a command when source of SBOM is a folder(i.e input system/adapter is folder). SBOMs just shown up in a folder—maybe from your CI pipeline, a nightly build job, or a dev tool—and sbommv running in the daemon mode, instantly detects it, validates it, convert it to CycloneDX spec and ships them off to SBOM platforms.
+- How complete is my SBOM?
+- Does it contains important fields ?
+- Is it compliant with standards like NTIA, BSI, or OCT?
+- And what is quality score based on pre-defined fields ?
 
-![alt text](/posts/image.png)
+You might already be scoring your SBOMs locally using a tool like **sbomqs**, that part is straightforward. You run a command and instantly get a score.
 
-In theory, SBOM automation should “just work.” But in reality, users are still asking [this](https://github.com/DependencyTrack/dependency-track/discussions/4256):
+But your team isn’t spending time looking at raw SBOM files.  All the real action happens inside **Dependency-Track**, dashboards, vulnerability alerts, license monitoring, and so on. So naturally, a question arises:
 
-> “Is there a tool that can automate SBOM uploads to Dependency-Track outside of CI?”
+> What if you want your SBOM quality score inside Dependency-Track itself?
 
-> “We generate SBOMs for different modules in CI, but once deployed on a customer site—where there’s no internet—we need a way to update their local Dependency-Track install automatically when new SBOMs show up.”
+Once an SBOM is uploaded into the platform, you suddenly lose visibility into the score. You can’t see completeness issues, missing metadata, policy failures, or compliance gaps unless you go hunting for them manually.
 
-That’s not a one-off question—it’s a pattern. Products deployed on-premise, CI pipelines that export SBOMs, Air-gapped environments, and teams stuck manually syncing SBOMs post-deployment.
+So questions like these start popping up:
 
-Now, you don’t have to, if SBOM source is folder.
+- How do I push my SBOM score into Dependency-Track?
+- How do I make that score visible right next to the vulnerability and license data?
+- And in the future, can I also push NTIA/BSI/OCT compliance scores (thanks to upcoming sbomqs features)?
 
-**NOTE**: This automatically fetching or triggering SBOMs, in technically sbommv running in the background, i.e daemon mode is only for folder input adapter.
+This blog is about **exactly this use case**, how to bring **SBOM scoring into Dependency-Track** so the people using the platform get the full picture.
 
-## Meet Folder Monitoring
+Before we dive deeper, let’s quickly look at the two tools at the centre of this conversation:
 
-With sbommv's new folder monitoring mode, all you have to do is drop the SBOM in a watched folder—
+### sbomqs
 
-- ✖️ no scripts,
-- ✖️ no re-runs,
-- ✖️ no manual uploads.
+A lightweight, open-source CLI tool for measuring the quality and compliance of SBOMs. It  helps you check completeness, correctness, consistency, and gives you a simple score.
 
-sbommv running in the background i.e. in daemon mode automatically detects it, validates it, and ships it off to your local Dependency-Track, Interlynk, or other SBOM platforms.
+### Dependency-Track
 
-It’s like turning your file system into an event-driven pipeline:
+A popular open-source SBOM platform used by organizations worldwide. It lets you analyze SBOMs in depth, vulnerabilities, components, licenses, risk scoring, and more.
 
-- Your CI drops a new SBOM → 📂 Folder event triggered
-- sbommv running in daemon mode auto-detects → ✅ Validates
-- Convert the SPDX spec into CycloneDX spec, especially for Dependency-Track system
-- Automatically uploaded → 🔁 Project updated in Dependency-Track
+### How Scoring Works in sbomqs (And How to Push That Score Into Dependency-Track)
 
-No human in the loop. No risk of missing uploads.
+Let’s walk through it step by step.
 
-Here’s what a real-world setup looks like. Let's switch on to some hands-on work.
+#### 1. Score an SBOM Locally (The Simple Case)
 
-### 1️⃣ Monitoring a Local Folder (Flat Structure)
-
-Let’s start with the simplest case: watch a single-level folder named demo, and upload any SBOM that shows up there.
+If the SBOM is already on your machine, scoring it is straightforward:
 
 ```bash
-$ mkdir demo
-
-$ sbommv transfer \
---input-adapter=folder \
---in-folder-path="demo" \
---output-adapter=dtrack \
---out-dtrack-url="http://localhost:8081" \
--d
+sbomqs score my-sbom.spdx.json
 ```
 
-Once started, sbommv enters daemon mode—actively listening for events in demo directory.
+#### 2. Score an SBOM That Already Lives Inside Dependency-Track
 
-Now, let's drop an SBOM in demo (or use sbommv to fetch one and drop it to folder):
+If your SBOM is uploaded into D-Track, sbomqs can score it directly from the platform. First, export your credentials and project info:
 
 ```bash
-# fetch SBOM from input adapter github and save it to output adapter folder
-$ sbommv transfer \
---input-adapter=github \
---in-github-url="https://github.com/interlynk-io/sbomqs" \
---output-adapter=folder \
---out-folder-path=demo
+export DEPENDENCY_TRACK_PROJECT_ID="05cdcf2b-97ab-479c-be44-ae0d608d8863"
 
-2025-04-08T21:45:06.651+0530	INFO	logger/log.go:102	wrote	{"path": "demo/3c62fca7-28d9-4b68-903f-e471b2e4619c.sbom.json"}
-2025-04-08T21:45:06.651+0530	INFO	logger/log.go:102	wrote	{"sboms": 1, "success": 1, "failed": 0}
+export DEPENDENCY_TRACK_URL="http://localhost:8081/"
+
+export DEPENDENCY_TRACK_API_KEY="odt_WYMdgLZ8sQNEVAfTwD7C5tV55ysQI1Ps"
 ```
 
-Immediately, the following happens: detects SBOM and uploaded it to dependency track
-
-![alt text](/posts/image-3.png)
-
-Let's check dependency-track platform, whether SBOM is uploaded or not? Yeah, it's uploaded...
-
-![alt text](/posts/image-1.png)
-
-![alt text](/posts/image-2.png)
-
-Let's understand what happens:
-
-- Ran sbommv in daemon mode, monitoring folder
-- Drop a SBOM with the help of sbommv from fetching it from github to demo folder
-- 📂 Event triggered: CREATE & WRITE → demo/<SBOM-FILE>.json
-- ✅ Detected as SBOM
-- 🚀 Uploaded to Dependency-Track
-
-### 2️⃣ Deep Monitoring: Sub-directories Included
-
-Need to monitor sub-folders too? Add one flag --in-folder-recursive=true
+Now fetch and score the SBOM inside Dependency-Track:
 
 ```bash
-$ mkdir  -p  demo/again
-
-$ sbommv transfer \
---input-adapter=folder \
---in-folder-path="demo" \
---in-folder-recursive=true \
---output-adapter=dtrack \
---out-dtrack-url="http://localhost:8081" \
--d
+sbomqs dt \
+  --url "${DEPENDENCY_TRACK_URL}/" \
+  --api-key "${DEPENDENCY_TRACK_API_KEY}" \
+  ${DEPENDENCY_TRACK_PROJECT_ID}
 ```
 
-Now, let's drop an SBOM in demo (or use sbommv to fetch one and drop it to folder):
+This pulls the SBOM from D-Track → scores it → prints the summary.
+
+#### 3. Push the Score Back Into Dependency-Track (As a Tag)
+
+This is the fun part. If you want Dependency-Track to display the SBOM quality score alongside vulnerabilities, licenses, and components… just add one more flag:
 
 ```bash
-$ sbommv transfer \
---input-adapter=github \
---in-github-url="https://github.com/interlynk-io/sbomqs" \
---output-adapter=folder \
---out-folder-path=demo/again
+sbomqs dt \
+  --url "${DEPENDENCY_TRACK_URL}/" \
+  --api-key "${DEPENDENCY_TRACK_API_KEY}" \
+  ${DEPENDENCY_TRACK_PROJECT_ID} \
+  --tag-project-with-score
 ```
 
-![alt text](/posts/image-4.png)
-
-Immediately, the following logs appeared: detects SBOM and skip uploading to dependency track. This is because same SBOM is trying to get uploaded in same project. Will talk about this in next section.
-
-![alt text](/posts/image-5.png)
-
-Each nested directory is auto-watched. Each SBOM is independently tracked and uploaded as it's added.
-
-Let's understand what happens:
-
-- Ran sbommv in daemon mode, monitoring folder
-- Drop a SBOM with the help of sbommv from fetching it from github to demo/again folder
-- 📂 Event triggered: CREATE & WRITE → demo/<SBOM-FILE>.json
-- ✅ Detected as SBOM
-- 🚀 Skipped uploading to Dependency-Track
-
-The SBOM overwrite is controllable via sbommv overwrite flag. Let's see in next section.
-
-### 3️⃣ Controlling Overwrites
-
-By default, sbommv does not upload a new SBOM if a project with the same name and version already exists in Dependency-Track. This avoids unnecessary updates.
-
-But here’s the twist:
-
-Dependency-Track itself always overwrites SBOMs when they’re uploaded—even if they're identical.
-
-To give you more control, sbommv introduces the `--overwrite` flag:
-
-- **Default Behavior** (--overwrite=false): Uploads are skipped if the SBOM’s primary component name + version matches one already uploaded. This avoids duplicate uploads.
-- **Overwrite Option** (--overwrite=true): Forces upload every time—even if the SBOM already exists. Useful for rebuilds or when updating SBOM content while keeping the same component name/version.
-
-This flag is handled entirely by sbommv, works with any adapter, and ensures you stay in control of what gets updated.
+This will attach a tag like:
 
 ```bash
-$ sbommv transfer \
---input-adapter=folder \
---in-folder-path="demo" \
---output-adapter=dtrack \
---out-dtrack-url="http://localhost:8081" \
---overwrite \
--d
+sbomqs=5.2
 ```
 
-Try out it again, and you will see that this time it's uploaded instead of being skipped.
+…directly onto your D-Track project — just like this: 👇
 
-### 4️⃣ Preview Everything with Dry-Run 🧪
-
-Not ready to go live yet? You can simulate it all with --dry-run:
-
-```bash
-$ sbommv transfer \
---input-adapter=folder \
---in-folder-path="demo" \
---in-folder-recursive=true \
---output-adapter=dtrack \
---out-dtrack-url="http://localhost:8081" \
--d \
---dry-run
-```
-
-![alt text](/posts/image-6.png)
-
-This outputs:
-
-- 👁️ SBOMs detected in preview mode
-- 📝 For Input adapter preview mode it shows: Format, spec version, and file names
-- 📦 And for Output adapter preview mode shows: Project names & versions that would be created
-- 📊 Total count
-
-It’s just to see what's there in the input adapter and what's going to be uploaded in a preview mode, before executing command in actual.
-
-Let’s recap what happens under the hood when a new SBOM shows up in the watched folder:
-
-1. 📂 Event Triggered – CREATE + WRITE
-2. 🕵️ File Validated – Only valid SBOMs are picked up
-3. 🔄 Format Upgraded – E.g., SPDX 2.2 → SPDX 2.3 → CycloneDX
-4. 📤 Project Created/Updated in DTrack
-5. ✅ Upload Complete – You’re done
-
-You’ll see clean logs showing every step—what was detected, what was uploaded, what was skipped, and what was ignored.
-
-## Why This Matters
-
-> SBOMs are no longer one-time artifacts. They evolve with every commit, build, patch and new version.
-
-Real-time folder monitoring brings SBOM automation closer to how modern dev and DevSecOps teams actually work.
-
-It:
-
-- ✔️ Keeps security platforms updated in sync with software changes
-- ✔️ Removes the lag between SBOM generation and analysis
-- ✔️ Enables hands-off, always-on SBOM pipelines
-
-No more missed uploads. No more backlogs.
-
-## What’s Next?
-
-Now that folder monitoring is live, we’re already looking ahead:
-
-- Interlynk Platform demo: blog on using Interlynk as a destination system covering both sbommv use-cases.
-- ☁️ S3 Bucket Integration: as input as well as output system for source as well as destination.
-- ☁️ S3 Bucket Monitoring – Watch S3 for incoming SBOMs and upload automatically
-
-We’re just getting warmed up.
-
-Stay tuned for hands-on guides with Interlynk Platform + folder monitoring workflows. Want early access?
-
-⭐ Star the repo: https://github.com/interlynk-io/sbommv and drop us a message for your use s like integration your SBOM source systems or SBOM platform system, will love to integrate them.
+![alt text](image.png)
