@@ -59,6 +59,7 @@ The [SBOM Generation White Paper](https://github.com/SBOM-Community/SBOM-Generat
 ### Roles and Responsibilities
 
 Different parties have distinct SBOM obligations:
+
 - **Producers**: Generate accurate SBOMs during the build process
 - **Consumers**: Validate and utilize SBOMs for risk assessment
 - **Hosts**: Maintain and update SBOMs for deployed software
@@ -67,34 +68,35 @@ This requires clear communication and standardized formats across the software s
 
 ## Decision Matrix
 
-| Language / Ecosystem        | Preferred Format | Recommended Tool(s)                                          | Notes                                              |
-| --------------------------- | ---------------- | ------------------------------------------------------------ | -------------------------------------------------- |
-| **Go**                      | CycloneDX        | [cyclonedx-gomod](https://github.com/CycloneDX/cyclonedx-gomod) | Native Go module integration                       |
-| **Java (Maven)**            | CycloneDX        | [cyclonedx-maven-plugin](https://github.com/CycloneDX/cyclonedx-maven-plugin) | Integrates with Maven lifecycle                    |
-| **Java (Gradle)**           | CycloneDX        | [cyclonedx-gradle-plugin](https://github.com/CycloneDX/cyclonedx-gradle-plugin) | Easy Gradle task integration                       |
-| **JavaScript / TypeScript** | CycloneDX        | [@cyclonedx/cyclonedx-npm](https://github.com/CycloneDX/cyclonedx-node-npm), `npm sbom` (npm ≥9) | Ecosystem-native                                   |
-| **Python**                  | CycloneDX        | [cyclonedx-bom](https://github.com/CycloneDX/cyclonedx-python) | Supports pip, poetry                               |
-| **C# / .NET**               | SPDX             | [Microsoft sbom-tool](https://github.com/microsoft/sbom-tool), [CycloneDX.NET](https://github.com/CycloneDX/cyclonedx-dotnet) | Great for NuGet                                    |
+| Language / Ecosystem        | Preferred Format | Recommended Tool(s)                                                                                                              | Notes                                              |
+| --------------------------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
+| **Go**                      | CycloneDX        | [cyclonedx-gomod](https://github.com/CycloneDX/cyclonedx-gomod)                                                                  | Native Go module integration                       |
+| **Java (Maven)**            | CycloneDX        | [cyclonedx-maven-plugin](https://github.com/CycloneDX/cyclonedx-maven-plugin)                                                    | Integrates with Maven lifecycle                    |
+| **Java (Gradle)**           | CycloneDX        | [cyclonedx-gradle-plugin](https://github.com/CycloneDX/cyclonedx-gradle-plugin)                                                  | Easy Gradle task integration                       |
+| **JavaScript / TypeScript** | CycloneDX        | [@cyclonedx/cyclonedx-npm](https://github.com/CycloneDX/cyclonedx-node-npm), `npm sbom` (npm ≥9)                                 | Ecosystem-native                                   |
+| **Python**                  | CycloneDX        | [cyclonedx-bom](https://github.com/CycloneDX/cyclonedx-python)                                                                   | Supports pip, poetry                               |
+| **C# / .NET**               | SPDX             | [Microsoft sbom-tool](https://github.com/microsoft/sbom-tool), [CycloneDX.NET](https://github.com/CycloneDX/cyclonedx-dotnet)    | Great for NuGet                                    |
 | **C/C++**                   | SPDX             | [CMake 3.28+](https://cmake.org/), [conan-sbom](https://github.com/conan-io/conan-extensions/tree/main/extensions/commands/sbom) | Built-in or package manager support                |
-| **Containers**              | SPDX / CycloneDX | [Syft](https://github.com/anchore/syft), [Trivy](https://github.com/aquasecurity/trivy) | Excellent for images                               |
-| **Embedded (Yocto)**        | SPDX             | Built-in (`INHERIT += "create-spdx"`)                        | Native SPDX generation                             |
-| **Embedded (Buildroot)**    | CycloneDX        | [generate-cyclonedx](https://fossies.org/linux/buildroot/utils/generate-cyclonedx) | Built-in script                                    |
-| **Cross-language**          | SPDX             | [sbom-tool](https://github.com/microsoft/sbom-tool)          | Multipurpose tools for large number of ecosystems. |
+| **Containers**              | SPDX / CycloneDX | [Syft](https://github.com/anchore/syft), [Trivy](https://github.com/aquasecurity/trivy)                                          | Excellent for images                               |
+| **Embedded (Yocto)**        | SPDX             | Built-in (`INHERIT += "create-spdx"`)                                                                                            | Native SPDX generation                             |
+| **Embedded (Buildroot)**    | CycloneDX        | [generate-cyclonedx](https://fossies.org/linux/buildroot/utils/generate-cyclonedx)                                               | Built-in script                                    |
+| **Cross-language**          | SPDX             | [sbom-tool](https://github.com/microsoft/sbom-tool)                                                                              | Multipurpose tools for large number of ecosystems. |
 
 ## General-Purpose SBOM Generators
 
-| Tool                                                         | Formats         | Highlights                              | Best For                 |
-| ------------------------------------------------------------ | --------------- | --------------------------------------- | ------------------------ |
-| **[Syft](https://github.com/anchore/syft)**                  | CycloneDX, SPDX | Fast, wide language & container support | Containers, file systems |
-| **[Trivy](https://github.com/aquasecurity/trivy)**           | CycloneDX, SPDX | Vulnerability scanning included         | Containers, file systems |
+| Tool                                                              | Formats         | Highlights                              | Best For                 |
+| ----------------------------------------------------------------- | --------------- | --------------------------------------- | ------------------------ |
+| **[Syft](https://github.com/anchore/syft)**                       | CycloneDX, SPDX | Fast, wide language & container support | Containers, file systems |
+| **[Trivy](https://github.com/aquasecurity/trivy)**                | CycloneDX, SPDX | Vulnerability scanning included         | Containers, file systems |
 | **[Microsoft SBOM Tool](https://github.com/microsoft/sbom-tool)** | SPDX, CycloneDX | NTIA-compliant, multi-language          | Applications             |
-| **[sbomqs](https://github.com/interlynk-io/sbomqs)**         | —               | Quality and compliance validation       | Assessing SBOM quality   |
+| **[sbomqs](https://github.com/interlynk-io/sbomqs)**              | —               | Quality and compliance validation       | Assessing SBOM quality   |
 
 ## Quality Assessment
 
 After generating SBOMs, assess their quality using:
 
 ### [sbomqs](https://github.com/interlynk-io/sbomqs)
+
 - Evaluates SBOM quality and NTIA compliance
 - Provides scoring and recommendations
 - Helps ensure your SBOMs meet industry standards
@@ -131,17 +133,17 @@ name: Build and Generate SBOM
 
 on:
   push:
-    branches: [ main ]
-    tags: [ 'v*' ]
+    branches: [main]
+    tags: ["v*"]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build-and-sbom:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # For uploading release artifacts
-      packages: write  # For container registry
+      contents: write # For uploading release artifacts
+      packages: write # For container registry
 
     steps:
       - name: Checkout code
@@ -150,7 +152,7 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
-          go-version: '1.22'
+          go-version: "1.22"
 
       - name: Build application
         run: |
@@ -233,5 +235,3 @@ jobs:
 - [SPDX Specification](https://spdx.github.io/spdx-spec/)
 
 - [Interlynk](https://app.interlynk.io/)
-
-  

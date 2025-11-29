@@ -28,11 +28,13 @@ We commend CISA for its iterative approach to refining SBOM requirements. Howeve
 ## Response to CISA's Specific Questions
 
 ### Elements to Remove
+
 **Should any elements be removed from the 2025 CISA SBOM Minimum Elements, meaning the element should not be required for all SBOMs? Which elements, and why?**
 
-At [Interlynk](https://interlynk.io) we support the removal of SWID as an SBOM format. 
+At [Interlynk](https://interlynk.io) we support the removal of SWID as an SBOM format.
 
 ### Additional Elements to Include
+
 **Should CISA include any additional elements in the 2025 CISA SBOM Minimum Elements, meaning the element should be a requirement for all SBOMs? Which elements, and why?**
 
 Interlynk would recommend the following additions
@@ -49,12 +51,14 @@ Interlynk would recommend the following additions
 ### Component Hash
 
 **Pros:**
+
 - Establishes definitive component identity through cryptographic fingerprints
 - Critical foundation for verifying software authenticity and detecting tampering
 - Allows correlation between SBOMs and external security intelligence (CVE databases, provenance records, vulnerability feeds)
 - Supports automated security workflows and component verification pipelines
 
 **Cons:**
+
 - Different build configurations, compression methods, and toolchains can produce varying hash values for functionally identical components
 - Current SBOM generation tools lack consensus on hashing methodology and target artifacts
 - Components obtained in multiple forms (source archives vs. pre-built binaries) create uncertainty about which artifact should be hashed
@@ -64,30 +68,36 @@ Interlynk would recommend the following additions
 
 ### License Information
 
-[Interlynk](https://interlynk.io) strongly advocates for making license information mandatory in SBOMs, as it addresses a critical compliance gap for organizations managing complex software dependencies. To ensure consistent implementation, spelling out guidelines for custom license would be great. Also standardize on SPDX license format would go a step further. 
+[Interlynk](https://interlynk.io) strongly advocates for making license information mandatory in SBOMs, as it addresses a critical compliance gap for organizations managing complex software dependencies. To ensure consistent implementation, spelling out guidelines for custom license would be great. Also standardize on SPDX license format would go a step further.
 
 ### Tool Name
 
 [Interlynk](https://interlynk.io) strongly advocates for making tool name mandatory and recommends also requiring tool version, as both specifications provide native support for this data. CISA should additionally define conventions for representing multi-tool workflows where several tools contribute to or modify a single SBOM.
 
 ### Generation Context
-[Interlynk](https://interlynk.io) Strongly supports the inclusion of this field. Knowing when an SBOM was generated, benefits the consumer with little overhead on the producer. This context allows consumers to make better decisions. For C/C++ based projects this make the most sense, as the linked library on the build system, might have a different version as compared to the runtime. 
+
+[Interlynk](https://interlynk.io) Strongly supports the inclusion of this field. Knowing when an SBOM was generated, benefits the consumer with little overhead on the producer. This context allows consumers to make better decisions. For C/C++ based projects this make the most sense, as the linked library on the build system, might have a different version as compared to the runtime.
 
 ---
 
 ## Comments on Practices and Processes
 
 ### Coverage (full depth, transitive dependencies)
+
 The addition of this requirement, is great for vulnerability management. As you are probably aware but capturing this information for languages with package-managers is doable, however C/C++ could be a non-trivial effort.
 
 ### Known Unknowns & Redactions
-[Interlynk](https://interlynk.io) is in agreement with these requirements for large organizations. Small and Midsize organizations may struggle to manage these requests or justify redactions. 
+
+[Interlynk](https://interlynk.io) is in agreement with these requirements for large organizations. Small and Midsize organizations may struggle to manage these requests or justify redactions.
 
 ### Distribution and Delivery
-[Interlynk](https://interlynk.io) is in agreement with these requirements. In addition to SBOM distribution & delivery it should also call out the distribution of VEX. 
 
-### Practical Takeaways 
+[Interlynk](https://interlynk.io) is in agreement with these requirements. In addition to SBOM distribution & delivery it should also call out the distribution of VEX.
+
+### Practical Takeaways
+
 Based on all the guidelines provided, teams would require the following tooling at a minimum, which might be challenging to small teams
+
 - Automated SBOM generation using CI/CD (Frequency)
 - SBOM generator for package mangager or Custom Scripts for C/C++ (Coverage)
 - Known/Unknown Handling using post-processing. (Known/Unknown)
@@ -104,8 +114,3 @@ Our recommendations are grounded in practical implementation experience across t
 The success of these minimum elements depends on clear, actionable guidance that balances security objectives with implementation feasibility. We encourage CISA to provide specific conventions for component hashing, license representation, and multi-tool workflows to ensure consistent adoption across the ecosystem.
 
 Interlynk remains committed to supporting the SBOM community through our open-source tools and stands ready to collaborate with CISA and industry stakeholders in refining and implementing these critical standards. We believe that well-crafted minimum elements will accelerate SBOM adoption while delivering meaningful improvements in software supply chain security and transparency.
-
-
-
-
-

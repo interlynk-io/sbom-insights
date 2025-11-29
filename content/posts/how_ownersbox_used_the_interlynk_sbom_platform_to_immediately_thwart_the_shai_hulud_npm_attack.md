@@ -45,10 +45,10 @@ Because OwnersBox had already woven SBOM generation and analysis directly into i
 our SBOMs—already processed and analyzed by Interlynk—were instantly at the ready. The process to
 confirm our status was lightning-fast:
 
-* We obtained the updated list of compromised packages and versions involved in the Shai-Hulud attack.
-* We used the search functionality within the Interlynk SBOM platform.
-* We cross-referenced the malicious dependency list against our comprehensive inventory reports to
-see if any of our production, staging, or build environments had pulled a compromised package.
+- We obtained the updated list of compromised packages and versions involved in the Shai-Hulud attack.
+- We used the search functionality within the Interlynk SBOM platform.
+- We cross-referenced the malicious dependency list against our comprehensive inventory reports to
+  see if any of our production, staging, or build environments had pulled a compromised package.
 
 The entire process, from obtaining the attack list to having a definitive, company-wide answer,
 took less than one hour. We're happy to report that our systems were clean. Less than 60 minutes
@@ -58,6 +58,7 @@ giving our engineering team full peace of mind during a major industry crisis.
 ---
 
 ## Tying It All Together: The Power of the SBOM Platform
+
 An SBOM is the ingredient list of your software—a vital snapshot of its composition. While powerful alone,
 SBOMs become a proactive defense system only when paired with a robust management platform like Interlynk.
 In the case of Shai-Hulud, our ability to search our entire platform's OSS inventory instantly was the key
