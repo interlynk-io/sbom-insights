@@ -1,9 +1,9 @@
 +++
 date = '2025-11-29T14:40:15+05:30'
 draft = false
-title = 'sbomqs 1.x vs sbomqs 2.x: What Changed'
-categories = ['sbomqs', 'scoring', "sbom']
-tags = ['SBOM', 'sbomq', 'sbom', 'scoring']
+title = 'sbomqs v1 vs sbomqs v2: What Changed?'
+categories = ['sbomqs', 'scoring', 'sbom']
+tags = ['SBOM', 'sbomqs', 'sbom', 'scoring']
 author = 'Vivek Sahu'
 +++
 
@@ -20,7 +20,6 @@ all categories("quality", "semantic", structural", "sharing" )
 all profiles (NTIA, BSI, Semantic, Quality, etc.) in a summarized way.
 
 See the o/p: <https://gist.github.com/viveksahu26/8cbf7bfc2152e6f3a46d52d6762c58b6>
-
 
 ## 🚀 What’s New in sbomqs 2.0?
 
