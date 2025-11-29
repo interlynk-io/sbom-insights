@@ -51,6 +51,8 @@ This blog is about **exactly this use case**, how to bring **SBOM scoring into D
 
 So, yeah let's get started....
 
+## Getting Started
+
 ### sbomqs
 
 A lightweight, open-source CLI tool for measuring the quality and compliance of SBOMs. It  helps you check completeness, correctness, consistency, and gives you a simple score.
