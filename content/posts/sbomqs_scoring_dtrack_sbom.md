@@ -8,7 +8,7 @@ author = 'Vivek Sahu'
 +++
 
 
-![alt text](image-1.png)
+![alt text](/posts/image-37.png)
 
 ## Introduction
 
@@ -132,7 +132,7 @@ sbomqs=5.2
 
 …directly onto your D-Track project — just like this: 👇
 
-![alt text](image.png)
+![alt text](/posts/image-38.png)
 
 ## Conclusion
 
