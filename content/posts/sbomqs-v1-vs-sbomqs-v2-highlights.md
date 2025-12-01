@@ -10,9 +10,9 @@ author = 'Vivek Sahu'
 
 ## Overview
 
-![alt text](image-2.png)
+![alt text](/posts/image-36.png)
 
-Hello Everyone,
+Hello Everyone 👋,
 
 We have released [sbomqs:2.0](https://github.com/interlynk-io/sbomqs/releases/tag/v2.0.1) last week. This post is about major changes b/w **sbomqs:1.x.x** and **sbomqs:2.0.x**. Let's understand, what exactly changed in sbomqs 2.0, and how it is different from the older 1.x scoring model?
 
