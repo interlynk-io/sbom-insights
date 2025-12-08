@@ -265,7 +265,9 @@ interlynk=5.1
 
 `interlynk` because by default it scores for `interlynk` [categories](https://github.com/interlynk-io/sbomqs/blob/main/docs/specs/SBOMQS-2.0-SPEC.md#score-categories-with-weights).
 
-Similarly, you can include many scores and grade for compliance like "ntia", "bsi", "oct", etc using a `--profile` flag. For say you want to include `ntia` profile score, then `--profile=ntia`:
+The default scoring in sbomqs is for interlynk categories. Apart from it, if you want to attach scoring for various compliances like `ntia`, `ntia-2025`, `fsct`, `bsi`, `bsi-v2.0`, `oct-v1.1`, `interlynk`, etc we do even support it.
+
+In order to score for compliance we call it via `profile`. For say you want to include `ntia` profile score, then `--profile=ntia`:
 
 ```bash
 sbomqs dt \
@@ -284,7 +286,7 @@ ntia=5.6
 
 ![alt text](/posts/image-40.png)
 
-Now, let's include `grade` for `ntia` profile, include tag `--tag-project-with-grade`
+Now, let's include **grade** for `ntia` profile, include tag `--tag-project-with-grade`
 
 ```bash
 sbomqs dt \
@@ -311,8 +313,6 @@ For multiple profiles, inlclude like this: `--profile=ntia,ntia-2025,bsi`
 
 ## Conclusion
 
-At the end of the day, an SBOM is only useful when its data is complete and reliable. Dependency-Track can analyze vulnerabilities and licenses, but the results only make sense if the SBOM itself is high quality.
-
-With sbomqs, you can now score your SBOM, validate its quality, and push that score directly into Dependency-Track. This makes SBOM quality visible where your team already works and helps everyone make better decisions using trustworthy data. And this is just the start—more compliance standards like NTIA, BSI, and OCT are coming next.
+With sbomqs, you can now score your SBOM, validate its quality, and push that score directly into Dependency-Track. This makes SBOM quality visible where your team already works and helps everyone make better decisions using trustworthy data.
 
 For any feedback to improve the SBOM quality, just fill up the [form](https://forms.gle/anFSspwrk7uSfD7Q6) or raise an [issue](https://github.com/interlynk-io/sbomqs/issues/new) or even start a [discussion](https://github.com/interlynk-io/sbomqs/discussions).
