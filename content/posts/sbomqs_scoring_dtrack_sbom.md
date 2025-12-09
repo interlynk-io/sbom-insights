@@ -35,7 +35,7 @@ That's exactly where **[sbomqs](https://github.com/interlynk-io/sbomqs)** comes 
 
 ```bash
 
-sbomqs score new-sbom.spdx.json
+sbomqs score new-sbom.cdx.json
 ```
 
 But practically organization deploy their SBOMs in the SBOM platform. So naturally, the question arises is:
@@ -69,7 +69,7 @@ Let’s walk through it step by step.
 If the SBOM is already on your machine, scoring it is straightforward:
 
 ```bash
-sbomqs score my-sbom.spdx.json
+sbomqs score my-sbom.cdx.json
 ```
 
 **NOTE**: For sbomqs installation, [refer](https://github.com/interlynk-io/sbomqs/blob/main/docs/getting-started.md).
