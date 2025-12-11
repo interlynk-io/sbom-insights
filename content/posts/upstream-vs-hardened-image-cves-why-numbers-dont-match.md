@@ -27,8 +27,8 @@ The user ran Vulnerability Scanner on both images and observed:
 > - Some vulnerabilities disappear in hardened images… but only because the **package was removed**, not patched.
 > - Some CVEs looked “fixed” in hardened… but were actually new packages introduced with fresh vulnerabilities.
 
-And the legitmate question is:
-> “How to objectively measure delta between a hardened image and the upstream one?"
+And the legitmate question arises is:
+> “***How to objectively measure delta between a hardened image and the upstream one?***"
 
 So let’s break down the three actual problems the Reddit user ran into:
 
@@ -38,13 +38,13 @@ First of all, if you ever noticed that many Linux distros like Ubuntu, Debian, A
 
 ### 2. Package Removal/ Package Suppression
 
-Second thing is generally to reduce the attack surface or even non-required packages are removed from Hardened images to make it lighter in terms of size as well as CVEs. But removal of CVE in this manner doesn’t mean that anything was patched.
+Second thing is, in order to reduce the attack surface or even non-required packages are removed from Hardened images to make it lighter in terms of size as well as CVEs. But removal of CVE in this way doesn’t mean that anything was patched.
 
 When you see a raw CVE numbers it creates confusion, like:
 
-- Did CVEs drop because we reduced attack surface?
-- Or because the package simply no longer exists?
-- Or even vice-versa, did CVE increases due to introduction a new package in hardened images ?
+- *Did CVEs drop because we reduced attack surface?*
+- *Did CVE increases due to introduction a new package in hardened images?*
+- *Did CVE drop due to patching?*
 
 At the end just from CVE numbers you can't get visibility into package-level deltas, therefore CVE numbers become noise.
 
@@ -61,13 +61,13 @@ then apart from number, it tells you nothing.
 
 You still don't know:
 
-- How many CVEs disappeared because the package was removed?
-- How many CVEs appeared due to new packages?
-- How many CVEs are genuinely common?
-- How many CVEs are false positives due to backports?
+- *How many CVEs disappeared because the package was removed?*
+- *How many CVEs appeared due to new packages?*
+- *How many CVEs are genuinely common?*
+- *How many CVEs are false positives due to backports?*
 
 This missing context is what causes confusion like:
-> “Why does hardened image have MORE CVEs???”
+> “***Why does hardened image have MORE CVEs??***”
 
 **So… what is the correct solution?**
 
@@ -81,7 +81,7 @@ This is exactly the right answer, so let’s unpack why it works.
 
 ### 1. SBOM solves package difference: “What Packages actually changed between the Images?”
 
-SBOM == the real list of installed software(components + versions + purls)
+**SBOM == the real list of installed software**(components + versions + purls)
 
 When you diff two SBOMs, you learn exactly:
 
@@ -174,7 +174,7 @@ Tracker/SBOM says: patched
 
 **Is there a tool that already implement this ?** Well... there wasn't. So we built one.
 
-### Introducing sbomdelta
+## Introducing sbomdelta
 
 A small, practical CLI that implements the full Reddit-recommended method:
 
@@ -188,8 +188,8 @@ A small, practical CLI that implements the full Reddit-recommended method:
 
 In other words:
 
-> Instead of just telling you “Hardened has 50 CVEs”,
-**sbomdelta tells you why.**
+> *Instead of just telling you “**Hardened has 50 CVEs**”*:
+> **sbomdelta tells you why.**
 
 It transforms a confusing black-box CVE count into a clear, fully explained delta:
 
@@ -200,7 +200,7 @@ It transforms a confusing black-box CVE count into a clear, fully explained delt
 
 This is the **missing observability layer between hardened and upstream images** in the scanner result, and it finally answers the exact question raised in the Reddit post.
 
-## Hands-On on sbomdelta
+### Hands-on with sbomdelta
 
 Now that you understand the why, let's walk through the how using real images and our CLI tool sbomdelta. We’ll use Syft to generate SBOMs, Trivy to generate vulnerability reports, and then feed everything into sbomdelta eval. For a practical demonstration, let’s compare:
 
@@ -209,7 +209,7 @@ Now that you understand the why, let's walk through the how using real images an
 
 Chainguard images are perfect for testing because they aggressively remove packages and apply extensive hardening.
 
-### 1. Generate SBOMs for both Images
+#### 1. Generate SBOMs for both Images
 
 We'll use syft:
 
@@ -226,7 +226,7 @@ What this gives us:
 
 Because SBOMs represent the true, installed package inventory, this allows perfect package-level diffing.
 
-### 2. Generate vulnerability reports for both Images
+#### 2. Generate vulnerability reports for both Images
 
 You can scan either:
 
@@ -247,7 +247,7 @@ This gives:
 - `upstream-vuln.trivy.json` → CVEs for Ubuntu
 - `hardened-vuln.trivy.json` → CVEs for Wolfi base
 
-### 3. Run sbomdelta
+#### 3. Run sbomdelta
 
 ```bash
 sbomdelta eval \
