@@ -172,7 +172,7 @@ Tracker/SBOM says: patched
 
 - This is false positive
 
-**Is there a tool that already implement this ?** Well... there wasn't. So we built one.
+**Is there a tool that already implement this ?** Well... there wasn't. So we built one, **sbomdelta**.
 
 ## Introducing sbomdelta
 
@@ -188,7 +188,7 @@ A small, practical CLI that implements the full Reddit-recommended method:
 
 In other words:
 
-> *Instead of just telling you “**Hardened has 50 CVEs**”*:
+> *Instead of just telling you “Hardened has 50 CVEs”*:
 > **sbomdelta tells you why.**
 
 It transforms a confusing black-box CVE count into a clear, fully explained delta:
