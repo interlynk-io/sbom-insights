@@ -69,7 +69,7 @@ You still don't know:
 This missing context is what causes confusion like:
 > “Why does hardened image have MORE CVEs???”
 
-### So… what is the correct solution?
+**So… what is the correct solution?**
 
 One of the most upvoted responses on Redit said:
 > **Don’t compare scanner outputs. Compare the real package state.
@@ -132,7 +132,7 @@ Two ways:
 - Provide a backport vulnerability report file
 - Connect with query vendor security tracker db
 
-### Now let's revisit why this solution will work
+## Now let's revisit why this solution work
 
 Once you have:
 
@@ -247,7 +247,7 @@ This gives:
 - `upstream-vuln.trivy.json` → CVEs for Ubuntu
 - `hardened-vuln.trivy.json` → CVEs for Wolfi base
 
-### Run sbomdelta
+### 3. Run sbomdelta
 
 ```bash
 sbomdelta eval \
