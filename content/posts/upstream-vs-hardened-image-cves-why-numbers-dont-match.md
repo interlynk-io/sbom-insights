@@ -13,8 +13,6 @@ author = 'Vivek Sahu'
 
 ## Introduction
 
-Hey Everyone 👋,
-
 Today, I’m not here to talk about SBOM scoring, compliance, NTIA , or anything as usual. Instead, I want to highlight a completely different, but very real SBOM use case.
 
 This isn't a theoritical problem, it came straight from a Redit thread: <https://www.reddit.com/r/sysadmin/comments/1p1xegu/how_to_verify_vulnerability_deltas_between/>
@@ -108,6 +106,9 @@ When you diff two SBOMs, you learn exactly:
 
 - CVEs should match 1:1 unless backports are involved
 
+Something like this:
+![alt text](/posts/image-44.png)
+
 Without an SBOM, none of this is visible.
 You’d see CVE numbers move up or down, but you’d have no idea **which packages changed**, or **why the numbers shifted**.
 
@@ -130,6 +131,18 @@ Now you can finally answer:
 - CVEs remained → because the same package exists in both
 - CVEs differ → because the patch level changed
 - CVEs flagged incorrectly → because the distro applied backports that scanners can’t see
+
+**CVE Changes 2×2 Grid**:
+
+| Package in Old → New | Exists in New | Removed in New |
+|---------------------|---------------|----------------|
+| **Exists in Old**   | CVEs remained → same package in both<br>CVEs increased → patch level changed<br>CVEs differ → patch level changed | CVEs disappeared → package removed |
+| **Not in Old**      | CVEs increased → new package introduced | – (doesn’t apply) |
+
+**Notes:**
+
+- CVEs flagged incorrectly due to distro backports can happen in any cell — it’s an orthogonal factor.  
+- “Patch level changed” can cause CVEs to differ or increase even if the package exists in both versions.
 
 This combination: **SBOM + scanner output**, is what gives you the full delta story the Reddit user was looking for.
 
@@ -262,66 +275,46 @@ This gives:
 #### 3. Run sbomdelta
 
 ```bash
-sbomdelta eval \
-  --up-sbom=upstream-sbom.cdx.json \
-  --hd-sbom=hardened-sbom.cdx.json \
-  --up-vuln=upstream-vuln.trivy.json \
-  --hd-vuln=hardened-vuln.trivy.json
+sbomdelta eval \                                   
+--up-sbom=testdata/upstream-sbom.cdx.json \           
+--hd-sbom=testdata/hardend-sbom.cdx.json \           
+--up-vuln=testdata/upstream-vuln.trivy.json \           
+--hd-vuln=testdata/hardend-vuln.trivy.json  
 ```
 
 And the o/p is:
 
 ```bash
-=== SBOM / Vulnerability Delta Summary ===
 
-Packages Delta:
-  Removed in hardened: 2378
-  Added in hardened:   81
-  Common:              15
+=== Raw Vulnerability Counts ===
+  Upstream total CVEs:   3
+  Hardened total CVEs:   3
 
-CVEs (raw counts):
-  Upstream total:   26
-  Hardened total:   0
-  Only upstream:    26
-  Only hardened:    0
-  Present in both:  0
-  High/Crit removed:0
-  High/Crit new:    0
+=== Package Delta (What Actually Changed) ===
+  Packages removed in hardened: 2
+  Packages added in hardened:   2
+  Packages common in both:      1
 
-Affect of package delta on CVE:
-  CVEs from removed packages: 26
-  CVEs from added packages:   0
-  CVEs on common packages:    0
+=== Impact of Package Changes on CVEs ===
+  CVEs removed because packages disappeared: 2
+  CVEs added because packages appeared:      2
+  CVEs on common packages:                   1
+
+=== CVE Delta (Root-Cause Breakdown) ===
+  Only in upstream:  2
+  Only in hardened:  2
+  Present in both:   1
+  High/Crit removed: 1
+  High/Crit added:   1
 
 === Vulnerability Delta Detail ===
-PACKAGE@VERSION                          CVE                  STATUS                 UPSTREAM   HARDENED  
---------------------------------------------------------------------------------------------------------------
-coreutils@8.32-4.1ubuntu1.2              CVE-2016-2781        ONLY_UPSTREAM LOW                  
-gcc-12-base@12.3.0-1ubuntu1~22.04.2      CVE-2022-27943       ONLY_UPSTREAM LOW                  
-gpgv@2.2.27-3ubuntu2.4                   CVE-2022-3219        ONLY_UPSTREAM LOW                  
-libgcc-s1@12.3.0-1ubuntu1~22.04.2        CVE-2022-27943       ONLY_UPSTREAM LOW                  
-libgcrypt20@1.9.4-3ubuntu3               CVE-2024-2236        ONLY_UPSTREAM LOW                  
-libncurses6@6.3-2ubuntu0.1               CVE-2023-50495       ONLY_UPSTREAM LOW                  
-libncursesw6@6.3-2ubuntu0.1              CVE-2023-50495       ONLY_UPSTREAM LOW                  
-libpam-modules-bin@1.4.0-11ubuntu2.6     CVE-2025-8941        ONLY_UPSTREAM MEDIUM               
-libpam-modules@1.4.0-11ubuntu2.6         CVE-2025-8941        ONLY_UPSTREAM MEDIUM               
-libpam-runtime@1.4.0-11ubuntu2.6         CVE-2025-8941        ONLY_UPSTREAM MEDIUM               
-libpam0g@1.4.0-11ubuntu2.6               CVE-2025-8941        ONLY_UPSTREAM MEDIUM               
-libpcre2-8-0@10.39-3ubuntu0.1            CVE-2022-41409       ONLY_UPSTREAM LOW                  
-libpcre3@2:8.39-13ubuntu0.22.04.1        CVE-2017-11164       ONLY_UPSTREAM LOW                  
-libssl3@3.0.2-0ubuntu1.20                CVE-2024-41996       ONLY_UPSTREAM LOW                  
-libstdc++6@12.3.0-1ubuntu1~22.04.2       CVE-2022-27943       ONLY_UPSTREAM LOW                  
-libsystemd0@249.11-0ubuntu3.17           CVE-2023-7008        ONLY_UPSTREAM LOW                  
-libtinfo6@6.3-2ubuntu0.1                 CVE-2023-50495       ONLY_UPSTREAM LOW                  
-libudev1@249.11-0ubuntu3.17              CVE-2023-7008        ONLY_UPSTREAM LOW                  
-libzstd1@1.4.8+dfsg-3build1              CVE-2022-4899        ONLY_UPSTREAM LOW                  
-login@1:4.8.1-2ubuntu2.2                 CVE-2023-29383       ONLY_UPSTREAM LOW                  
-login@1:4.8.1-2ubuntu2.2                 CVE-2024-56433       ONLY_UPSTREAM LOW                  
-ncurses-base@6.3-2ubuntu0.1              CVE-2023-50495       ONLY_UPSTREAM LOW                  
-ncurses-bin@6.3-2ubuntu0.1               CVE-2023-50495       ONLY_UPSTREAM LOW                  
-passwd@1:4.8.1-2ubuntu2.2                CVE-2023-29383       ONLY_UPSTREAM LOW                  
-passwd@1:4.8.1-2ubuntu2.2                CVE-2024-56433       ONLY_UPSTREAM LOW                  
-tar@1.34+dfsg-1ubuntu0.1.22.04.2         CVE-2025-45582       ONLY_UPSTREAM MEDIUM            
+PACKAGE@VERSION                          CVE                STATUS                 UPSTREAM   HARDENED  
+---------------------------------------------------------------------------------------------------------
+curl@7.80.0                              CVE-2024-2222      ONLY_UPSTREAM          MEDIUM     -         
+curl@7.88.0                              CVE-2024-2222      ONLY_HARDENED          -          LOW       
+jq@1.6                                   CVE-2024-4444      ONLY_HARDENED          -          HIGH      
+openssl@1.0.2                            CVE-2024-1111      ONLY_UPSTREAM          HIGH       -         
+zlib@1.2.11                              CVE-2024-3333      BOTH_SAME_SEVERITY     LOW        LOW               
 ```
 
 ## Conclusion
