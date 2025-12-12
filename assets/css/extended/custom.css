@@ -1,0 +1,7 @@
+/* 
+Increase the maximum width of the main content area for better readability on
+wider screens.
+*/
+:root {
+    --main-width: 940px;
+}
