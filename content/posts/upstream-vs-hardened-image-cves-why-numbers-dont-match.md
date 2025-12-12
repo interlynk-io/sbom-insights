@@ -9,6 +9,7 @@ author = 'Vivek Sahu'
 
 
 
+![alt text](/posts/image-43.png)
 
 ## Introduction
 
@@ -21,7 +22,7 @@ This isn't a theoritical problem, it came straight from a Redit thread: <https:/
 Reddit question (simplified):
 > I compared hardened base images with their official upstream images. Theoretically, CVEs should drop.... but scanner results don’t always match reality.
 
-The user ran Vulnerability Scanner on both images and observed:
+The user ran Vulnerability scanner on both images and observed that:
 
 > - Some vulnerabilities are silently fixed via backports, but scanners **still flag them**.
 > - Some vulnerabilities disappear in hardened images… but only because the **package was removed**, not patched.
@@ -30,56 +31,64 @@ The user ran Vulnerability Scanner on both images and observed:
 And the legitmate question arises is:
 > “***How to objectively measure delta between a hardened image and the upstream one?***"
 
-So let’s break down the three actual problems the Reddit user ran into:
+So let’s break down the 3 actual problems that Redit user faced:
 
 ### 1. Scanner False Positives (Backports)
 
-First of all, if you ever noticed that many Linux distros like Ubuntu, Debian, Alpine, RHEL all apply silent backport patches without changing version numbers. And due which vulnerability scanners unable to know about that. As a result scanner shows CVEs still present but in reality it's not, and that leads to a false positive.
+First of all, many Linux distros like Ubuntu, Debian, Alpine, and RHEL often fix vulnerabilities through backport patches without updating the package version. And this is where scanners get confused. Since the version number doesn’t change, the scanner thinks the package is still vulnerable, even though the distro has already patched it. So the CVE shows up in your scan, but in reality, it’s already fixed. That’s how false positives happen.
 
-### 2. Package Removal/ Package Suppression
+### 2. Package Removal / Package Suppression
 
-Second thing is, in order to reduce the attack surface or even non-required packages are removed from Hardened images to make it lighter in terms of size as well as CVEs. But removal of CVE in this way doesn’t mean that anything was patched.
+Second thing is, hardened images usually remove unnecessary packages to shrink the attack surface and reduce image size. Whan a package disappears, all of it's CVE disaapear too, but that doesn't mean anything was fixed. Nothing was patched; the package simple isn't there anymore.
 
-When you see a raw CVE numbers it creates confusion, like:
+This is why raw numbers become confusing. You can't tell:
 
-- *Did CVEs drop because we reduced attack surface?*
-- *Did CVE increases due to introduction a new package in hardened images?*
-- *Did CVE drop due to patching?*
+- *Did CVEs drop because we removed packages?*
+- *Did CVEs increase because hardened image introduced new packages?*
+- *Did anything actualy get patched?*
 
-At the end just from CVE numbers you can't get visibility into package-level deltas, therefore CVE numbers become noise.
+At the end just looking at the CVE numbers, you have no visibility into package-level changes,. Without that context, the numbers are basically noise.
 
 ### 3. Raw CVE counts are misleading
 
-When we Compare raw CVEs numbers:
+Third thing is, raw CVE counts or CVE numbers tell you nothing about what actually changed.
 
 ```text
 Upstream: 20 CVEs  
 Hardened: 50 CVEs
 ```
 
-then apart from number, it tells you nothing.
+or
+
+```text
+Upstream: 70 CVEs  
+Hardened: 20 CVEs
+```
 
 You still don't know:
 
-- *How many CVEs disappeared because the package was removed?*
-- *How many CVEs appeared due to new packages?*
-- *How many CVEs are genuinely common?*
-- *How many CVEs are false positives due to backports?*
+- *Did CVEs disappear because certain packages were removed?*
+- *Did new CVEs appear because hardened image added new packages?*
+- *Which CVEs are truly common between both images?*
+- *How many CVEs are just scanner false positives caused by backports?*
 
-This missing context is what causes confusion like:
-> “***Why does hardened image have MORE CVEs??***”
+This missing context is exactly why CVE totals create more confusion than clarity. Without knowing *why* the numbers changed, people naturally end up asking:
 
-**So… what is the correct solution?**
+> “***Why does my hardened image have MORE CVEs than upstream??***”
+
+And the opposite happens too. When the numbers drop without explanation, the question becomes:
+
+> “***Why does the hardened image have fewer CVEs, what actually caused the drop?***”
+
+## So… what is the correct solution?
 
 One of the most upvoted responses on Redit said:
 > **Don’t compare scanner outputs. Compare the real package state.
-> Build SBOMs, map package → CVE, detect backports, and compute the delta.**
+> Build SBOMs, map package → CVE, use distro security trackers, and then compute the delta.**
 
-This is exactly the right answer, so let’s unpack why it works.
+So let’s unpack why this approach works and why it solves every issue we discussed.
 
-## Why SBOM + Vulnerability mapping solves the problem
-
-### 1. SBOM solves package difference: “What Packages actually changed between the Images?”
+### 1. SBOM solves package difference problem
 
 **SBOM == the real list of installed software**(components + versions + purls)
 
@@ -99,29 +108,30 @@ When you diff two SBOMs, you learn exactly:
 
 - CVEs should match 1:1 unless backports are involved
 
-Without SBOM it would be impossible to know the package difference or package delta. And that's what SBOM gives you.
+Without an SBOM, none of this is visible.
+You’d see CVE numbers move up or down, but you’d have no idea **which packages changed**, or **why the numbers shifted**.
 
 ### 2. Scanner Results: “Which package has which CVE?”
 
-Basically the vulnerability scanner results tells you about which package is associated with which CVEs.
+Basically the vulnerability scanner results tells you **which package is tied to which CVEs**.
 
-Interesting thing is:
+But here is the interesting part:
 
-- SBOM doesn’t know anything about CVEs.
-- Scanner doesn’t know anything about package differences.
+- SBOM doesn’t know anything about vulnerabilities/CVEs.
+- Scanner doesn’t know anything about package differences b/w 2 images.
 
-But together…
+But together, makes lot's of sense….
 **SBOM (packages) + Scanner (CVEs) = full context**
 
-Now you can answer:
+Now you can finally answer:
 
-- CVEs lost because a package was removed
-- CVEs gained because new packages appeared
-- CVEs common across identical packages
-- CVEs that differ because patch levels differ
-- CVEs that are false positives because distro applied backports
+- CVEs disappeared → because the package was removed
+- CVEs increased → because a new package was introduced
+- CVEs remained → because the same package exists in both
+- CVEs differ → because the patch level changed
+- CVEs flagged incorrectly → because the distro applied backports that scanners can’t see
 
-This is the full “**delta calculatio**n” the Reddit user was searching for.
+This combination: **SBOM + scanner output**, is what gives you the full delta story the Reddit user was looking for.
 
 ### 3. Backport Fixes(The Missing Piece)
 
@@ -134,6 +144,8 @@ Two ways:
 
 ## Now let's revisit why this solution work
 
+By this point, we’ve looked at the individual pieces (SBOMs, scanners, backports). Now lets step back and see **how everything connects**.
+
 Once you have:
 
 - SBOM(upstream)
@@ -142,35 +154,35 @@ Once you have:
 - CVEs(hardened)
 - Backport fixes (optional)
 
-You can mathematically compute everything the Reddit user needed.
+…you finally have enough information to compute the complete vulnerability delta the Reddit user was looking for.
 
-### 1. Package Difference
+### 1. Package Difference(explains why CVEs appear or disappear)
 
 | Impact           | Meaning                                      |
 | ---------------- | -------------------------------------------- |
-| Packages removed | CVEs disappear                               |
-| Packages added   | CVEs appear                                  |
-| Packages common  | CVEs should match unless patch level changed |
+| Packages removed | CVEs disappear with them                     |
+| Packages added   | New CVEs appear                              |
+| Packages common  | CVEs should match unless patch levels differ |
 
-### 2. CVE Difference
+### 2. CVE Difference(the actual vulnerability delta)
 
 | Status             | Meaning                                             |
 | ------------------ | --------------------------------------------------- |
-| ONLY_UPSTREAM      | vulnerabilities eliminated (by removal or patching) |
-| ONLY_HARDENED      | new vulnerabilities introduced                      |
-| BOTH_SAME_SEVERITY | unchanged vulnerabilities                           |
-| BOTH_DIFF_SEVERITY | patched / upgraded severity changed                 |
+| ONLY_UPSTREAM      | CVEs eliminated (package removed or patched) |
+| ONLY_HARDENED      | New vulnerabilities introduced                      |
+| BOTH_SAME_SEVERITY | Unchanged vulnerabilities                           |
+| BOTH_DIFF_SEVERITY | Patched or severity changed                 |
 
 ### 3. Backport Fixes
 
-When:
+When you see:
 
 ```text
 Scanner says: vulnerable  
 Tracker/SBOM says: patched  
 ```
 
-- This is false positive
+That's a **false positive** caused by backports.
 
 **Is there a tool that already implement this ?** Well... there wasn't. So we built one, **sbomdelta**.
 
@@ -311,3 +323,27 @@ passwd@1:4.8.1-2ubuntu2.2                CVE-2023-29383       ONLY_UPSTREAM LOW
 passwd@1:4.8.1-2ubuntu2.2                CVE-2024-56433       ONLY_UPSTREAM LOW                  
 tar@1.34+dfsg-1ubuntu0.1.22.04.2         CVE-2025-45582       ONLY_UPSTREAM MEDIUM            
 ```
+
+## Conclusion
+
+Most teams compare CVEs using just scanner outputs, and that’s where the confusion begins. Scanners don’t understand:
+
+- package removal
+- distro backport patches
+- new packages introduced by hardened images
+- or why CVE counts go up or down
+
+Without this context, CVE numbers become noise.
+
+But once you bring SBOMs into the picture, and combine them with scanner data, everything becomes clear. SBOM tells you what changed, the scanner tells you what’s vulnerable, and sbomdelta connects the dots to tell you why.
+
+That’s the missing layer of visibility between upstream and hardened images.
+
+So next time someone asks:
+
+> “Why does our hardened image show more/less CVEs than upstream?”
+
+You don’t need to guess.
+You can explain every single change with absolute confidence.
+
+And that’s exactly why we built **sbomdelta**, to turn confusing CVE comparisons into a clean, understandable delta that teams can trust.
