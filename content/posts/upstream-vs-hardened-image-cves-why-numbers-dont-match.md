@@ -3,7 +3,7 @@ date = '2025-12-11T23:10:15+05:30'
 draft = false
 title = 'Stop Comparing CVE Counts: How SBOM deltas explain upstream vs hardened image security'
 categories = ['sbom', 'vulnerability']
-tags = ['SBOM', 'vulnerability', 'sbomdelta', 'DevOps']
+tags = ['SBOM', 'vulnerability', 'sbomdelta', 'DevOps', 'CVE']
 author = 'Vivek Sahu'
 +++
 
@@ -34,7 +34,7 @@ So let’s break down these 3 actual problems that Redit user faced:
 
 ### 1. Scanner False Positives (Backports)
 
-First of all, many Linux distros like Ubuntu, Debian, Alpine, and RHEL often fix vulnerabilities through backport patches without updating the package version. And this is where scanners gets confused. Since the version number doesn’t change, the scanner thinks the package is still vulnerable, even though the distro has already patched it. So the CVE shows up in your scan, but in reality, it’s already fixed. That’s how false positives happen.
+First of all, many Linux distros like Ubuntu, Debian, Alpine, and RHEL often fix vulnerabilities through backport patches without updating the package version. And this is where scanners gets confused. Since the scanner typically only see the upstream version, not the fact that you're running a backported, security-patched version from your distribution, therefore the scanner flag it vulnerable, even though the distro has already patched it via backport. So the CVE shows up in your scan, but in reality, it’s already fixed. That’s how false positives happen.
 
 From Red Hat’s official documentation:
 > RedHat backport security fixes to older version of software...
@@ -141,20 +141,6 @@ Now you can finally answer:
 - CVEs differ → because the patch level changed
 - CVEs flagged incorrectly → because the distro applied backports that scanners can’t see
 
-**CVE Changes 2×2 Grid**:
-
-| Package in Old → New | Exists in New | Removed in New |
-|---------------------|---------------|----------------|
-| **Exists in Old**   | CVEs remained → same package in both CVEs increased → patch level changed CVEs differ → patch level changed | CVEs disappeared → package removed |
-| **Not in Old**      | CVEs increased → new package introduced | – (doesn’t apply) |
-
-**Notes:**
-
-- CVEs flagged incorrectly due to distro backports can happen in any cell — it’s an orthogonal factor.  
-- “Patch level changed” can cause CVEs to differ or increase even if the package exists in both versions.
-
-This combination: **SBOM + scanner output**, is what gives you the full delta story the Reddit user was looking for.
-
 ### 3. Backport Fixes(The missing piece)
 
 Backports are where scanners are wrong most often. How do you detect them?
@@ -163,6 +149,8 @@ Two ways:
 
 - Provide a backport vulnerability report file
 - Connect with query vendor security tracker db
+
+In the latest blog from RedHat Developer on ["How to reduce false positives in security scans"](https://developers.redhat.com/articles/2025/12/15/how-reduce-false-positives-security-scans#) using SBOM. This is really interesting scenario and use case of SBOM.
 
 ## Revisit on why this solution work
 
@@ -357,3 +345,4 @@ And that’s exactly why we built **sbomdelta**, to turn confusing CVE compariso
 - [Reddit issue](https://www.reddit.com/r/sysadmin/comments/1p1xegu/how_to_verify_vulnerability_deltas_between/)
 - [Reddit Solution](https://www.reddit.com/r/sysadmin/comments/1p1xegu/comment/npt7xv4/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
 - sbomdelta: <https://github.com/interlynk-io/sbomdelta>
+- [How to reduce false positives in security scans](https://developers.redhat.com/articles/2025/12/15/how-reduce-false-positives-security-scans#)
