@@ -1,7 +1,7 @@
 +++
 date = '2025-12-11T23:10:15+05:30'
 draft = false
-title = 'Upstream vs Hardened Image CVEs: Why Numbers Don’t Match, And How SBOM Delta Explains the Real Reason'
+title = 'Stop Comparing CVE Counts: How SBOM deltas explain upstream vs hardened image security'
 categories = ['sbom', 'vulnerability']
 tags = ['SBOM', 'vulnerability', 'sbomdelta', 'DevOps']
 author = 'Vivek Sahu'
