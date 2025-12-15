@@ -17,7 +17,8 @@ Today, I’m not here to talk about SBOM scoring, compliance, NTIA , or anything
 
 This isn't a theoritical problem, it came straight from a Redit thread: <https://www.reddit.com/r/sysadmin/comments/1p1xegu/how_to_verify_vulnerability_deltas_between/>
 
-Reddit question (simplified):
+## Reddit question (simplified)
+
 > I compared hardened base images with their official upstream images. Theoretically, CVEs should drop.... but scanner results don’t always match reality.
 
 The user ran Vulnerability scanner on both images and observed that:
@@ -29,11 +30,16 @@ The user ran Vulnerability scanner on both images and observed that:
 And the legitmate question arises is:
 > “***How to objectively measure delta between a hardened image and the upstream one?***"
 
-So let’s break down the 3 actual problems that Redit user faced:
+So let’s break down these 3 actual problems that Redit user faced:
 
 ### 1. Scanner False Positives (Backports)
 
-First of all, many Linux distros like Ubuntu, Debian, Alpine, and RHEL often fix vulnerabilities through backport patches without updating the package version. And this is where scanners get confused. Since the version number doesn’t change, the scanner thinks the package is still vulnerable, even though the distro has already patched it. So the CVE shows up in your scan, but in reality, it’s already fixed. That’s how false positives happen.
+First of all, many Linux distros like Ubuntu, Debian, Alpine, and RHEL often fix vulnerabilities through backport patches without updating the package version. And this is where scanners gets confused. Since the version number doesn’t change, the scanner thinks the package is still vulnerable, even though the distro has already patched it. So the CVE shows up in your scan, but in reality, it’s already fixed. That’s how false positives happen.
+
+From Red Hat’s official documentation:
+> RedHat backport security fixes to older version of software...
+
+- Source: [RedHat Security Backporting Fixes](https://access.redhat.com/security/updates/backporting)
 
 ### 2. Package Removal / Package Suppression
 
