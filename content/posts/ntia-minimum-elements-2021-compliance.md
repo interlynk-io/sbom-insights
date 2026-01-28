@@ -89,25 +89,6 @@ SBOM mapping:
 Official Definition:
 > Author reflects the source of the metadata, which could come from the creator of the software being described in the SBOM, the upstream component supplier, or some third-party analysis tool.
 
-NTIA also asks a simple but critical question:
-
-> Who created this SBOM data?
-
-This is not about who wrote the software.
-It’s about who is asserting the metadata.
-
-That author may be:
-
-- the software creator,
-- an upstream supplier, or
-- an automated SBOM generation tool.
-
-Knowing the source of the SBOM helps consumers judge:
-
-- how the SBOM was generated,
-- how repeatable it is,
-- and who to contact if issues arise.
-
 SBOM mapping:
 
 - SPDX
@@ -194,3 +175,66 @@ Required Fields : 3/7 compliant
 
 Love to hear your feedback https://forms.gle/anFSspwrk7uSfD7Q6
 ```
+
+where, `profile` represent specific compliance such as `ntia`, `fsct`, `bsi`, etc. In future we will also support profiling beyong compliance, which will more specifically based on a use cases.
+
+And similarly run below command to check compliance in detailed.
+
+```bash
+go run main.go compliance --ntia samples/photon.spdx.json
+NTIA Report
+Compliance score by Interlynk Score:3.3 RequiredScore:6.6 OptionalScore:0.0 for samples/photon.spdx.json
+* indicates optional fields
++-------------------------------------+------------+-------------------------------+------------------------------------------------------------------+-------+
+|             ELEMENT ID              | SECTION ID |     NTIA MINIMUM ELEMENTS     |                              RESULT                              | SCORE |
++-------------------------------------+------------+-------------------------------+------------------------------------------------------------------+-------+
+| Automation Support                  |        1.1 | Machine-Readable Formats      | spdx, json                                                       |  10.0 |
++                                     +------------+-------------------------------+------------------------------------------------------------------+-------+
+|                                     |        1.2 | SBOM generation tool declared | tern-b8e13d1780cd3a02204226bba3d0772d95da24a0                    |  10.0 |
++-------------------------------------+------------+-------------------------------+------------------------------------------------------------------+-------+
+| Required Document-level             |        2.1 | Author                        | SBOM author inferred from SBOM tool:                             |  10.0 |
+|                                     |            |                               | tern-b8e13d1780cd3a02204226bba3d0772d95da24a0                    |       |
++                                     +------------+-------------------------------+------------------------------------------------------------------+-------+
+|                                     |        2.2 | Timestamp                     | 2023-01-12T22:06:03Z                                             |  10.0 |
++                                     +------------+-------------------------------+------------------------------------------------------------------+-------+
+|                                     |        2.3 | Dependencies                  | primary component has no                                         |   0.0 |
+|                                     |            |                               | top-level relationships and                                      |       |
+|                                     |            |                               | nor declare relationships                                        |       |
+|                                     |            |                               | completeness                                                     |       |
++-------------------------------------+------------+-------------------------------+------------------------------------------------------------------+-------+
+| ad1f1c6f4fef...ad7fdeff-            |        2.4 | Package Name                  | ad1f1c6f4fef6e6208ebc53e701bf9937f4e05dce5f601b20c35d8a0ad7fdeff |  10.0 |
++                                     +------------+-------------------------------+------------------------------------------------------------------+-------+
+|                                     |        2.6 | Package Supplier              | supplier not declared                                            |   0.0 |
++                                     +------------+-------------------------------+------------------------------------------------------------------+-------+
+|                                     |        2.7 | Package Version               |                                                                  |   0.0 |
++                                     +------------+-------------------------------+------------------------------------------------------------------+-------+
+|                                     |        2.8 | Other Uniq IDs                | no unique identifier declared                                    |   0.0 |
++-------------------------------------+------------+-------------------------------+------------------------------------------------------------------+-------+
+| bash-4.4.18-4.ph3                   |        2.4 | Package Name                  | bash                                                             |  10.0 |
++                                     +------------+-------------------------------+------------------------------------------------------------------+-------+
+|                                     |        2.6 | Package Supplier              | supplier not declared                                            |   0.0 |
++                                     +------------+-------------------------------+------------------------------------------------------------------+-------+
+|                                     |        2.7 | Package Version               | 4.4.18-4.ph3                                                     |  10.0 |
++                                     +------------+-------------------------------+------------------------------------------------------------------+-------+
+|                                     |        2.8 | Other Uniq IDs                | no unique identifier declared                                    |   0.0 |
++-------------------------------------+------------+-------------------------------+------------------------------------------------------------------+-------+
+
+...
+continue remaining components
+```
+
+The compliance evaluate in detailed for each component and NTIA fields for each components.
+
+
+## Conclusion and what's next
+
+NTIA SBOM compliance establishes a baseline level of transparency for software composition data.
+It defines the minimum information needed to understand what software is made of, where components come from, and how they relate to the final product.
+
+By focusing on essentials, component identity, dependency relationships, authorship, and time context, NTIA makes SBOMs usable and trustworthy, without demanding exhaustive detail.
+
+Tools like sbomqs help validate this baseline by checking both quality and compliance, making it easier to understand whether an SBOM meets NTIA expectations and where it can be improved.
+
+In the next post of this series, we’ll move beyond minimum elements and look at Framing Software Component Transparency (FSCT), a framework that builds on NTIA concepts and goes deeper into how software components are described, related, and contextualized.
+
+That’s where the conversation shifts from minimum transparency to structured, scalable transparency.
