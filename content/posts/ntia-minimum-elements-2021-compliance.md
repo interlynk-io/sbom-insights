@@ -7,15 +7,19 @@ tags = ['SBOM', 'GitHub', 'Monitoring', 'sbommv', 'Open Source', 'Supply Chain',
 author = 'Vivek Sahu'
 +++
 
-In this blog, we’ll start learning about NTIA SBOM Compliance.
+In this blog, we’ll be discussing about NTIA minimum element SBOM Compliance.
 
-This post is the 1st part of an SBOM compliance series, where we’ll look at different SBOM compliance frameworks one by one and understand why they exist and what they actually expect from an SBOM.
+This blog is the first part of an SBOM compliance series. The series is about where covering all different SBOM compliances framework one by one and understand why they exist and what they actually expect from an SBOM and lastly will use tool to check is SBOM complaint or not.
 
-Before diving into NTIA specifically, let’s answer a basic question: What does SBOM compliance mean ? SBOM compliance refers to regulatory or policy requirements defined by the governments or organization that specify what information an SBOM must contain. The the core motive behind SBOM compliance is **transparency in complex software systems**. Modern software is built by assembling many components: commercial software from vendors, open source libraries, and dependency mained by projects across the world. Without transparency, it becomes difficult to understand that, what software is actually being used, where it comes from, and what risks may be ontroduced through dependencies.
+Before diving into NTIA minimum element compliance specifically, let’s answer a basic question: 
 
-To get bit idea on how NTIA compliance came into existance. After one by one big software supply chain attack like SolarWind, Log4J, etc the U.S. government came into action and signed an Executive Order to bring compliance framework with a motive to bring transparency into complex software system. As government agencies itself rely on software from corporate world. Those companies, in turn, rely heavily on open-source components maintained by projects anywhere in the world. Without clear visibility into these dependency chains, it become shard to figure out risks hidden behind it.
+> What does SBOM compliance mean and it's motive ?
 
-## How NTIA minimum elements fields support the goal of transparency
+SBOM compliance refers to regulatory or policy requirements defined by the governments or organization that specify what information an SBOM must contain. The core motive behind SBOM compliance is **transparency in complex software systems**. Modern software is built by assembling many components: commercial software from vendors, open source libraries, and dependency maitained by projects across the world. Without transparency, it becomes difficult to understand that, what software is actually being used, where it comes from, and what risks may be ontroduced through dependencies.
+
+Now let's get idea on how NTIA compliance came into existance. After one by one big software supply chain attack like SolarWind, Log4J, etc the U.S. government came into action and signed an Executive Order to bring SBOM compliance framework with a motive to bring transparency into complex software system. As government agencies itself rely on software from corporate/private companies. Those companies, in turn, rely heavily on open-source components maintained by projects anywhere around the world. Without clear visibility into these dependency chains, it become shard to figure out risks hidden behind it.
+
+## What are the NTIA minimum elements fields and how it support the motive of transparency ?
 
 ### 1. Component Identity: Name, Version, Supplier
 
@@ -24,7 +28,7 @@ Official definition:
 > Version identifier used to distinguish a specific release.
 > Supplier is the name of an entity that creates, defines, and identifies components.
 
-NTIA requires every component to declare: Name, Version and Supplier. These 3 fields together establish component identity. Without it, you cannot track vulnerabilities, compare SBOM b/w different releases, etc. Now let's map these fields to SPDX and CycloneDX SBOM.
+NTIA requires every component to declare: Name, Version and Supplier. These 3 fields together establish component identity. Without it, you cannot track vulnerabilities, compare SBOM b/w different releases, etc. Now let's see mapping of these fields to a SPDX and CycloneDX SBOM.
 
 SBOM Mapping:
 
@@ -43,7 +47,7 @@ SBOM Mapping:
 Official definition:
 > At least one additional identifier if available (e.g., CPE, PURL, SWID).
 
-Names and versions work well, but when it comes to uniquely identifying component across software, then their comes unique identifiers such as PURLs, CPEs. It enables mapping of existing vulnerabilities to a component.
+Names and versions work well, but when it comes to uniquely identifying component across software world, then their comes unique identifiers such as PURLs, CPEs. It enables mapping of existing vulnerabilities to a component.
 
 SBOM mapping:
 
@@ -56,23 +60,13 @@ SBOM mapping:
 
 ### 3. Dependency Relationships (Top-Level Focus)
 
-NTIA says:
+Official definition:
 > NTIA defines Dependency Relationship as the directional inclusion of upstream components in a primary software component. At minimum, top-level dependencies or explicit completeness declarations must be present. Full transitive depth is encouraged but not required.
 
-What it requires is clarity at the top level:
+NTIA requires that an SBOM declare the upstream dependency relationships of the *primary (top-level) component*.
 
-> Which upstream components are directly included in the primary software?
-
-This answers a fundamental question:
-
-> What is my software immediately composed of?
-
-From there, deeper dependency analysis can happen recursively.
-
-Equally important, NTIA requires SBOMs to distinguish between:
-
-- no dependencies, and
-- complete or unknown or incomplete dependency data.
+- At a minimum, the SBOM must list the primary component's direct dependencies
+- or decalrer completeness if no dependencies exist.
 
 SBOM mapping:
 
@@ -83,6 +77,8 @@ SBOM mapping:
 - CycloneDX
   - dependencies graph(`depends_on`)
   - dependency completeness via composition metadata
+
+It helps to identify what all direct and transitive dependencies your software consumes. And these plays an important role in software supply chain.
 
 ### 4. Author of SBOM data
 
@@ -101,9 +97,7 @@ SBOM mapping:
 
 ### 5. Creation Timestamp
 
-The timestamp answers a basic but essential question:
-
-> When was this snapshot of the software taken?
+It represent the timestamp of the creation of the SBOM.
 
 SBOM mapping:
 
@@ -113,7 +107,7 @@ SBOM mapping:
 - CycloneDX
   - `metadata.timestamp`
 
-## Summary Table
+## NTIA min field summary table
 
 | Check ID                  | NTIA Field               | Required     | SPDX Mapping                                              | CycloneDX Mapping                                                 |
 | ------------------------- | ------------------------ | ------------ | --------------------------------------------------------- | ----------------------------------------------------------------- |
@@ -125,7 +119,7 @@ SBOM mapping:
 | `sbom_authors`            | Author of SBOM Data      | Yes          | CreationInfo.Creators                                     | metadata.authors / metadata.tools (fallbacks allowed)             |
 | `sbom_creation_timestamp` | Creation Timestamp       | Yes          | CreationInfo.Created                                      | metadata.timestamp                                                |
 
-## How to Evaluate Your SBOM Against NTIA Compliance
+## How to evaluate your SBOM against NTIA minimum element compliance
 
 At this point, we’ve looked at **why NTIA SBOM compliance exists** and **what each required field represents**.
 The next natural question is:
@@ -178,6 +172,8 @@ Love to hear your feedback https://forms.gle/anFSspwrk7uSfD7Q6
 
 where, `profile` represent specific compliance such as `ntia`, `fsct`, `bsi`, etc. In future we will also support profiling beyong compliance, which will more specifically based on a use cases.
 
+The above o/p shows overall quality of an SBOM against NTIA minimum elements in a summarized way.
+
 And similarly run below command to check compliance in detailed.
 
 ```bash
@@ -223,18 +219,19 @@ Compliance score by Interlynk Score:3.3 RequiredScore:6.6 OptionalScore:0.0 for 
 continue remaining components
 ```
 
-The compliance evaluate in detailed for each component and NTIA fields for each components.
+The compliance evaluate in detailed for each component and NTIA fields for each components. So, it gives you clear idea about how complete your SBOM is with compare to SBOM compliance required fields. You exactly know what's missing and what's not. 
 
+This makes it easy to see:
+
+- how complete each component’s data is,
+- which required fields are present,
+- which fields are missing or incomplete, and
+- how closely the SBOM aligns with NTIA compliance expectations.
 
 ## Conclusion and what's next
 
-NTIA SBOM compliance establishes a baseline level of transparency for software composition data.
-It defines the minimum information needed to understand what software is made of, where components come from, and how they relate to the final product.
+In this post, we discussed SBOM compliance and its core motivation:bringing transparency to complex software systems. We discuss at how compliance frameworks like NTIA Minimum Elements are designed to support this goal by focusing on essentials fields like, component identity, dependency relationships, authorship, and time context, NTIA makes SBOMs usable and trustworthy, without demanding exhaustive detail.
 
-By focusing on essentials, component identity, dependency relationships, authorship, and time context, NTIA makes SBOMs usable and trustworthy, without demanding exhaustive detail.
+We also saw how SBOM compliance is not just about defining requirements, but about validating them in practice. Tools like sbomqs help evaluate SBOMs against NTIA expectations by checking both quality and compliance, making it easier to identify missing information, inferred data, and areas for improvement.
 
-Tools like sbomqs help validate this baseline by checking both quality and compliance, making it easier to understand whether an SBOM meets NTIA expectations and where it can be improved.
-
-In the next post of this series, we’ll move beyond minimum elements and look at Framing Software Component Transparency (FSCT), a framework that builds on NTIA concepts and goes deeper into how software components are described, related, and contextualized.
-
-That’s where the conversation shifts from minimum transparency to structured, scalable transparency.
+In the next post of this series, we’ll move beyond minimum elements and look at **Framing Software Component Transparency** (FSCT), a framework that builds on NTIA concepts and goes deeper into how software components are described, related, and contextualized.
