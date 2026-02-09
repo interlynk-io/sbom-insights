@@ -113,7 +113,7 @@ FSCT requires supplier information to be explicitly declared for all components.
 - CycloneDX:
   - Version: `component.supplier`
 
-## 5. Unique Identification
+### 5. Unique Identification
 
 Unique ID official definition
 > At least one unique identifier should be declared for each Component listed in the SBOM. A globally unique identifier is preferred.
@@ -142,7 +142,7 @@ Accepted unique identifiers include:
   - `component.swhid`
   - `component.swid`
 
-## 6. Artifact Integrity (Cryptographic Hashes)
+### 6. Artifact Integrity (Cryptographic Hashes)
 
 Cryptographic Hashes official definition
 > Provide a hash for any Component listed in the SBOM for which the hash was provided or sufficient information is available to generate the hash. If sufficient information is not available, indicate as unknown.
@@ -155,7 +155,7 @@ Cryptographic Hashes official definition
 - CycloneDX:
   - `component.hashes`
 
-## 7. Dependency Relationships & Completeness
+### 7. Dependency Relationships & Completeness
 
 Dependency Relationship official definition
 > Relationships and relationship completeness declared for the Primary Component and direct Dependencies.
@@ -184,7 +184,7 @@ FSCT does not require:
 - full transitive dependency graphs, or
 - complete knowledge of all downstream components
 
-## 8. License Coverage
+### 8. License Coverage
 
 License official definition
 > Minimum: Provide license information for the Primary Component.
@@ -202,7 +202,7 @@ FSCT treats license information as a **coverage-based attribute**, not a strict 
 - CycloneDX:
   - `component.licenses`
 
-## 9. Copyright Coverage
+### 9. Copyright Coverage
 
 Copyright official definition
 > Minimum: Provide copyright notice for the Primary Component.
