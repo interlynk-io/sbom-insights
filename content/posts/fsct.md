@@ -2,7 +2,7 @@
 date = '2026-02-09T18:38:10+05:30'
 draft = false
 title = 'SBOM Compliance Series (Part 2): Understanding Framing Software Component Transparency (FSCT)'
-categories = ['SBOM', 'Comliance', 'FSCT']
+categories = ['SBOM', 'Compliance', 'FSCT']
 tags = ['SBOM', 'quality', 'completeness', 'compliance', 'fsct', 'declaration']
 author = 'Vivek Sahu'
 +++
@@ -21,7 +21,7 @@ Now, let's discuss the required elements for SBOM.
 
 ### 1. SBOM Provenance(SBOM Author + SBOM Creation Timestamp)
 
-Provenance describes the context behind who produced the SBOM and when it was produced.It establish the trust in the SBOM itself.
+Provenance describes the context behind who produced the SBOM and when it was produced. It establishes trust in the SBOM itself.
 
 SBOM Author official definition:
 > An SBOM must list the entity that prompted the creation of the SBOM.
@@ -108,10 +108,12 @@ FSCT requires supplier information to be explicitly declared for all components.
 **Mapping of Component Supplier**:
 
 - SPDX:
-  - Version: `PackageSupplier`
+  - Supplier: `PackageSupplier`
 
 - CycloneDX:
-  - Version: `component.supplier`
+  - Supplier: 
+    - `component.supplier`
+    - `component.manufacturer`
 
 ### 5. Unique Identification
 
