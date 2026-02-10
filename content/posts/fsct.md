@@ -7,7 +7,11 @@ tags = ['SBOM', 'quality', 'completeness', 'compliance', 'fsct', 'declaration']
 author = 'Vivek Sahu'
 +++
 
+## Overview
+
 This is the second part of our SBOM compliances series. In the [previous post](https://sbom-insights.dev/posts/ntia-minimum-elements-2021-compliance/), we discussed NTIA Minimum Elements, their motivation, and how they define a baseline for SBOM transparency. In this post, we will discuss about **Framing Software Component Transparency (FSCT)**, why it came into existence, the real-world gaps it addresses, and how it shifts the focus from minimum presence to meaningful transparency. Let's go.
+
+## Context
 
 In order to manage risk, cost or security, an organization first need to understand what is software made up of, what all components are being used, and how they depend on each other. In the modern software world, systems are complex because they rely on dynamic supply chains i.e. consuming open-source libraries, commercial software, and third parties dependencies maintained across the world. Without clear visibility into these dependencies(or supply chain), organizations are forced to rely on assumptions rather than facts. That's why NTIA Minimum Elements came in and introduced required set of minimum SBOM fields to ensure the basic information about each consumed component is present or declared, and with this it laids the foundation of establishing a transparency across software supply chains.
 
