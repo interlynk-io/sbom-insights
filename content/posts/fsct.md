@@ -55,7 +55,7 @@ Any value would be considered:
 - CycloneDX:
   - `metadata.timestamp`
 
-### 2 Primary Component (SBOM Subject)
+### 2. Primary Component (SBOM Subject)
 
 SBOM Primary Component official definition:
 > The Primary Component, or root of Dependencies, is the subject of the SBOM or the foundational Component being described in the SBOM.
@@ -117,7 +117,7 @@ FSCT requires supplier information to be explicitly declared for all components.
 
 ### 5. Unique Identification
 
-Unique ID official definition
+Unique Identifiers official definition
 > At least one unique identifier should be declared for each Component listed in the SBOM. A globally unique identifier is preferred.
 
 While component name and version establish basic identity, FSCT recognizes that they are often not sufficient on their own to uniquely identify components across ecosystems, registries, and vulnerability databases.
