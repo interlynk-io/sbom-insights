@@ -19,7 +19,7 @@ SBOM compliance refers to regulatory or policy requirements defined by the gover
 
 Now let's get idea on how NTIA minimum element compliance came into existance. After one by one big software supply chain attack like SolarWind, Log4J, etc the U.S. Federal Government NTIA (National Telecommunications and Information Administration) came into action and signed an Executive Order to bring SBOM compliance framework with a motive to bring transparency into complex software system and hence published "minimum elements required for SBOM(Software Bill Of Materials)". As government agencies itself rely on software from corporate/private companies. Those companies, in turn, rely heavily on open-source components maintained by projects anywhere around the world. Without clear visibility into these dependency chains, it become shard to figure out risks hidden behind it.
 
-## What are the NTIA minimum elements fields reuired for SBOM?
+## What are the NTIA minimum elements fields required for SBOM?
 
 ### 1. Component Identity: Name, Version, Supplier
 
@@ -140,29 +140,40 @@ Now, let quickly check SBOM quality score:
 
 ```bash
 sbomqs score samples/photon.sbom.spdx.json --profile ntia
-SBOM Quality Score: 5.7/10.0	 Grade: D	Components: 38 	 EngineVersion: 4	File: samples/photon.spdx.json
+```
+
+And o/p is:
+
+```bash
+SBOM Quality Score: 5.7/10.0	 Grade: D	Components: 38 	 EngineVersion: 5	File: samples/photon.spdx.json
 
 
 +------------------------------+--------------------+-----------+--------------------------------+
 |           PROFILE            |      FEATURE       |  STATUS   |              DESC              |
 +------------------------------+--------------------+-----------+--------------------------------+
-| NTIA Minimum Elements (2021) | comp_supplier      | 0.0/10.0  | add to 38 components           |
+| NTIA Minimum Elements (2021) | comp_supplier      | 0.0/10.0  | supplier or manufacturer       |
+|                              |                    |           | information missing for all 38 |
+|                              |                    |           | components                     |
 +                              +--------------------+-----------+--------------------------------+
-|                              | comp_name          | 10.0/10.0 | complete                       |
+|                              | comp_name          | 10.0/10.0 | name declared for all          |
+|                              |                    |           | components                     |
 +                              +--------------------+-----------+--------------------------------+
-|                              | comp_version       | 9.7/10.0  | add to 1 component             |
+|                              | comp_version       | 9.7/10.0  | version declared for 37 of 38  |
+|                              |                    |           | components                     |
 +                              +--------------------+-----------+--------------------------------+
-|                              | comp_uniq_id       | 0.0/10.0  | add to 38 components           |
+|                              | comp_uniq_id       | 0.0/10.0  | unique identifier missing for  |
+|                              |                    |           | all 38 components              |
 +                              +--------------------+-----------+--------------------------------+
-|                              | sbom_relationships | 0.0/10.0  | primary component has no       |
-|                              |                    |           | top-level relationships and    |
-|                              |                    |           | nor declare relationships      |
+|                              | sbom_relationships | 0.0/10.0  | primary component declares     |
+|                              |                    |           | no direct dependencies and     |
+|                              |                    |           | does not declare relationship  |
 |                              |                    |           | completeness                   |
 +                              +--------------------+-----------+--------------------------------+
 |                              | sbom_authors       | 10.0/10.0 | SBOM author inferred from SBOM |
-|                              |                    |           | tool                           |
+|                              |                    |           | generation tool                |
 +                              +--------------------+-----------+--------------------------------+
-|                              | sbom_timestamp     | 10.0/10.0 | complete                       |
+|                              | sbom_timestamp     | 10.0/10.0 | SBOM creation timestamp        |
+|                              |                    |           | declared                       |
 +------------------------------+--------------------+-----------+--------------------------------+
 
 
