@@ -34,8 +34,3 @@
 
 [context.branch-deploy.environment]
   HUGO_ENV = "staging"
-
-[[plugins]]
-  package = "@netlify/plugin-sitemap"
-  [plugins.inputs]
-    buildDir = "public"
