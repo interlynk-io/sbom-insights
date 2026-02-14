@@ -2,8 +2,8 @@
 date = '2025-11-29T14:40:15+05:30'
 draft = false
 title = 'sbomqs:v1.x.x Vs sbomqs:v2.x.x: What Changed?'
-categories = ['sbomqs', 'scoring', 'sbom']
-tags = ['SBOM', 'sbomqs', 'sbom', 'scoring']
+categories = ['SBOM', 'Quality', 'Tools']
+tags = ['SBOM', 'sbomqs', 'Scoring']
 author = 'Vivek Sahu'
 description = 'Compare sbomqs v1 and v2 scoring models. See what changed in the new release, from separated compliance checks to a cleaner quality scoring approach.'
 +++

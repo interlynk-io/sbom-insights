@@ -3,7 +3,7 @@ date = '2025-09-23T14:09:20+05:30'
 draft = false
 title = 'Github Releases Are Where SBOMs Goto Die'
 categories = ['Automation', 'Tools']
-tags = ['SBOM', 'GitHub', 'Automation', 'sbommv', 'Dependency-Track', 'Supply Chain', 'CI/CD']
+tags = ['SBOM', 'GitHub', 'Automation', 'sbommv', 'Dependency-Track', 'Software Supply Chain', 'CI/CD']
 author = 'Vivek Sahu'
 description = 'SBOMs stuck in GitHub Releases slow down security teams. See how sbommv automates SBOM transfers to platforms like Dependency-Track seamlessly.'
 +++

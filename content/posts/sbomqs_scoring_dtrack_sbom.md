@@ -3,7 +3,7 @@ date = '2025-11-25T14:40:15+05:30'
 draft = false
 title = 'SBOM scoring into the Dependency-Track'
 categories = ['Automation', 'Tools']
-tags = ['SBOM', 'sbomq', 'sbom', 'scoring', 'dependency-track', 'Dependency-Track', 'projects']
+tags = ['SBOM', 'sbomqs', 'Scoring', 'Dependency-Track']
 author = 'Vivek Sahu'
 description = 'Score SBOM quality directly within Dependency-Track using sbomqs. Ensure your SBOMs are complete and accurate before feeding them to your SBOM platform.'
 +++

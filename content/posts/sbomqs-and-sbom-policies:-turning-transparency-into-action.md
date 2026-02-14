@@ -3,7 +3,7 @@ date = '2025-09-23T17:36:55+05:30'
 draft = false
 title = 'sbomqs and SBOM Policies: Turning Transparency Into Action'
 categories = ['Compliance', 'Quality', 'Tools']
-tags = ['SBOM', 'sbomqs', 'Policy', 'Compliance', 'Supply Chain', 'Risk Management', 'Security', 'Vulnerability Management']
+tags = ['SBOM', 'sbomqs', 'Policy', 'Compliance', 'Software Supply Chain', 'Risk Management', 'Security', 'Vulnerability Management']
 author = 'Vivek Sahu'
 description = 'Turn SBOM transparency into action with sbomqs policies. Define rules for licenses, vulnerabilities, and suppliers to automate supply chain risk decisions.'
 +++
