@@ -2,7 +2,7 @@
 date = '2026-01-28T22:50:46+05:30'
 draft = false
 title = 'SBOM Compliance Series (Part 1): Understanding NTIA Minimum Elements'
-categories = ['SBOM', 'Comliance', 'NTIA']
+categories = ['SBOM', 'Compliance', 'NTIA']
 tags = ['SBOM', 'quality', 'scoring', 'compliance', 'ntia']
 author = 'Vivek Sahu'
 +++
