@@ -1,7 +1,8 @@
 +++
 date = '2025-11-05T11:23:58-08:00'
 draft = false
-title = 'Sbom Generator Recommendations & Workflows'
+title = 'SBOM Generator Recommendations and Workflows'
+slug = 'sbom-generator-recommendations-and-workflows'
 
 tags = ["SBOM", "Generators", "Workflow"]
 categories = ["Generators", "SBOM"]

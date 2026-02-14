@@ -6,6 +6,7 @@ categories = ['Automation', 'Tools']
 tags = ['SBOM', 'Automation', 'sbommv', 'Monitoring', 'CI/CD', 'Dependency-Track', 'DevOps']
 author = 'Vivek Sahu'
 description = 'Automate SBOM workflows with sbommv folder monitoring. Detect, validate, and ship SBOMs to platforms like Dependency-Track in real time using daemon mode.'
+slug = 'folder-monitoring-sbom-automation-that-never-sleeps'
 +++
 
 ![Blog header for sbommv folder monitoring SBOM automation feature](/posts/image-7.png)
