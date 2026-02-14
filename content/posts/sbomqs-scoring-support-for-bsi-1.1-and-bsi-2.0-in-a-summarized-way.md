@@ -61,7 +61,7 @@ Similarly scoring for BSI-v2.0:
 
 As compare to NTIA, bsi has more number of features to check. Now, once you get a summary of this score. Along with score you get to know how many number of components missing what features and how many have. This helps you better understanding of you SBOM overall. Now accordingly, you can update your SBOM with adding more values to it.
 
-After identifying the overall gaps, you might want to dig deeper and see exactly which components are missing which fields. This helps you decide what needs to be added or enriched to improve the quality of your SBOM. To support this, sbomqs provides a list command that breaks it down component by component.
+After identifying the overall gaps, you might want to dig deeper and see exactly which components are missing which fields. This helps you decide what needs to be added or enriched to improve the quality of your SBOM. To support this, sbomqs provides a list command that breaks it down component by component. For a full walkthrough, see our post on [using sbomqs list to inspect what's missing in your SBOM](/posts/whats-missing-in-your-sbom-sbomqs-list-can-help/).
 
 ## sbomqs list command
 

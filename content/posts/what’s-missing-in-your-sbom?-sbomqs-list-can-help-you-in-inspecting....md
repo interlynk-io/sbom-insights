@@ -42,7 +42,7 @@ Let's take a look at the compliance framework worldwide by countries:
 
 🇺🇸 NTIA Minimum Elements Defined by the U.S. Department of Commerce post-Executive Order 14028, this framework outlines the minimum fields every SBOM should include—author, timestamp, supplier, license info, dependency graph, and more.
 
-🇩🇪 BSI TR-03183-2 Germany’s Federal Office for Information Security (BSI) released one of the most detailed and technical SBOM frameworks to date. It’s not just about structure—it digs into data completeness, consistency, and traceability. And it’s already in version 2.0.
+🇩🇪 BSI TR-03183-2 Germany’s Federal Office for Information Security (BSI) released one of the most detailed and technical SBOM frameworks to date. It’s not just about structure—it digs into data completeness, consistency, and traceability. And it’s already in version 2.0. See our detailed post on [sbomqs BSI scoring support](/posts/sbomqs-scoring-support-for-bsi-1.1-and-bsi-2.0-in-a-summarized-way/).
 
 🌐 FSCT (Framing Software Component Transparency) This initiative brings a more global, vendor-neutral view of what “transparency” looks like in SBOMs. It’s about policy and visibility—especially relevant for procurement and risk teams.
 

@@ -211,7 +211,7 @@ These workflows demonstrate how sbommv streamlines SBOM movement, reducing manua
 
 ## Future Work: What’s Next for sbommv?
 
-- **Folder Monitoring** – Instead of manually triggering SBOM transfers, sbommv will continuously monitor directories and automatically upload new SBOMs as they appear. Stay tuned—this feature is launching next week 🚀 with hands-on with Interlynk platform !
+- **[Folder Monitoring](/posts/folder-monitoring-sbom-automation-that-never-sleeps/)** – Instead of manually triggering SBOM transfers, sbommv will continuously monitor directories and automatically upload new SBOMs as they appear. Stay tuned—this feature is launching next week 🚀 with hands-on with Interlynk platform !
 - **Expanded Input & Output Support** – We're adding support for S3 buckets, additional security tools, and more SBOM formats, making sbommv even more versatile.
 - **Advanced SBOM Processing** – Enhancements are on the way, including better SBOM format conversions, improved validation, and detailed logging for greater visibility into SBOM transfers.
 

@@ -30,7 +30,7 @@ But traditional QA only tests behavior. SBOMs add visibility into the components
 
 ### What SBOMs Give QA That Testing Alone Cannot
 
-An SBOM (Software Bill of Materials) provides a comprehensive inventory of third-party and open-source components in the software — including versions, dependencies, and lifecycle status. While completeness varies by SBOM format (SPDX, CycloneDX) and generation method, modern SBOMs capture the critical components QA needs to assess.
+An [SBOM (Software Bill of Materials)](/posts/what-is-sbom-why-required/) provides a comprehensive inventory of third-party and open-source components in the software — including versions, dependencies, and lifecycle status. While completeness varies by SBOM format (SPDX, CycloneDX) and generation method, modern SBOMs capture the critical components QA needs to assess.
 
 For QA, this means immediate insights into:
 

@@ -32,7 +32,7 @@ That’s why the quality of an SBOM matters just as much as generating the SBOM 
 - Is it compliant with standards like NTIA, BSI, or OCT?
 - And what is quality score based on pre-defined fields ?
 
-That's exactly where **[sbomqs](https://github.com/interlynk-io/sbomqs)** comes into to measure the SBOM quality. Run simple command and get instantly score for SBOMs:
+That's exactly where **[sbomqs](https://github.com/interlynk-io/sbomqs)** comes in to measure the SBOM quality (see our post on [what changed in sbomqs v2](/posts/sbomqs-v1-vs-sbomqs-v2-highlights/) for the latest scoring model). Run a simple command and get an instant score for SBOMs:
 
 ```bash
 

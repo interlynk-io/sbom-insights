@@ -11,7 +11,7 @@ author = "Ritesh Noronha"
 
 +++
 
-This guide helps **software engineers, DevSecOps teams, and open-source maintainers** choose and implement the right SBOM (Software Bill of Materials) generator for their projects — based on technology stack, ecosystem, and workflow maturity.
+This guide helps **software engineers, DevSecOps teams, and open-source maintainers** choose and implement the right [SBOM (Software Bill of Materials)](/posts/what-is-sbom-why-required/) generator for their projects — based on technology stack, ecosystem, and workflow maturity.
 
 ## General Guidelines
 

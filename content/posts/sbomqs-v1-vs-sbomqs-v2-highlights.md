@@ -613,7 +613,7 @@ With:
 
 …it gives teams a structured, reliable way to judge the trustworthiness of an SBOM, whether for internal quality checks or regulatory compliance.
 
-If you’ve been using sbomqs 1.x, upgrading to 2.0 gives you a scoring system that’s far more accurate, interpretable, and future-proof.
+If you've been using sbomqs 1.x, upgrading to 2.0 gives you a scoring system that's far more accurate, interpretable, and future-proof. You can also [push these scores directly into Dependency-Track](/posts/sbomqs_scoring_dtrack_sbom/) as tags for at-a-glance visibility.
 
 For **sbomqs:2.0** spec refer [here](https://github.com/interlynk-io/sbomqs/blob/main/docs/specs/SBOMQS-2.0-SPEC.md).
 

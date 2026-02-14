@@ -11,7 +11,7 @@ slug = 'modular-sbom-automation-now-with-aws-s3-support'
 
 ![Blog header for sbommv AWS S3 integration for SBOM automation](/posts/image-9.png)
 
-In our previous posts, we streamlined SBOM workflows by moving them from GitHub releases or local folders directly into platforms like Dependency-Track and then, we took it one step further with folder continuous monitoring—continuous fetching and uploading via sbommv’s daemon mode, which runs in the background and keeps an eye on target folders for any incoming or modified SBOMs.
+In our previous posts, we streamlined SBOM workflows by [moving them from GitHub releases](/posts/github-releases-are-where-sboms-goto-die/) or local folders directly into platforms like Dependency-Track and then, we took it one step further with [folder continuous monitoring](/posts/folder-monitoring-sbom-automation-that-never-sleeps/)—continuous fetching and uploading via sbommv's daemon mode, which runs in the background and keeps an eye on target folders for any incoming or modified SBOMs.
 
 As we know, sbommv is a modular system that seamlessly integrates multiple input systems like folders, GitHub, and multiple output systems like Dependency-Track, Interlynk, and folders—allowing SBOMs to move effortlessly from one system to another. Building on that foundation, it's time for another leap forward: **Integrating AWS S3 with sbommv**.
 

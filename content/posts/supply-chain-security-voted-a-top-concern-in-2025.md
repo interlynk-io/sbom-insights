@@ -45,7 +45,7 @@ OWASP’s recommendations are clear — but translating them into operational pr
 ### Inventory Everything
 You can’t protect what you can’t see.
 
-Maintain an up-to-date **Software Bill of Materials (SBOM)** for every environment. Use tools that automatically track transitive dependencies and associate them with deployments.
+Maintain an up-to-date **[Software Bill of Materials (SBOM)](/posts/what-is-sbom-why-required/)** for every environment. Use tools that automatically track transitive dependencies and associate them with deployments.
 
 ### Treat CI/CD as Production
 Your pipeline *is* your production.

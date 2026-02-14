@@ -14,9 +14,9 @@ description = 'Monitor external GitHub repos for new SBOM releases with sbommv d
 
 If you’ve been following our sbommv blog series, welcome to the fourth one—each post tackling a new challenge around SBOM automation. Here’s a quick recap of what we’ve covered so far:
 
-- **GitHub Release Transfers**: How to fetch SBOMs from GitHub release pages and move them to systems like folders, Dependency-Track, Interlynk, or AWS S3.
-- **Folder Monitoring**: Running sbommv in daemon mode to continuously watch a local folder and upload new SBOMs as they appear.
-- **AWS S3 Integration**: Adding S3 as both an input and output adapter, enabling SBOM flows to and from S3 buckets.
+- **[GitHub Release Transfers](/posts/github-releases-are-where-sboms-goto-die/)**: How to fetch SBOMs from GitHub release pages and move them to systems like folders, Dependency-Track, Interlynk, or AWS S3.
+- **[Folder Monitoring](/posts/folder-monitoring-sbom-automation-that-never-sleeps/)**: Running sbommv in daemon mode to continuously watch a local folder and upload new SBOMs as they appear.
+- **[AWS S3 Integration](/posts/modular-sbom-automation-now-with-aws-s3-support/)**: Adding S3 as both an input and output adapter, enabling SBOM flows to and from S3 buckets.
 
 In short, sbommv is a tool built for automation—designed to seamlessly move SBOMs across systems, with support for format conversion, metadata enrichment, and monitoring workflows like folders.
 

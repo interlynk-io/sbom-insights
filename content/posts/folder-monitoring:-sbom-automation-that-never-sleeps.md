@@ -13,7 +13,7 @@ slug = 'folder-monitoring-sbom-automation-that-never-sleeps'
 
 ## Introduction
 
-In our previous post(GitHub Releases are where SBOM's goto die), we tackled a growing pain in modern software security: SBOMs stuck in GitHub Releases. We showed how sbommv streamlines the manual mess—automating the movement of SBOMs from GitHub or local folders directly into SBOM platforms like Dependency-Track, Interlynk(next blog will show demo on this).
+In our previous post, [GitHub Releases Are Where SBOMs Go to Die](/posts/github-releases-are-where-sboms-goto-die/), we tackled a growing pain in modern software security: SBOMs stuck in GitHub Releases. We showed how sbommv streamlines the manual mess—automating the movement of SBOMs from GitHub or local folders directly into SBOM platforms like Dependency-Track, Interlynk(next blog will show demo on this).
 
 We covered:
 
@@ -239,7 +239,7 @@ No more missed uploads. No more backlogs.
 Now that folder monitoring is live, we’re already looking ahead:
 
 - Interlynk Platform demo: blog on using Interlynk as a destination system covering both sbommv use-cases.
-- ☁️ S3 Bucket Integration: as input as well as output system for source as well as destination.
+- ☁️ [S3 Bucket Integration](/posts/modular-sbom-automation-now-with-aws-s3-support/): as input as well as output system for source as well as destination.
 - ☁️ S3 Bucket Monitoring – Watch S3 for incoming SBOMs and upload automatically
 
 We’re just getting warmed up.

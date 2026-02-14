@@ -285,7 +285,7 @@ At its core, an SBOM gives you transparency — a clear view of every piece that
 
 That’s why policies matter. They turn your SBOM into something actionable: guardrails that decide what’s acceptable, what’s risky, and what simply can’t be shipped. From blocking vulnerable components to banning unwanted licenses, policies make sure your software supply chain stays secure, compliant, and trustworthy.
 
-So the next time you look at an SBOM, don’t just see a list of components. See it as the foundation for decisions. And with the right policies in place, those decisions become consistent, automated, and reliable — helping you ship software that others can truly trust.
+So the next time you look at an SBOM, don't just see a list of components. See it as the foundation for decisions. And with the right policies in place, those decisions become consistent, automated, and reliable — helping you ship software that others can truly trust. To drill deeper into exactly which components are missing specific fields, check out [sbomqs list for field-level SBOM inspection](/posts/whats-missing-in-your-sbom-sbomqs-list-can-help/).
 
 Feel free to raise an [issue](https://github.com/interlynk-io/sbomqs/issues/new) if you have any other use-cases or anything else. If you love this project show your love by starring ⭐ the sbomqs [repository](https://github.com/interlynk-io/sbomqs)!
 

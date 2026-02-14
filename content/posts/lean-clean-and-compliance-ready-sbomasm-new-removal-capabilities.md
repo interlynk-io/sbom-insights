@@ -193,7 +193,7 @@ So, these were sorts of examples on both "field removal" as well as "component r
 
 Whether it’s trimming sensitive details, cleaning up unused metadata, or removing entire components that don’t belong, sbomasm now gives you precise control over what stays in your SBOM — and what doesn’t.
 
-The reality is, SBOMs aren’t just static files you generate once and forget about. They’re living artifacts that evolve with your software, and sometimes evolution means subtraction.
+The reality is, SBOMs aren't just static files you generate once and forget about. They're living artifacts that evolve with your software, and sometimes evolution means subtraction. And when evolution means addition, sbomasm can also [enrich your SBOMs with license data from ClearlyDefined](/posts/sbomasm-enriches-licenses-using-clearlydefined-datasets/).
 
 By supporting both SPDX and CycloneDX with a common field approach, sbomasm removes the guesswork (and schema headaches) so you can focus on what matters: delivering accurate, shareable, and compliance-ready SBOMs without manual cleanup marathons.
 
