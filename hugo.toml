@@ -24,7 +24,7 @@ keywords = ['SBOM', 'Software Bill of Materials', 'Supply Chain Security', 'Cycl
 author = 'SBOM Community'
 images = ['/logo.png']
 DateFormat = 'January 2, 2006'
-copyright = '© 2025 Interlynk.io and Contributors | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)'
+copyright = '© 2025-2026 Interlynk.io and Contributors | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)'
 googleAnalytics = 'G-ZWMS311EG2'
 defaultTheme = 'auto'
 disableThemeToggle = false
@@ -173,7 +173,6 @@ style = 'monokai'
 [taxonomies]
 category = 'categories'
 tag = 'tags'
-author = 'authors'
 series = 'series'
 
 [outputs]
