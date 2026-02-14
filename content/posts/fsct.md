@@ -5,6 +5,7 @@ title = 'SBOM Compliance Series (Part 2): Understanding Framing Software Compone
 categories = ['SBOM', 'Compliance', 'FSCT']
 tags = ['SBOM', 'quality', 'completeness', 'compliance', 'fsct', 'declaration']
 author = 'Vivek Sahu'
+description = 'Learn how FSCT (Framing Software Component Transparency) goes beyond NTIA minimum elements to measure SBOM completeness, declaration quality, and trust.'
 +++
 
 ## Overview

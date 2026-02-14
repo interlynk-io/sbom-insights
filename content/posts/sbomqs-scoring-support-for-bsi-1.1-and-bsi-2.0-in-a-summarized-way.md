@@ -5,6 +5,7 @@ title = 'sbomqs Scoring Support for Bsi 1.1 and Bsi 2.0 in a Summarized Way'
 categories = ['Compliance', 'Quality', 'Tools']
 tags = ['SBOM', 'sbomqs', 'BSI', 'Compliance', 'NTIA', 'SBOM Quality', 'Standards', 'Security']
 author = 'Vivek Sahu'
+description = 'sbomqs now supports BSI TR-03183 v1.1 and v2.0 compliance scoring alongside NTIA. Get a summarized SBOM quality scorecard across multiple frameworks.'
 +++
 
 ![alt text](/posts/image-15.png)

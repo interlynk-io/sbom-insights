@@ -5,6 +5,7 @@ title = 'What’s Missing in Your SBOM? sbomqs List Can Help You in Inspecting..
 categories = ['Quality', 'Compliance', 'Tools']
 tags = ['SBOM', 'sbomqs', 'Compliance', 'SBOM Quality', 'Validation', 'NTIA', 'BSI', 'Component Analysis']
 author = 'Vivek Sahu'
+description = 'Use sbomqs list to inspect your SBOM against NTIA, BSI, and other compliance frameworks. Find exactly what fields are missing and fix them before sharing.'
 +++
 
 ![alt text](/posts/image-8.png)

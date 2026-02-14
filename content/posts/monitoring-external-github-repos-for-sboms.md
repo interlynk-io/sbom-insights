@@ -5,6 +5,7 @@ title = 'Monitoring External Github Repos for SBOMs'
 categories = ['Automation', 'Tools']
 tags = ['SBOM', 'GitHub', 'Monitoring', 'sbommv', 'Open Source', 'Supply Chain', 'Automation']
 author = 'Vivek Sahu'
+description = 'Monitor external GitHub repos for new SBOM releases with sbommv daemon mode. Automatically fetch and forward SBOMs from open-source dependencies.'
 +++
 
 ![alt text](/posts/image-14.png)

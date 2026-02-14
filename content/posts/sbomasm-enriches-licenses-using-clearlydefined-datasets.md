@@ -5,6 +5,7 @@ title = 'sbomasm Enriches Licenses Using Clearlydefined Datasets'
 categories = ['Tools', 'Quality']
 tags = ['SBOM', 'sbomasm', 'License Management', 'ClearlyDefined', 'SBOM Quality', 'Open Source', 'Enrichment']
 author = 'Vivek Sahu'
+description = 'Enrich SBOM license data automatically using sbomasm and ClearlyDefined datasets. Fill NOASSERTION gaps and boost SBOM quality at scale.'
 +++
 
 ![alt text](/posts/image-24.png)

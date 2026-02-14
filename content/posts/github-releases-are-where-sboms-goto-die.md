@@ -5,6 +5,7 @@ title = 'Github Releases Are Where SBOMs Goto Die'
 categories = ['Automation', 'Tools']
 tags = ['SBOM', 'GitHub', 'Automation', 'sbommv', 'Dependency-Track', 'Supply Chain', 'CI/CD']
 author = 'Vivek Sahu'
+description = 'SBOMs stuck in GitHub Releases slow down security teams. See how sbommv automates SBOM transfers to platforms like Dependency-Track seamlessly.'
 +++
 
 ![alt text](/posts/image-30.png)

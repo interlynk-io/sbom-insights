@@ -5,6 +5,7 @@ title = 'sbomqs and SBOM Policies: Turning Transparency Into Action'
 categories = ['Compliance', 'Quality', 'Tools']
 tags = ['SBOM', 'sbomqs', 'Policy', 'Compliance', 'Supply Chain', 'Risk Management', 'Security', 'Vulnerability Management']
 author = 'Vivek Sahu'
+description = 'Turn SBOM transparency into action with sbomqs policies. Define rules for licenses, vulnerabilities, and suppliers to automate supply chain risk decisions.'
 +++
 
 ![alt text](/posts/image-25.png)

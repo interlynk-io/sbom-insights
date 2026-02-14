@@ -5,6 +5,7 @@ title = 'SBOM Compliance Series (Part 1): Understanding NTIA Minimum Elements'
 categories = ['SBOM', 'Compliance', 'NTIA']
 tags = ['SBOM', 'quality', 'scoring', 'compliance', 'ntia']
 author = 'Vivek Sahu'
+description = 'Understand NTIA minimum elements for SBOM compliance. Learn the required fields, why they matter, and how to check if your SBOM meets the standard.'
 +++
 
 In this blog, we’ll be discussing about NTIA minimum element SBOM Compliance.

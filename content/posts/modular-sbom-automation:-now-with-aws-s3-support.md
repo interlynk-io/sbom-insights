@@ -5,6 +5,7 @@ title = 'Modular SBOM Automation: Now With AWS S3 Support'
 categories = ['Automation', 'Tools', 'Cloud']
 tags = ['SBOM', 'AWS', 'S3', 'Cloud Storage', 'sbommv', 'Automation', 'Dependency-Track']
 author = 'Vivek Sahu'
+description = 'sbommv now supports AWS S3 as both input and output for SBOM automation. Fetch, store, and move SBOMs between S3 buckets and security platforms seamlessly.'
 +++
 
 ![alt text](/posts/image-9.png)

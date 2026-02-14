@@ -6,6 +6,7 @@ author = "Cosimo Commisso"
 tags = ["SBOM", "Software Supply Chain", "Vulnerability Management", "Risk Management", "Security", "Open Source", "DevSecOps"]
 categories = ["Security"]
 summary = "This blog post describes how OwnersBox quickly mitigated the threat of the \"Shai-Hulud\" npm supply chain attack in September 2025. The attack involved malicious packages that stole credentials and aggressively self-propagated."
+description = "How OwnersBox used the Interlynk SBOM platform to detect and mitigate the Shai-Hulud npm supply chain attack within hours of its discovery in September 2025."
 +++
 
 ---

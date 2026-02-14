@@ -4,7 +4,7 @@ draft = false
 title = 'OWASP A03:2025: Why Supply Chain Security Is Now Ranked #3 (and What Operators Must Do)'
 tags = ["SBOM", "DevSecOps", "Software Supply Chain"]
 categories = ["DevSecOps", "OWASP"]
-description = "A03:2025 – Software Supply Chain Failures"
+description = "OWASP ranked software supply chain failures as the #3 risk in 2025. Learn why operators must act now with SBOMs, CI/CD hardening, and dependency controls."
 author = "Ritesh Noronha"
 
 +++

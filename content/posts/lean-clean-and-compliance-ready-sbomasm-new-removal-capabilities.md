@@ -5,6 +5,7 @@ title = "Lean, Clean, and Compliance Ready: sbomasm's removal capabilities"
 categories = ['Tools', 'Compliance']
 tags = ['SBOM', 'sbomasm', 'Data Privacy', 'Compliance', 'SBOM Editing', 'Best Practices']
 author = 'Vivek Sahu'
+description = 'Remove unwanted fields, components, and sensitive data from SBOMs using sbomasm. Keep your SBOM lean, private, and compliance-ready in SPDX or CycloneDX.'
 +++
 
 ![alt text](/posts/image-23.png)

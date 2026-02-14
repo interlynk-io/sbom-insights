@@ -5,6 +5,7 @@ title = 'Stop Comparing CVE Counts: How SBOM deltas explain upstream vs hardened
 categories = ['sbom', 'vulnerability']
 tags = ['SBOM', 'vulnerability', 'sbomdelta', 'DevOps', 'CVE']
 author = 'Vivek Sahu'
+description = 'Why do CVE counts differ between upstream and hardened container images? Use SBOM deltas to understand what packages changed, not just vulnerability numbers.'
 +++
 
 
