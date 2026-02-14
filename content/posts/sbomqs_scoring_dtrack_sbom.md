@@ -1,7 +1,7 @@
 +++
 date = '2025-11-25T14:40:15+05:30'
 draft = false
-title = 'SBOM scoring into the Dependency-Track '
+title = 'SBOM scoring into the Dependency-Track'
 categories = ['Automation', 'Tools']
 tags = ['SBOM', 'sbomq', 'sbom', 'scoring', 'dependency-track', 'Dependency-Track', 'projects']
 author = 'Vivek Sahu'
