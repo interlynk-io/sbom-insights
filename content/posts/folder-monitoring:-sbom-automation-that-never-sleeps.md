@@ -1,7 +1,7 @@
 +++
 date = '2025-09-23T14:40:15+05:30'
 draft = false
-title = 'Folder Monitoring: Sbom Automation That Never Sleeps'
+title = 'Folder Monitoring: SBOM Automation That Never Sleeps'
 categories = ['Automation', 'Tools']
 tags = ['SBOM', 'Automation', 'sbommv', 'Monitoring', 'CI/CD', 'Dependency-Track', 'DevOps']
 author = 'Vivek Sahu'

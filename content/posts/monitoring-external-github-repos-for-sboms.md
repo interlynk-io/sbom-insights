@@ -1,7 +1,7 @@
 +++
 date = '2025-09-23T16:39:52+05:30'
 draft = false
-title = 'Monitoring External Github Repos for SBOMs'
+title = 'Monitoring External GitHub Repos for SBOMs'
 categories = ['Automation', 'Tools']
 tags = ['SBOM', 'GitHub', 'Monitoring', 'sbommv', 'Open Source', 'Software Supply Chain', 'Automation']
 author = 'Vivek Sahu'
