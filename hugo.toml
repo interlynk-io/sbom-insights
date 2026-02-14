@@ -45,6 +45,21 @@ hideSummary = false
 showtoc = true
 tocopen = false
 
+[params.social]
+twitter = "interlynk"
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/interlynk-io"
+
+[[params.socialIcons]]
+name = "linkedin"
+url = "https://linkedin.com/company/interlynk"
+
+[[params.socialIcons]]
+name = "twitter"
+url = "https://twitter.com/interlynk"
+
 [params.assets]
 favicon = '/favicon.ico'
 favicon16x16 = '/favicon-16x16.png'
