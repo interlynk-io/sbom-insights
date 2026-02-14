@@ -14,9 +14,9 @@ SBOM Insights is a community-driven platform dedicated to sharing knowledge, bes
 - **CycloneDX**: The OWASP Foundation and Ecma International Technical Committee for Software & System Transparency (TC54) drive the continued advancement of the specification.
 - **SPDX**: An open standard capable of representing systems with software components in as SBOMs (Software Bill of Materials) and other AI, data and security references supporting a range of risk management use cases.
 
-### OSS Utilies
+### OSS Utilities
 
-- OSS utitilies which help with SBOM management e.g(sbomasm, sbomqs, syft, sbom-tool, dependency-track, ..)
+- OSS utilities which help with SBOM management e.g (sbomasm, sbomqs, syft, sbom-tool, dependency-track, ..)
 
 ### Topics of Interest
 
