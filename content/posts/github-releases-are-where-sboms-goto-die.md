@@ -8,7 +8,7 @@ author = 'Vivek Sahu'
 description = 'SBOMs stuck in GitHub Releases slow down security teams. See how sbommv automates SBOM transfers to platforms like Dependency-Track seamlessly.'
 +++
 
-![alt text](/posts/image-30.png)
+![Blog header for automating SBOM transfers from GitHub releases using sbommv](/posts/image-30.png)
 
 Hey there 👋, SBOM enthusiasts ! Since the [2021 Cyber security Executive Order](https://www.nist.gov/itl/executive-order-14028-improving-nations-cybersecurity) by Joe Biden. SBOMs (Software Bill of Materials) have become essential for software security and compliance. With countries like the [EU](https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act), [US](https://www.ntia.gov/sites/default/files/publications/sbom_minimum_elements_report_0.pdf), [Germany](https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/Publications/TechGuidelines/TR03183/BSI-TR-03183-2-2_0_0.pdf?__blob=publicationFile&v=3), and [India](https://www.cert-in.org.in/PDF/SBOM_Guidelines.pdf) introducing their own SBOM regulations, it’s clear:
 
@@ -134,7 +134,7 @@ sbommv transfer \
 --out-folder-path="demo"
 ```
 
-![alt text](/posts/image-31.png)
+![Terminal output of sbommv downloading SBOMs from GitHub releases to a local folder](/posts/image-31.png)
 
 Now that we have a collection of SBOMs in our local folder demo, the next step is to seamlessly transfer them to Dependency-Track using sbommv.
 
@@ -148,9 +148,9 @@ sbommv transfer \
 --out-dtrack-url="http://localhost:8081"
 ```
 
-![alt text](/posts/image-32.png)
+![Terminal output of sbommv uploading SBOMs from a local folder to Dependency-Track](/posts/image-32.png)
 
-![alt text](/posts/image-33.png)
+![Dependency-Track dashboard showing multiple projects created from uploaded SBOMs](/posts/image-33.png)
 
 **After execution**:
 
@@ -175,7 +175,7 @@ sbommv transfer \
 --dry-run
 ```
 
-![alt text](/posts/image-34.png)
+![Terminal output of sbommv dry-run previewing a GitHub-to-Dependency-Track transfer](/posts/image-34.png)
 
 - Displays the list of SBOMs that would be fetched from which all repo and their formats.
 - Ensures project names and formats are correctly identified before execution.
@@ -194,7 +194,7 @@ sbommv transfer \
 --dry-run
 ```
 
-![alt text](/posts/image-35.png)
+![Terminal output of sbommv dry-run previewing a folder-to-Dependency-Track transfer](/posts/image-35.png)
 
 - Lists valid SBOM files detected in the folder.
 - Confirms format, project name with it will be uploaded to DTrack, Spec-Version and filename.

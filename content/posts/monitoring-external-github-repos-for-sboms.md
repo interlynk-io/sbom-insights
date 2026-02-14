@@ -8,7 +8,7 @@ author = 'Vivek Sahu'
 description = 'Monitor external GitHub repos for new SBOM releases with sbommv daemon mode. Automatically fetch and forward SBOMs from open-source dependencies.'
 +++
 
-![alt text](/posts/image-14.png)
+![Blog header for sbommv GitHub release monitoring in daemon mode](/posts/image-14.png)
 
 **GitHub Release Monitoring: SBOM Automation for External Repos** 🚀
 

@@ -11,7 +11,7 @@ description = 'Compare sbomqs v1 and v2 scoring models. See what changed in the 
 
 ## Overview
 
-![alt text](/posts/image-36.png)
+![Comparison diagram highlighting key differences between sbomqs v1 and v2 scoring](/posts/image-36.png)
 
 Hello Everyone 👋,
 

@@ -8,7 +8,7 @@ author = 'Vivek Sahu'
 description = 'Remove unwanted fields, components, and sensitive data from SBOMs using sbomasm. Keep your SBOM lean, private, and compliance-ready in SPDX or CycloneDX.'
 +++
 
-![alt text](/posts/image-23.png)
+![Blog header for sbomasm SBOM field and component removal capabilities](/posts/image-23.png)
 
 Hey SBOM enthusiasts 👋,
 

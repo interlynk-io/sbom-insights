@@ -8,7 +8,7 @@ author = 'Vivek Sahu'
 description = 'Use sbomqs list to inspect your SBOM against NTIA, BSI, and other compliance frameworks. Find exactly what fields are missing and fix them before sharing.'
 +++
 
-![alt text](/posts/image-8.png)
+![Blog header for sbomqs list command for SBOM compliance inspection](/posts/image-8.png)
 
 Hey there 👋 SBOM practitioners, compliance engineers, and open-source watchers!
 

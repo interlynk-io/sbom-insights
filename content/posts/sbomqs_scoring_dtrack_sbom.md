@@ -9,7 +9,7 @@ description = 'Score SBOM quality directly within Dependency-Track using sbomqs.
 +++
 
 
-![alt text](/posts/image-37.png)
+![Blog header for integrating sbomqs SBOM scoring into Dependency-Track](/posts/image-37.png)
 
 ## Introduction
 
@@ -262,7 +262,7 @@ interlynk=5.1
 ```
 
 …directly onto your D-Track project — just like this: 👇
-![alt text](/posts/image-38.png)
+![Dependency-Track project view showing sbomqs quality score tag](/posts/image-38.png)
 
 `interlynk` because by default it scores for `interlynk` [categories](https://github.com/interlynk-io/sbomqs/blob/main/docs/specs/SBOMQS-2.0-SPEC.md#score-categories-with-weights).
 
@@ -285,7 +285,7 @@ This will attach a tag like:
 ntia=5.6
 ```
 
-![alt text](/posts/image-40.png)
+![Dependency-Track project view showing NTIA profile score tag](/posts/image-40.png)
 
 Now, let's include **grade** for `ntia` profile, include tag `--tag-project-with-grade`
 
@@ -304,13 +304,13 @@ This will attach a tag like:
 ntia-grade=d
 ```
 
-![alt text](/posts/image-41.png)
+![Dependency-Track project view showing NTIA grade tag](/posts/image-41.png)
 
 Similarly, you can include other compliance score such as `ntia-2025`, `fsct`, `bsi`, `bsi-v2.0`, `oct-v1.1`, `interlynk`.
 
 For multiple profiles, inlclude like this: `--profile=ntia,ntia-2025,bsi`
 
-![alt text](/posts/image-42.png)
+![Dependency-Track project view showing multiple compliance profile score tags](/posts/image-42.png)
 
 ## Conclusion
 

@@ -8,7 +8,7 @@ author = 'Vivek Sahu'
 description = 'Enrich SBOM license data automatically using sbomasm and ClearlyDefined datasets. Fill NOASSERTION gaps and boost SBOM quality at scale.'
 +++
 
-![alt text](/posts/image-24.png)
+![Blog header for sbomasm license enrichment using ClearlyDefined datasets](/posts/image-24.png)
 
 Hey SBOM enthusiasts 👋,
 

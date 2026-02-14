@@ -8,7 +8,7 @@ author = 'Vivek Sahu'
 description = 'Automate SBOM workflows with sbommv folder monitoring. Detect, validate, and ship SBOMs to platforms like Dependency-Track in real time using daemon mode.'
 +++
 
-![alt text](/posts/image-7.png)
+![Blog header for sbommv folder monitoring SBOM automation feature](/posts/image-7.png)
 
 ## Introduction
 
@@ -28,7 +28,7 @@ Now we’re taking it a step further, **SBOM automation that doesn’t wait for 
 
 Imagine a workflow where you don’t even have to run a command when source of SBOM is a folder(i.e input system/adapter is folder). SBOMs just shown up in a folder—maybe from your CI pipeline, a nightly build job, or a dev tool—and sbommv running in the daemon mode, instantly detects it, validates it, convert it to CycloneDX spec and ships them off to SBOM platforms.
 
-![alt text](/posts/image.png)
+![Diagram showing sbommv daemon mode detecting SBOMs in a folder and uploading automatically](/posts/image.png)
 
 In theory, SBOM automation should “just work.” But in reality, users are still asking [this](https://github.com/DependencyTrack/dependency-track/discussions/4256):
 
@@ -96,13 +96,13 @@ $ sbommv transfer \
 
 Immediately, the following happens: detects SBOM and uploaded it to dependency track
 
-![alt text](/posts/image-3.png)
+![Terminal logs showing sbommv detecting and uploading an SBOM to Dependency-Track](/posts/image-3.png)
 
 Let's check dependency-track platform, whether SBOM is uploaded or not? Yeah, it's uploaded...
 
-![alt text](/posts/image-1.png)
+![Dependency-Track dashboard confirming the SBOM project was uploaded successfully](/posts/image-1.png)
 
-![alt text](/posts/image-2.png)
+![Dependency-Track project details view showing the uploaded SBOM components](/posts/image-2.png)
 
 Let's understand what happens:
 
@@ -138,11 +138,11 @@ $ sbommv transfer \
 --out-folder-path=demo/again
 ```
 
-![alt text](/posts/image-4.png)
+![Terminal output of sbommv fetching an SBOM from GitHub and saving to a subfolder](/posts/image-4.png)
 
 Immediately, the following logs appeared: detects SBOM and skip uploading to dependency track. This is because same SBOM is trying to get uploaded in same project. Will talk about this in next section.
 
-![alt text](/posts/image-5.png)
+![Terminal logs showing sbommv detecting a duplicate SBOM and skipping the upload](/posts/image-5.png)
 
 Each nested directory is auto-watched. Each SBOM is independently tracked and uploaded as it's added.
 
@@ -198,7 +198,7 @@ $ sbommv transfer \
 --dry-run
 ```
 
-![alt text](/posts/image-6.png)
+![Terminal output of sbommv dry-run mode previewing detected SBOMs and target projects](/posts/image-6.png)
 
 This outputs:
 

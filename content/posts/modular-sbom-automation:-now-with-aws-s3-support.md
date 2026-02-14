@@ -8,7 +8,7 @@ author = 'Vivek Sahu'
 description = 'sbommv now supports AWS S3 as both input and output for SBOM automation. Fetch, store, and move SBOMs between S3 buckets and security platforms seamlessly.'
 +++
 
-![alt text](/posts/image-9.png)
+![Blog header for sbommv AWS S3 integration for SBOM automation](/posts/image-9.png)
 
 In our previous posts, we streamlined SBOM workflows by moving them from GitHub releases or local folders directly into platforms like Dependency-Track and then, we took it one step further with folder continuous monitoring—continuous fetching and uploading via sbommv’s daemon mode, which runs in the background and keeps an eye on target folders for any incoming or modified SBOMs.
 
@@ -42,7 +42,7 @@ We have done with theory part, now let's proceed with hands-on part:
 
 Let's say you already have SBOMs either in a folder, GitHub, or any other input system. Now, you want to push them to an S3 bucket.
 
-![alt text](/posts/image-10.png)
+![Terminal output of sbommv uploading SBOMs from GitHub releases to an S3 bucket](/posts/image-10.png)
 
 Make sure your AWS credentials are already configured locally and present at `~/aws/credential` path.
 
@@ -94,7 +94,7 @@ Now, you have SBOMs on S3 bucket, let's fetch from here and upload to SBOM platf
 
 Let's fetch SBOMs stored in S3 and upload them into Dependency-Track or any other system?
 
-![alt text](/posts/image-11.png)
+![Terminal output of sbommv dry-run fetching SBOMs from S3 for Dependency-Track upload](/posts/image-11.png)
 
 Let's see what it fetched and what it would upload to Dependency Track:
 
@@ -137,7 +137,7 @@ sbommv  transfer  \
 
 ```
 
-![alt text](/posts/image-12.png)
+![Dependency-Track dashboard showing projects created from S3-sourced SBOMs](/posts/image-12.png)
 
 To setup Dependency-Track locally follow this [guide](https://github.com/interlynk-io/sbommv/blob/main/examples/setup_dependency_track.md).
 
@@ -153,7 +153,7 @@ sbommv  transfer  \
 --out-dtrack-url="http://localhost:8081"
 ```
 
-![alt text](/posts/image-13.png)
+![Terminal output of sbommv transferring SBOMs from S3 bucket to Dependency-Track](/posts/image-13.png)
 
 **What's happening:**
 

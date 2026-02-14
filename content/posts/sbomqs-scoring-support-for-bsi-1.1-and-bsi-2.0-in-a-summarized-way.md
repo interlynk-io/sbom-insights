@@ -8,7 +8,7 @@ author = 'Vivek Sahu'
 description = 'sbomqs now supports BSI TR-03183 v1.1 and v2.0 compliance scoring alongside NTIA. Get a summarized SBOM quality scorecard across multiple frameworks.'
 +++
 
-![alt text](/posts/image-15.png)
+![Blog header for sbomqs BSI compliance scoring support announcement](/posts/image-15.png)
 
 Hey SBOM community,
 
@@ -32,7 +32,7 @@ This made it easier to get a fast, visual understanding of where your SBOM stand
 
 Before we get into the new additions, let’s look at how a summarized score for NTIA looks like.
 
-![alt text](/posts/image-16.png)
+![sbomqs score output table showing NTIA compliance fields with scores and descriptions](/posts/image-16.png)
 
 The score output gives you a clear table showing which key fields from the NTIA guidelines are present across your SBOM. For example, `component_with_name` checks whether each listed component includes a name. If all components are named, you’ll see a 100% score for that field. Other fields, like `comp_with_version`, `comp_with_uniq_ids`, and `comp_with_supplier`, follow the same idea—scanning for completeness based on NTIA expectations.
 
@@ -53,11 +53,11 @@ We’ve now expanded the score command to include [BSI-v1.1](https://www.bsi.bun
 
 Let's quickly see a summarized score against BSI-v1.1:
 
-![alt text](/posts/image-17.png)
+![sbomqs summarized score output table for BSI v1.1 compliance](/posts/image-17.png)
 
 Similarly scoring for BSI-v2.0:
 
-![alt text](/posts/image-18.png)
+![sbomqs summarized score output table for BSI v2.0 compliance](/posts/image-18.png)
 
 As compare to NTIA, bsi has more number of features to check. Now, once you get a summary of this score. Along with score you get to know how many number of components missing what features and how many have. This helps you better understanding of you SBOM overall. Now accordingly, you can update your SBOM with adding more values to it.
 
@@ -67,21 +67,21 @@ After identifying the overall gaps, you might want to dig deeper and see exactly
 
 Let's quickly look at the command and it's o/p and see how many components have feature, comp_with_name.
 
-![alt text](/posts/image-19.png)
+![sbomqs list command output showing 38 of 38 components have the comp_with_name feature](/posts/image-19.png)
 
 If you see the o/p, it shows that 38/38 components contains component name. Now let's see the value of each feature that components have. To do so, add a --show flag in the list command:
 
-![alt text](/posts/image-20.png)
+![sbomqs list command with --show flag displaying component name values](/posts/image-20.png)
 
 By default, the list command shows which all components has a particular feature. To flip the view and see which components are missing it, just add the `--missing` flag.
 
-![alt text](/posts/image-21.png)
+![sbomqs list command with --missing flag showing no components missing comp_with_name](/posts/image-21.png)
 
 For example, if all components already have a name, the output will confirm that none are missing the `comp_with_name` field. Simple and direct.
 
 Similarly, let see how many component is missing the feature `comp_with_suppplier`.
 
-![alt text](/posts/image-22.png)
+![sbomqs list command showing all components missing the comp_with_supplier feature](/posts/image-22.png)
 
 So, all components are missing this feature. Now, you can enrich the values accordingly. You can use tools like [sbomasm](https://github.com/interlynk-io/sbomasm) and [parlay](https://github.com/snyk/parlay) tool for augmentation and enrichment respectively.
 
