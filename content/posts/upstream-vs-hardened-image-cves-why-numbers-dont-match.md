@@ -2,14 +2,15 @@
 date = '2025-12-11T23:10:15+05:30'
 draft = false
 title = 'Stop Comparing CVE Counts: How SBOM deltas explain upstream vs hardened image security'
-categories = ['sbom', 'vulnerability']
-tags = ['SBOM', 'vulnerability', 'sbomdelta', 'DevOps', 'CVE']
+categories = ['SBOM', 'Vulnerability']
+tags = ['SBOM', 'Vulnerability', 'sbomdelta', 'DevOps', 'CVE']
 author = 'Vivek Sahu'
+description = 'Why do CVE counts differ between upstream and hardened container images? Use SBOM deltas to understand what packages changed, not just vulnerability numbers.'
 +++
 
 
 
-![alt text](/posts/image-43.png)
+![Blog header for comparing upstream vs hardened image CVEs using SBOM deltas](/posts/image-43.png)
 
 ## Introduction
 
@@ -116,7 +117,7 @@ When you diff two SBOMs, you know exactly:
 - CVEs should match 1:1 unless backports are involved
 
 Something like this:
-![alt text](/posts/image-44.png)
+![Diagram showing SBOM diff of packages removed, added, and common between two images](/posts/image-44.png)
 
 Without an SBOM, none of this is visible.
 You’d see CVE numbers move up or down, but you’d have no idea **which packages changed**, or **why the numbers shifted**.

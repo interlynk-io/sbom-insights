@@ -6,6 +6,7 @@ tags = ["SBOM", "CISA", "Compliance", "Software Supply Chain"]
 categories = ["Regulations", "Public Comments"]
 description = "Interlynk's formal response to CISA's request for public comments on the 2025 Minimum Elements for a Software Bill of Materials (SBOM)"
 author = "Ritesh Noronha"
+slug = "interlynk-feedback-2025-cisa-minimum-element-for-sbom"
 
 +++
 

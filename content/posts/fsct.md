@@ -5,6 +5,7 @@ title = 'SBOM Compliance Series (Part 2): Understanding Framing Software Compone
 categories = ['SBOM', 'Compliance', 'FSCT']
 tags = ['SBOM', 'quality', 'completeness', 'compliance', 'fsct', 'declaration']
 author = 'Vivek Sahu'
+description = 'Learn how FSCT (Framing Software Component Transparency) goes beyond NTIA minimum elements to measure SBOM completeness, declaration quality, and trust.'
 +++
 
 ## Overview
@@ -13,7 +14,7 @@ This is the second part of our SBOM compliances series. In the [previous post](h
 
 ## Context
 
-In order to manage risk, cost or security, an organization first need to understand what is software made up of, what all components are being used, and how they depend on each other. In the modern software world, systems are complex because they rely on dynamic supply chains i.e. consuming open-source libraries, commercial software, and third parties dependencies maintained across the world. Without clear visibility into these dependencies(or supply chain), organizations are forced to rely on assumptions rather than facts. That's why NTIA Minimum Elements came in and introduced required set of minimum SBOM fields to ensure the basic information about each consumed component is present or declared, and with this it laids the foundation of establishing a transparency across software supply chains.
+In order to manage risk, cost or security, an organization first need to understand [what software is made up of](/posts/what-is-sbom-why-required/), what all components are being used, and how they depend on each other. In the modern software world, systems are complex because they rely on dynamic supply chains i.e. consuming open-source libraries, commercial software, and third parties dependencies maintained across the world. Without clear visibility into these dependencies(or supply chain), organizations are forced to rely on assumptions rather than facts. That's why NTIA Minimum Elements came in and introduced required set of minimum SBOM fields to ensure the basic information about each consumed component is present or declared, and with this it laids the foundation of establishing a transparency across software supply chains.
 
 But in practice, SBOM consumers often struggled to make sense of missing information. It was difficult to understand whether a missing field meant the data was unknown, not applicable, or simply not declared. Without this missing context, it became difficult to reason about how complete an SBOM actually was and what assumptions could safely be made. This is when organizations realized they needed guidance not only on what data should exist, but also on how that data is declared, how complete it is, and how much confidence can be placed in it.
 

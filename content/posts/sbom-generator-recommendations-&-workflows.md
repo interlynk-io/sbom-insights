@@ -1,7 +1,8 @@
 +++
 date = '2025-11-05T11:23:58-08:00'
 draft = false
-title = 'Sbom Generator Recommendations & Workflows'
+title = 'SBOM Generator Recommendations and Workflows'
+slug = 'sbom-generator-recommendations-and-workflows'
 
 tags = ["SBOM", "Generators", "Workflow"]
 categories = ["Generators", "SBOM"]
@@ -10,7 +11,7 @@ author = "Ritesh Noronha"
 
 +++
 
-This guide helps **software engineers, DevSecOps teams, and open-source maintainers** choose and implement the right SBOM (Software Bill of Materials) generator for their projects — based on technology stack, ecosystem, and workflow maturity.
+This guide helps **software engineers, DevSecOps teams, and open-source maintainers** choose and implement the right [SBOM (Software Bill of Materials)](/posts/what-is-sbom-why-required/) generator for their projects — based on technology stack, ecosystem, and workflow maturity.
 
 ## General Guidelines
 

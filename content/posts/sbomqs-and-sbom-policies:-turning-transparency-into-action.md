@@ -3,11 +3,13 @@ date = '2025-09-23T17:36:55+05:30'
 draft = false
 title = 'sbomqs and SBOM Policies: Turning Transparency Into Action'
 categories = ['Compliance', 'Quality', 'Tools']
-tags = ['SBOM', 'sbomqs', 'Policy', 'Compliance', 'Supply Chain', 'Risk Management', 'Security', 'Vulnerability Management']
+tags = ['SBOM', 'sbomqs', 'Policy', 'Compliance', 'Software Supply Chain', 'Risk Management', 'Security', 'Vulnerability Management']
 author = 'Vivek Sahu'
+description = 'Turn SBOM transparency into action with sbomqs policies. Define rules for licenses, vulnerabilities, and suppliers to automate supply chain risk decisions.'
+slug = 'sbomqs-sbom-policies-turning-transparency-into-action'
 +++
 
-![alt text](/posts/image-25.png)
+![Blog header for sbomqs SBOM policy enforcement feature](/posts/image-25.png)
 
 Hey SBOM enthusiasts 👋
 
@@ -181,7 +183,7 @@ We will run this policy against incomplete which has license value as "NOASSERTI
 sbomqs policy -f samples/policy/whitelist/approved-licenses.yaml samples/policy/in-complete.spdx.sbom.json
 ```
 
-![alt text](/posts/image-26.png)
+![sbomqs policy output showing license whitelist check failed with 6 violations](/posts/image-26.png)
 
 The output shows that the policy check failed. Here’s why:
 
@@ -196,7 +198,7 @@ Now, will run the same command against complete SBOM, which contain license with
 sbomqs policy -f samples/policy/whitelist/approved-licenses.yaml samples/policy/complete-sbom.spdx.json
 ```
 
-![alt text](/posts/image-27.png)
+![sbomqs policy output showing license whitelist check passed with 0 violations](/posts/image-27.png)
 
 The output shows that the policy check failed. Here’s why:
 
@@ -222,7 +224,7 @@ sbomqs policy \
 samples/policy/in-complete.spdx.sbom.json
 ```
 
-![alt text](/posts/image-28.png)
+![sbomqs inline CLI policy output showing license whitelist failure for 6 components](/posts/image-28.png)
 
 The outcome shows that the SBOM had 6 components, and all 6 failed the whitelist rule (none matched MIT or Apache-2.0). Since the action was set to fail, the final result is also fail.
 
@@ -269,7 +271,7 @@ Now, let’s run it:
 sbomqs policy -f samples/policy/custom/custom-policies.yaml samples/policy/in-complete.spdx.sbom.json
 ```
 
-![alt text](/posts/image-29.png)
+![sbomqs multi-policy output showing whitelist warn, blacklist fail, and required pass results](/posts/image-29.png)
 
 Breaking it down:
 
@@ -283,7 +285,7 @@ At its core, an SBOM gives you transparency — a clear view of every piece that
 
 That’s why policies matter. They turn your SBOM into something actionable: guardrails that decide what’s acceptable, what’s risky, and what simply can’t be shipped. From blocking vulnerable components to banning unwanted licenses, policies make sure your software supply chain stays secure, compliant, and trustworthy.
 
-So the next time you look at an SBOM, don’t just see a list of components. See it as the foundation for decisions. And with the right policies in place, those decisions become consistent, automated, and reliable — helping you ship software that others can truly trust.
+So the next time you look at an SBOM, don't just see a list of components. See it as the foundation for decisions. And with the right policies in place, those decisions become consistent, automated, and reliable — helping you ship software that others can truly trust. To drill deeper into exactly which components are missing specific fields, check out [sbomqs list for field-level SBOM inspection](/posts/whats-missing-in-your-sbom-sbomqs-list-can-help/).
 
 Feel free to raise an [issue](https://github.com/interlynk-io/sbomqs/issues/new) if you have any other use-cases or anything else. If you love this project show your love by starring ⭐ the sbomqs [repository](https://github.com/interlynk-io/sbomqs)!
 

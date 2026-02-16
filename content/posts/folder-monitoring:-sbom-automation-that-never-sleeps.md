@@ -1,17 +1,19 @@
 +++
 date = '2025-09-23T14:40:15+05:30'
 draft = false
-title = 'Folder Monitoring: Sbom Automation That Never Sleeps'
+title = 'Folder Monitoring: SBOM Automation That Never Sleeps'
 categories = ['Automation', 'Tools']
 tags = ['SBOM', 'Automation', 'sbommv', 'Monitoring', 'CI/CD', 'Dependency-Track', 'DevOps']
 author = 'Vivek Sahu'
+description = 'Automate SBOM workflows with sbommv folder monitoring. Detect, validate, and ship SBOMs to platforms like Dependency-Track in real time using daemon mode.'
+slug = 'folder-monitoring-sbom-automation-that-never-sleeps'
 +++
 
-![alt text](/posts/image-7.png)
+![Blog header for sbommv folder monitoring SBOM automation feature](/posts/image-7.png)
 
 ## Introduction
 
-In our previous post(GitHub Releases are where SBOM's goto die), we tackled a growing pain in modern software security: SBOMs stuck in GitHub Releases. We showed how sbommv streamlines the manual mess—automating the movement of SBOMs from GitHub or local folders directly into SBOM platforms like Dependency-Track, Interlynk(next blog will show demo on this).
+In our previous post, [GitHub Releases Are Where SBOMs Go to Die](/posts/github-releases-are-where-sboms-goto-die/), we tackled a growing pain in modern software security: SBOMs stuck in GitHub Releases. We showed how sbommv streamlines the manual mess—automating the movement of SBOMs from GitHub or local folders directly into SBOM platforms like Dependency-Track, Interlynk(next blog will show demo on this).
 
 We covered:
 
@@ -27,7 +29,7 @@ Now we’re taking it a step further, **SBOM automation that doesn’t wait for 
 
 Imagine a workflow where you don’t even have to run a command when source of SBOM is a folder(i.e input system/adapter is folder). SBOMs just shown up in a folder—maybe from your CI pipeline, a nightly build job, or a dev tool—and sbommv running in the daemon mode, instantly detects it, validates it, convert it to CycloneDX spec and ships them off to SBOM platforms.
 
-![alt text](/posts/image.png)
+![Diagram showing sbommv daemon mode detecting SBOMs in a folder and uploading automatically](/posts/image.png)
 
 In theory, SBOM automation should “just work.” But in reality, users are still asking [this](https://github.com/DependencyTrack/dependency-track/discussions/4256):
 
@@ -95,13 +97,13 @@ $ sbommv transfer \
 
 Immediately, the following happens: detects SBOM and uploaded it to dependency track
 
-![alt text](/posts/image-3.png)
+![Terminal logs showing sbommv detecting and uploading an SBOM to Dependency-Track](/posts/image-3.png)
 
 Let's check dependency-track platform, whether SBOM is uploaded or not? Yeah, it's uploaded...
 
-![alt text](/posts/image-1.png)
+![Dependency-Track dashboard confirming the SBOM project was uploaded successfully](/posts/image-1.png)
 
-![alt text](/posts/image-2.png)
+![Dependency-Track project details view showing the uploaded SBOM components](/posts/image-2.png)
 
 Let's understand what happens:
 
@@ -137,11 +139,11 @@ $ sbommv transfer \
 --out-folder-path=demo/again
 ```
 
-![alt text](/posts/image-4.png)
+![Terminal output of sbommv fetching an SBOM from GitHub and saving to a subfolder](/posts/image-4.png)
 
 Immediately, the following logs appeared: detects SBOM and skip uploading to dependency track. This is because same SBOM is trying to get uploaded in same project. Will talk about this in next section.
 
-![alt text](/posts/image-5.png)
+![Terminal logs showing sbommv detecting a duplicate SBOM and skipping the upload](/posts/image-5.png)
 
 Each nested directory is auto-watched. Each SBOM is independently tracked and uploaded as it's added.
 
@@ -197,7 +199,7 @@ $ sbommv transfer \
 --dry-run
 ```
 
-![alt text](/posts/image-6.png)
+![Terminal output of sbommv dry-run mode previewing detected SBOMs and target projects](/posts/image-6.png)
 
 This outputs:
 
@@ -237,7 +239,7 @@ No more missed uploads. No more backlogs.
 Now that folder monitoring is live, we’re already looking ahead:
 
 - Interlynk Platform demo: blog on using Interlynk as a destination system covering both sbommv use-cases.
-- ☁️ S3 Bucket Integration: as input as well as output system for source as well as destination.
+- ☁️ [S3 Bucket Integration](/posts/modular-sbom-automation-now-with-aws-s3-support/): as input as well as output system for source as well as destination.
 - ☁️ S3 Bucket Monitoring – Watch S3 for incoming SBOMs and upload automatically
 
 We’re just getting warmed up.

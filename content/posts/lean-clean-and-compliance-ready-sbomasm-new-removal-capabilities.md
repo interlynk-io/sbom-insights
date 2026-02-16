@@ -5,9 +5,10 @@ title = "Lean, Clean, and Compliance Ready: sbomasm's removal capabilities"
 categories = ['Tools', 'Compliance']
 tags = ['SBOM', 'sbomasm', 'Data Privacy', 'Compliance', 'SBOM Editing', 'Best Practices']
 author = 'Vivek Sahu'
+description = 'Remove unwanted fields, components, and sensitive data from SBOMs using sbomasm. Keep your SBOM lean, private, and compliance-ready in SPDX or CycloneDX.'
 +++
 
-![alt text](/posts/image-23.png)
+![Blog header for sbomasm SBOM field and component removal capabilities](/posts/image-23.png)
 
 Hey SBOM enthusiasts 👋,
 
@@ -192,7 +193,7 @@ So, these were sorts of examples on both "field removal" as well as "component r
 
 Whether it’s trimming sensitive details, cleaning up unused metadata, or removing entire components that don’t belong, sbomasm now gives you precise control over what stays in your SBOM — and what doesn’t.
 
-The reality is, SBOMs aren’t just static files you generate once and forget about. They’re living artifacts that evolve with your software, and sometimes evolution means subtraction.
+The reality is, SBOMs aren't just static files you generate once and forget about. They're living artifacts that evolve with your software, and sometimes evolution means subtraction. And when evolution means addition, sbomasm can also [enrich your SBOMs with license data from ClearlyDefined](/posts/sbomasm-enriches-licenses-using-clearlydefined-datasets/).
 
 By supporting both SPDX and CycloneDX with a common field approach, sbomasm removes the guesswork (and schema headaches) so you can focus on what matters: delivering accurate, shareable, and compliance-ready SBOMs without manual cleanup marathons.
 

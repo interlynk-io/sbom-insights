@@ -1,14 +1,15 @@
 +++
 date = '2025-11-25T14:40:15+05:30'
 draft = false
-title = 'SBOM scoring into the Dependency-Track '
+title = 'SBOM scoring into the Dependency-Track'
 categories = ['Automation', 'Tools']
-tags = ['SBOM', 'sbomq', 'sbom', 'scoring', 'dependency-track', 'Dependency-Track', 'projects']
+tags = ['SBOM', 'sbomqs', 'Scoring', 'Dependency-Track']
 author = 'Vivek Sahu'
+description = 'Score SBOM quality directly within Dependency-Track using sbomqs. Ensure your SBOMs are complete and accurate before feeding them to your SBOM platform.'
 +++
 
 
-![alt text](/posts/image-37.png)
+![Blog header for integrating sbomqs SBOM scoring into Dependency-Track](/posts/image-37.png)
 
 ## Introduction
 
@@ -31,7 +32,7 @@ That’s why the quality of an SBOM matters just as much as generating the SBOM 
 - Is it compliant with standards like NTIA, BSI, or OCT?
 - And what is quality score based on pre-defined fields ?
 
-That's exactly where **[sbomqs](https://github.com/interlynk-io/sbomqs)** comes into to measure the SBOM quality. Run simple command and get instantly score for SBOMs:
+That's exactly where **[sbomqs](https://github.com/interlynk-io/sbomqs)** comes in to measure the SBOM quality (see our post on [what changed in sbomqs v2](/posts/sbomqs-v1-vs-sbomqs-v2-highlights/) for the latest scoring model). Run a simple command and get an instant score for SBOMs:
 
 ```bash
 
@@ -261,7 +262,7 @@ interlynk=5.1
 ```
 
 …directly onto your D-Track project — just like this: 👇
-![alt text](/posts/image-38.png)
+![Dependency-Track project view showing sbomqs quality score tag](/posts/image-38.png)
 
 `interlynk` because by default it scores for `interlynk` [categories](https://github.com/interlynk-io/sbomqs/blob/main/docs/specs/SBOMQS-2.0-SPEC.md#score-categories-with-weights).
 
@@ -284,7 +285,7 @@ This will attach a tag like:
 ntia=5.6
 ```
 
-![alt text](/posts/image-40.png)
+![Dependency-Track project view showing NTIA profile score tag](/posts/image-40.png)
 
 Now, let's include **grade** for `ntia` profile, include tag `--tag-project-with-grade`
 
@@ -303,13 +304,13 @@ This will attach a tag like:
 ntia-grade=d
 ```
 
-![alt text](/posts/image-41.png)
+![Dependency-Track project view showing NTIA grade tag](/posts/image-41.png)
 
 Similarly, you can include other compliance score such as `ntia-2025`, `fsct`, `bsi`, `bsi-v2.0`, `oct-v1.1`, `interlynk`.
 
 For multiple profiles, inlclude like this: `--profile=ntia,ntia-2025,bsi`
 
-![alt text](/posts/image-42.png)
+![Dependency-Track project view showing multiple compliance profile score tags](/posts/image-42.png)
 
 ## Conclusion
 
