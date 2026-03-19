@@ -27,7 +27,7 @@ Let's get started.
 
 ## What is BSI TR-03183?
 
-**BSI TR-03183** is a Technical Guideline published by Germany's Federal Office for Information Security (Bundesamt für Sicherheit in der Informationstechnik). Part 2 of this guideline specifically focuses on Software Bill of Materials (SBOM)  what an SBOM must contain, how it should be structured, and which formats are acceptable.
+**BSI TR-03183** is a Technical Guideline published by Germany's Federal Office for Information Security (Bundesamt für Sicherheit in der Informationstechnik). Part 2 of this guideline specifically focuses on Software Bill of Materials (SBOM): what an SBOM must contain, how it should be structured, and which formats are acceptable.
 
 The reason BSI matters so much right now is the **EU Cyber Resilience Act (CRA)**. The CRA is a market access regulation for the EU that requires manufacturers of products with digital components to continuously handle vulnerabilities and provide transparent information about their products. BSI TR-03183 is closely aligned with CRA requirements, making it the go-to SBOM standard for organizations selling software products in the European market.
 
@@ -318,7 +318,7 @@ Structured archives (like `.zip`, `.tar`, container images, packages) retain the
 
 ## Scoring Your SBOM Against BSI v2.1 Using sbomqs
 
-Now comes the fun part  checking whether your SBOM actually meets BSI v2.1.
+Now comes the fun part: checking whether your SBOM actually meets BSI v2.1.
 
 This is where [sbomqs](https://github.com/interlynk-io/sbomqs) comes in. It's an open-source CLI tool that evaluates SBOMs for quality and compliance. Just run a single command and get a clear scorecard.
 
@@ -429,11 +429,11 @@ For a detailed component-by-component breakdown, use the compliance command:
 sbomqs compliance --bsi-v2.1 samples/sbom_cdx.json
 ```
 
-This gives you a full table showing the compliance status of each field for every single component in the SBOM  so you know exactly which components are missing which fields.
+This gives you a full table showing the compliance status of each field for every single component in the SBOM so you know exactly which components are missing which fields.
 
 ### Score all BSI profiles
 
-If you want to score your SBOM scores across all different BSI versions at once, you can run:
+If you want to score your SBOM across all supported BSI versions at once, you can run:
 
 ```bash
 sbomqs score samples/sbom_cdx.json --profile bsi-v1.1,bsi-v2.0,bsi-v2.1
