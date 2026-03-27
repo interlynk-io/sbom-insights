@@ -33,7 +33,7 @@ The reason BSI matters so much right now is the **EU Cyber Resilience Act (CRA)*
 | 1.0     | 2023-07-12 | First publication                                                           |
 | 1.1     | 2023-11-28 | Translated to English; updated requirements for creator, version, licence  |
 | 2.0.0   | 2024-09-20 | Added new required fields (filename, executable, archive, structured); updated CycloneDX min to 1.5, SPDX min to 2.2.1 |
-| 2.1.0   | 2025-08-20 | Updated CycloneDX min to 1.6, SPDX min to 3.0.1; introduced logical and identified components; promoted several fields to required; added format field mapping tables |
+| 2.1.0   | 2025-08-20 | Updated CycloneDX min to 1.6, SPDX min to 3.0.1; introduced logical and identified components; overhauled licence terminology; added format field mapping tables |
 
 Each version has made the standard more complete and practical. And there's a clear rule: you must always use the most recent version for new SBOMs. The only exception is the immediately preceding version, which can be used for up to six months after a new version is published.
 
@@ -82,27 +82,31 @@ BSI v2.1 now explicitly defines three categories of licence information, using t
 
 The reason for this: the terms "declared" and "concluded" are used differently across SPDX and CycloneDX, creating confusion. BSI v2.1 sidesteps that by using its own precise terminology.
 
-### 4. Fields Promoted from Additional to Required
+### 4. Licence Field Tier Changes
 
-This is a significant change. Several fields that were "additional" (must be present *if available*) in v2.0 are now **required** in v2.1:
+v2.1 reorganises how licence fields are structured across the three tiers. Two licence fields from v2.0 are gone, and three new BSI-specific terms replace them:
 
-| Field | v2.0 Status | v2.1 Status |
-|-------|------------|-------------|
-| SBOM-URI | Additional | **Required** |
-| Source code URI | Additional | **Required** |
-| URI of deployable form | Additional | **Required** |
-| Other unique identifiers (PURL/CPE) | Additional | **Required** |
-| Original licences | Additional | **Required** |
+| v2.0 Field | v2.0 Tier | v2.1 Replacement | v2.1 Tier |
+|-----------|----------|-----------------|---------|
+| Associated licences | Required | **Distribution licences** (renamed) | Required |
+| Concluded licences | Additional | — (removed) | — |
+| Declared licences | Optional | **Original licences** (renamed) | **Additional** |
+| — | — | **Effective licence** (new) | Optional |
 
-If your SBOM was passing v2.0 with these fields missing, it will now fail v2.1.
+The key promotion: "Declared licences" was optional in v2.0. In v2.1, the same concept — renamed "Original licences" — is now **additional**, meaning it must be declared whenever the data exists.
+
+"Concluded licences" (additional in v2.0) is removed from v2.1 entirely. Its role is absorbed into the BSI-defined "Distribution licences" concept.
+
+All other additional fields (SBOM-URI, Source code URI, URI of deployable form, Other unique identifiers) **remain additional** — their tier is unchanged.
 
 ### 5. New Optional Fields
 
-v2.1 also adds three new optional fields that weren't in v2.0 at all:
+v2.1 adds two new optional fields that weren't in v2.0 at all:
 
 - **Effective licence** — the licence the SBOM creator actually uses the component under
-- **Hash value of source code** — SHA-512 hash of the component's source
 - **URL of security.txt** — points to the component creator's `security.txt` (RFC 9116)
+
+The third optional field, **hash value of source code**, was already optional in v2.0 and remains so in v2.1.
 
 ## sbomqs v2.1 Support
 
@@ -238,7 +242,7 @@ If you run an SPDX v2 SBOM against `bsi-v2.1`, sbomqs will return a hard fail on
 
 BSI v2.1 is a meaningful step forward from v2.0. The format bumps, the new component concepts, the promoted fields, and the clearer licence terminology all make the standard more precise and practical to implement.
 
-The fields themselves were largely in v2.0. But v2.1 makes more of them required, tightens the format requirements, and removes the ambiguity around how to handle components at the boundary of your delivery.
+The fields themselves were largely in v2.0. But v2.1 tightens the format requirements, promotes "Declared licences" from optional to additional (renaming it "Original licences"), removes the ambiguity around how to handle components at the boundary of your delivery, and adds clearer licence terminology throughout.
 
 With sbomqs, you don't need to manually check all of this. Just run a command, read the output, and you'll know exactly where your SBOM stands against BSI v2.1.
 
