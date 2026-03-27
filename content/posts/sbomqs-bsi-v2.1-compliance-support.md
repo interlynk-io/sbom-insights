@@ -60,14 +60,6 @@ v2.1 solves this by introducing two new component roles alongside the existing f
 
 **Identified Component**: A physical file that exists *outside* your scope of delivery, something your software depends on but you didn't ship. You don't need to fully describe it, just identify it so consumers can unambiguously chain SBOMs. Minimum fields: creator, name, version, and other unique identifiers (PURL or CPE).
 
-BSI v2.1 gives a clear priority order for deciding how much to record:
-
-```text
-1. Referenced component: 3 fields + pointer to another BOM
-2. Identified component: 4 fields (at scope boundary)
-3. Fully described component: all fields (inside your delivery)
-```
-
 Before v2.1, there was no guidance on how to handle components at the boundary of your delivery. Now BSI explicitly tells you: identify them, don't fully describe them.
 
 ### 3. Licence Terminology Clarified
