@@ -5,7 +5,7 @@ title = 'Component Quality in sbomqs: Moving Beyond Static Checks to Real Compon
 categories = ['Quality', 'Security', 'Tools']
 tags = ['SBOM', 'sbomqs', 'Component Quality', 'PURL', 'CPE', 'Supply Chain Security', 'sbomqs v2', 'Vulnerability Management']
 author = 'Vivek Sahu'
-description = 'sbomqs introduces Component Quality analysis — a new layer of SBOM validation that checks whether your identifiers are real, your packages are healthy, and your supply chain is trustworthy.'
+description = 'sbomqs introduces Component Quality analysis, a new layer of SBOM validation that goes beyond checking field presence to validating components against live external data — starting with identifiers and expanding to EOL, malicious, and vulnerability intelligence.'
 slug = 'component-quality-in-sbomqs-real-component-health'
 +++
 
@@ -13,47 +13,43 @@ slug = 'component-quality-in-sbomqs-real-component-health'
 
 Hey SBOM community 👋
 
-If you've been using sbomqs for a while, you know it does a solid job of telling you **what's in** your SBOM. Names, versions, licenses, suppliers, checksums — the whole nine yards. And if something's missing, the `score` and `list` commands make it crystal clear.
+If you've been using sbomqs for a while, you know it does a solid job of telling you **what's in** your SBOM, not just that fields exist, but what values they actually hold. Names, versions, licenses, suppliers, checksums, PURLs, CPEs — every field and its corresponding value, laid out right there in your SBOM. And when something's missing? The `score` command returns a 0 score on it so you can't miss it, while the `list` command shows you exactly which components are empty and which ones have real values. It's a transparent, no-nonsense way to audit your SBOM's contents.
 
-So far, we've been scoring SBOMs against different compliances like NTIA, BSI (v1.1, v2.0, v2.1), OCT, FSCT, and more. Compliance is still necessary and always will be — every compliance has its own way of looking at transparency into your software by asking for different information: name, version, license, PURL, CPE, copyright, dependencies, and so on. sbomqs has been doing an amazing job checking your SBOM against these compliances and scoring whether those fields are present.
+And all these field checks come from compliance. So far, we've been scoring SBOMs against different compliances like NTIA, BSI (v1.1, v2.0, v2.1), OCT, FSCT, and more. Every compliance has its own way of looking at transparency into your software by asking for different information(fields) like: name, version, license, PURL, CPE, copyright, dependencies, and so on. sbomqs has been doing an amazing job checking your SBOM against these compliances and scoring whether those fields are present. Compliance is still necessary and always will be.
 
-But here's the thing — **presence isn't the same as validity.**
+> But here's the thing — having fields and values isn't the same as validation of it's contents.
 
-Your SBOM might have a PURL and CPE for every component. The compliance check passes with flying colors. But what if that PURL doesn't actually resolve to anything? What if the CPE isn't in the NVD database? What if a component was abandoned years ago, or worse — flagged as malicious in a threat database?
+For say, your SBOM might have a PURL and CPE for every component. The compliance check passes with flying colors and recieved scored 10/10 for both PURL/CPE. But here is the twist:
 
-That's the gap between **static analysis** (are the fields present?) and **dynamic analysis** (do those fields *mean* something in the real world?).
+> what if that PURL doesn't actually resolve to anything?
+> What if the CPE isn't in the NVD database?
+> What if a component was abandoned years ago, or worse, flagged as malicious in a threat database?
 
-And that's exactly why we're introducing **Component Quality analysis** in sbomqs — a new category that brings dynamic analysis into the mix with six fields: `comp_purl_valid`, `comp_cpe_valid`, `comp_eol_eos`, `comp_malicious`, `comp_vuln_sev_critical`, and `comp_kev`. Right now we've started with the first **2 fields**: `comp_purl_valid` and `comp_cpe_valid`. Based on community feedback and demand, we'll be rolling out the rest soon. And a heads up — this analysis requires an `INTERLYNK_SECURITY_TOKEN` (more on that below).
+That's the gap between **static analysis** (are the fields present?) and **dynamic analysis** (do those fields *mean* something in the real world?)
 
-## What sbomqs Has Been Doing: Static Analysis 📝
+And that's exactly why we're introducing **Component Quality analysis** in sbomqs, a new category that brings dynamic analysis into the mix with six fields: `comp_purl_valid`, `comp_cpe_valid`, `comp_eol_eos`, `comp_malicious`, `comp_vuln_sev_critical`, and `comp_kev`. Right now we've started with the first **2 fields**: `comp_purl_valid` and `comp_cpe_valid`. Based on community feedback and demand, we'll be rolling out the rest soon. Here the feedback form: <https://forms.gle/WVoB3DrX9NKnzfhV8>
+
+## What sbomqs has been doing: Static Analysis 📝
 
 Let's take a step back and understand what "static" actually means in the context of SBOM quality.
 
-**Static analysis** is the practice of examining the SBOM file itself — the data that's right there in JSON, XML, or tag-value format — without reaching out to external systems, databases, or the internet. It's a self-contained audit of the document.
+**Static analysis** is the practice of examining the SBOM file itself, the data that's right there in the SBOM, without validating it to external sources, databases, or the internet. It's a self-contained audit of the document.
 
 Everything sbomqs has done until now falls under this umbrella:
 
-- NTIA compliance scoring — does the SBOM have author, timestamp, supplier, dependency graph?
-- BSI v1.1 / v2.0 / v2.1 scoring — are the required fields present with correct values?
-- FSCT, OCT, Interlynk profiles — do components have names, versions, licenses, checksums?
+- NTIA compliance scoring: does the SBOM have author, timestamp, supplier, dependency graph?
+- BSI v1.1 / v2.0 / v2.1 scoring: are the required fields present with correct values?
+- FSCT, OCT, Interlynk profiles: do components have names, versions, licenses, checksums?
 
-At the end of the day, sbomqs reads the SBOM, looks for specific fields, checks whether values exist (and sometimes whether they match expected patterns), and assigns a score. It's essentially asking:
-
-- Does the component have a name? ✅
-- Does it have a version? ✅
-- Is there a PURL listed? ✅
-- Is there a CPE listed? ✅
-- Is the license declared? ✅
-
-This is incredibly valuable. Static analysis ensures **structural completeness** and **compliance readiness**. If your SBOM is missing a creation timestamp or half your components don't have versions, you need to know that before you share it with anyone.
+At the end of the day, sbomqs reads the SBOM, looks for specific fields, checks whether values exist (and sometimes whether they match expected patterns), and assigns a score. This is incredibly valuable. Static analysis ensures **structural completeness** and **compliance readiness** and that's what for sbomqs made for. If your SBOM is missing a creation timestamp or half your components don't have versions, you need to know that before you share it with anyone.
 
 But here's the catch: **static analysis only knows what the SBOM tells it.**
 
-## The Problem with Static Data 😬
+## The Problem with Static Analysis 😬
 
 An SBOM can be *structurally perfect* and still be *operationally useless*.
 
-Imagine an SBOM where every single component has a PURL and a CPE. Static analysis gives it a perfect score — 10/10, compliance passed, gold stars all around. But what if:
+Imagine an SBOM where every single component has a PURL and a CPE. Static analysis gives it a perfect score: 10/10, compliance passed, gold stars all around. But what if:
 
 - Those PURLs don't actually resolve to any package manager or repository? (They're syntactically correct but point to nowhere.)
 - Those CPEs aren't in the NVD database? (No vulnerability scanner can map them to CVEs.)
@@ -69,7 +65,7 @@ That's the fundamental limitation of static analysis: **it validates presence, n
 
 **Dynamic analysis** is the practice of validating SBOM data against *live, external sources*. Instead of asking "is the field there?", it asks "does this field *mean* something in the real world?"
 
-This requires reaching out to external databases, registries, and threat intelligence feeds — something that wasn't previously part of sbomqs' scope. It's more expensive (needs API calls), more complex (handles rate limits, retries, partial failures), but infinitely more powerful.
+This requires reaching out to external databases, registries, and threat intelligence feeds, something that wasn't previously part of sbomqs' scope. It's more expensive (needs API calls), more complex (handles rate limits, retries, partial failures), but infinitely more powerful.
 
 Dynamic analysis answers questions like:
 
@@ -108,11 +104,11 @@ Here's what sbomqs checks right now when you enable component quality analysis:
 | `comp_purl_valid` | Does this PURL resolve to a real package manager or repository? |
 | `comp_cpe_valid` | Is this CPE found in the NVD CPE database? |
 
-Why start here? Because PURLs and CPEs are the **connective tissue** of your SBOM. They're what vulnerability scanners, SCA tools, and compliance platforms use to look up components downstream. If they're wrong or fake, every subsequent step — scanning, triage, reporting — becomes unreliable.
+Why start here? Because PURLs and CPEs are the **connective tissue** of your SBOM. They're what vulnerability scanners, SCA tools, and compliance platforms use to look up components downstream. If they're wrong or fake, every subsequent step: scanning, triage, reporting, becomes unreliable.
 
 Identifier validation is the foundation. It directly solves the "fake identifier" problem we discussed above. Everything else (EOL, malicious, CVE, KEV) builds on top of having valid identifiers to look up.
 
-And because the remaining four fields rely on external API support that is still being rolled out, they'll light up in sbomqs automatically as the Interlynk API expands — no tool upgrade needed on your side.
+And because the remaining four fields rely on external API support that is still being rolled out, they'll light up in sbomqs automatically as the Interlynk API expands, no tool upgrade needed on your side.
 
 ## How It Works Under the Hood 🔧
 
@@ -120,13 +116,13 @@ When you enable component quality analysis, sbomqs does something new: it sends 
 
 Here's the good news: sbomqs handles all the complexity for you.
 
-- **Smart Batching** — Large SBOMs are chunked into efficient batches (up to 5,000 components for authenticated users, 50 for unauthenticated) and sent in parallel.
-- **Rate-Limit Resilience** — If the API returns HTTP 429, sbomqs retries with exponential backoff up to 3 times.
-- **Graceful Degradation** — If the API is unreachable, scoring continues normally. Component Quality shows as N/A. No broken CI pipelines.
+- **Smart Batching**: Large SBOMs are chunked into efficient batches (up to 5,000 components for authenticated users, 50 for unauthenticated) and sent in parallel.
+- **Rate-Limit Resilience**: If the API returns HTTP 429, sbomqs retries with exponential backoff up to 3 times.
+- **Graceful Degradation**: If the API is unreachable, scoring continues normally. Component Quality shows as N/A. No broken CI pipelines.
 
 And here's something important: **Component Quality is informational only.** It does **not** affect your overall sbomqs score.
 
-Why? Because we're intentionally separating *structural quality* (does the SBOM have the right fields?) from *component health* (are the actual packages healthy?). As the ecosystem matures and these checks become standard, we'll revisit how they factor into scoring. For now, it's an opt-in lens — use it to spot problems, not to gate releases.
+Why? Because we're intentionally separating *structural quality* (does the SBOM have the right fields?) from *component health* (are the actual packages healthy?). As the ecosystem matures and these checks become standard, we'll revisit how they factor into scoring. For now, it's an opt-in lens, use it to spot problems, not to gate releases.
 
 ## Getting Your Hands Dirty 💻
 
@@ -178,7 +174,7 @@ In the detailed score output, a new **Component Quality** section appears:
 
 **A Note on Scoring:**
 
-sbomqs only scores components that the API successfully **verified**. If a component returns no findings at all, it's marked as N/A — not as a pass or a fail. This keeps the scoring honest and avoids penalizing components that simply weren't in the check scope.
+sbomqs only scores components that the API successfully **verified**. If a component returns no findings at all, it's marked as N/A, not as a pass or a fail. This keeps the scoring honest and avoids penalizing components that simply weren't in the check scope.
 
 - **Verified + matching finding** = affected (failed)
 - **Verified + no matching finding** = passed
@@ -199,7 +195,7 @@ Identifier validation is just the beginning. Here's what's already defined in th
 | `comp_purl_valid` | ✅ Already live |
 | `comp_cpe_valid` | ✅ Already live |
 
-As these checks go live in the API, they'll automatically light up in sbomqs — no upgrade needed on your side. The architecture is already there; we're just waiting for the data.
+As these checks go live in the API, they'll automatically light up in sbomqs, no upgrade needed on your side. The architecture is already there; we're just waiting for the data.
 
 ## Why This Matters for Your Supply Chain 🏗️
 
@@ -207,7 +203,7 @@ Think about the lifecycle of an SBOM after it's generated. It gets fed into vuln
 
 Now imagine every one of those steps relying on a PURL that doesn't resolve, or a CPE that doesn't exist in NVD. The scanner says "not found." The audit says "unverifiable." The customer says "we can't accept this."
 
-Component Quality catches that at the source. It's a smoke test for the *connective tissue* of your SBOM — making sure the identifiers actually *work* in the real world, and eventually, making sure the components themselves are healthy.
+Component Quality catches that at the source. It's a smoke test for the *connective tissue* of your SBOM, making sure the identifiers actually *work* in the real world, and eventually, making sure the components themselves are healthy.
 
 And because it's opt-in and informational, you can turn it on today without touching your existing score thresholds or CI gates. Use it to audit, clean up, and build confidence. Then, as the checks mature, decide how deeply you want to integrate them into your pipeline.
 
@@ -215,7 +211,7 @@ And because it's opt-in and informational, you can turn it on today without touc
 
 SBOM quality has come a long way. We've gone from "do you have an SBOM?" to "does your SBOM have the right fields?" and now to "are the actual components in your SBOM healthy and verifiable?"
 
-Component Quality analysis is sbomqs' step into that third phase. It's not about replacing structural checks — it's about adding a layer of **real-world intelligence** on top of them. Presence checks tell you the field is there. Component Quality tells you if the field *means* something.
+Component Quality analysis is sbomqs' step into that third phase. It's not about replacing structural checks, it's about adding a layer of **real-world intelligence** on top of them. Presence checks tell you the field is there. Component Quality tells you if the field *means* something.
 
 Right now, that means validating PURLs and CPEs. Soon, it will mean catching EOL packages, malicious components, and exploited vulnerabilities before they ever reach production.
 
@@ -225,15 +221,16 @@ So go ahead. Turn it on. See what your identifiers actually resolve to. And star
 sbomqs score --enable-component-analysis your-sbom.json
 ```
 
-Feedback? Ideas? Want to prioritize a specific check? Drop us an [issue](https://github.com/interlynk-io/sbomqs/issues/new). And if you like where this is headed, show some love with a ⭐ on the [sbomqs repo](https://github.com/interlynk-io/sbomqs).
+Interested with this feature, fill out this [form](https://forms.gle/WVoB3DrX9NKnzfhV8) and show your interest towards this feature.
+Apart from that any Feedback? Ideas? Want to prioritize a specific check? Drop us an [issue](https://github.com/interlynk-io/sbomqs/issues/new). And if you like where this is headed, show some love with a ⭐ on the [sbomqs repo](https://github.com/interlynk-io/sbomqs).
 
-For the full platform experience — compliance scoring, vulnerability detection, automated enrichment, and team collaboration — check out [Interlynk](https://app.interlynk.io).
+For the full platform experience, compliance scoring, vulnerability detection, automated enrichment, and team collaboration, check out [Interlynk](https://app.interlynk.io).
 
 Keep building, keep validating, and keep your supply chain trustworthy 🔒
 
 ## Resources
 
+- Component Quality Feature Community Form: <https://forms.gle/WVoB3DrX9NKnzfhV8>
 - sbomqs GitHub: <https://github.com/interlynk-io/sbomqs>
 - Component Quality docs: <https://github.com/interlynk-io/sbomqs/blob/main/docs/commands/score.md>
 - Interlynk Platform: <https://www.interlynk.io>
-- Previous post on [sbomqs v1 vs v2](/posts/sbomqs-v1-vs-sbomqs-v2-highlights/)
