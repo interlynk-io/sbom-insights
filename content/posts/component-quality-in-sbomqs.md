@@ -1,5 +1,5 @@
 +++
-date = '2026-05-20T10:00:00+05:30'
+date = '2026-05-19T10:00:00+05:30'
 draft = false
 title = 'Component Quality in sbomqs: Moving Beyond Static Checks to Real Component Health'
 categories = ['Quality', 'Security', 'Tools']
@@ -22,7 +22,9 @@ And all these field checks come from compliance. So far, we've been scoring SBOM
 For say, your SBOM might have a PURL and CPE for every component. The compliance check passes with flying colors and recieved scored 10/10 for both PURL/CPE. But here is the twist:
 
 > what if that PURL doesn't actually resolve to anything?
+>
 > What if the CPE isn't in the NVD database?
+>
 > What if a component was abandoned years ago, or worse, flagged as malicious in a threat database?
 
 That's the gap between **static analysis** (are the fields present?) and **dynamic analysis** (do those fields *mean* something in the real world?)
@@ -221,10 +223,11 @@ So go ahead. Turn it on. See what your identifiers actually resolve to. And star
 sbomqs score --enable-component-analysis your-sbom.json
 ```
 
-Interested with this feature, fill out this [form](https://forms.gle/WVoB3DrX9NKnzfhV8) and show your interest towards this feature.
+Excited about Component Quality analysis? Let us know by filling out this interest [form](https://forms.gle/WVoB3DrX9NKnzfhV8) — it helps us decide which checks to ship first.
+
 Apart from that any Feedback? Ideas? Want to prioritize a specific check? Drop us an [issue](https://github.com/interlynk-io/sbomqs/issues/new). And if you like where this is headed, show some love with a ⭐ on the [sbomqs repo](https://github.com/interlynk-io/sbomqs).
 
-For the full platform experience, compliance scoring, vulnerability detection, automated enrichment, and team collaboration, check out [Interlynk](https://app.interlynk.io).
+For the full platform experience, compliance scoring, vulnerability detection, automated enrichment, and team collaboration, check out [Interlynk](https://app.interlynk.io) platform.
 
 Keep building, keep validating, and keep your supply chain trustworthy 🔒
 
