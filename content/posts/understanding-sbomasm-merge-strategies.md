@@ -12,7 +12,7 @@ Hey SBOM enthusiasts 👋,
 
 If your organization is dealing with multiple SBOMs and you're wondering how to combine them into a single **Unified SBOM Document**, you're not alone. Merging SBOMs sounds simple in theory, just combine the files, but in practice, it's not that straightforward.
 
-One of the challenge is that those SBOMs can come from very different sources: it could be from platform specific builds, or it could be from multi-service architectures, or even from microservices, or even scan results that need enriching. Each source calls for a different way of merging. Without the right strategy, you end up with duplicate components, broken dependency chains, or SBOMs that simply don't validate.
+One of the challenges is that those SBOMs can come from very different sources: platform-specific builds, multi-service architectures, microservices, or scan results that need enriching. Each source calls for a different way of merging. Without the right strategy, you end up with duplicate components, broken dependency chains, or SBOMs that simply don't validate.
 
 Understanding when and how to use each strategy is essential for anyone working on SBOMs in the software supply chain transparency.
 
@@ -30,23 +30,23 @@ A single SBOM gives you a **complete view** of your entire product. But a produc
 
 ### Faster Security Response
 
-A single SBOM gives you **faster security response**. It contains every component from all the different services and platforms into one final document, giving security teams clear visibility to scan everything in a single pass when a critical vulnerability drops (think Log4j, Spring4Shell). No need to scan through 20 separate SBOMs, run one query, get one answer. This directly reduces mean-time-to-remediate (MTTR).
+A single SBOM gives you **faster security response**. When a critical vulnerability drops (think Log4j, Spring4Shell), security teams can scan everything in a single pass instead of checking 20 separate SBOMs. One query, one answer. This directly reduces mean-time-to-remediate (MTTR).
 
 ### Simplified Compliance
 
-A single SBOM gives you **simplified compliance**. It contains every component from all the different services and platforms into one final document, giving regulators and enterprise customers a single artifact to review. No need to deliver a ZIP file of 15 fragmented SBOMs, one unified SBOM satisfies **NTIA minimum elements**, **FDA cybersecurity guidance**, and **EU Cyber Resilience Act** requirements cleanly.
+A single SBOM gives you **simplified compliance**. Regulators and enterprise customers get one artifact to review—not a ZIP file of 15 fragmented SBOMs. One unified SBOM satisfies **NTIA minimum elements**, **FDA cybersecurity guidance**, and **EU Cyber Resilience Act** requirements cleanly.
 
 ### Accurate License Inventory
 
-A single SBOM gives you an **accurate license inventory**. It contains every component from all the different services and platforms into one final document, revealing the true license footprint of your product. No more scattered license data across multiple files, when a component appears in three separate SBOMs with different license expressions, merging surfaces conflicts and obligations that fragmented files hide.
+A single SBOM gives you an **accurate license inventory**. The true license footprint of your product is visible in one place, not scattered across multiple files. When a component appears in three separate SBOMs with different license expressions, merging surfaces conflicts and obligations that fragmented files hide.
   
 ### Easier Distribution
 
-A single SBOM gives you **easier distribution**. It contains every component from all the different services and platforms into one final document, giving downstream consumers (customers, auditors, government agencies) a single artifact they can ingest into Dependency-Track, OWASP DefectDojo, Interlynk platform, or their internal compliance pipeline. No need to deliver multiple files, one unified SBOM is the standard deliverable.
+A single SBOM gives you **easier distribution**. Customers, auditors, and government agencies get one artifact they can ingest into Dependency-Track, OWASP DefectDojo, Interlynk platform, or their internal compliance pipeline. One unified SBOM is the standard deliverable.
 
 ### Consistent Versioning
 
-A single SBOM gives you **consistent versioning**. It contains every component from all the different services and platforms into one final document, carrying one version for your entire product release. When you ship v2.3.0, the SBOM represents v2.3.0, not a collection of unrelated files with different serial numbers.
+A single SBOM gives you **consistent versioning**. When you ship v2.3.0, the SBOM represents v2.3.0. One version for your entire product release, not a collection of unrelated files with different serial numbers.
 
 Each of these benefits: visibility, security, compliance, licensing, distribution, and versioning depends on one thing: bringing multiple SBOMs together into a single document. But when does this actually happen? In what situations do you find yourself with multiple SBOMs that need merging in the first place?
 
@@ -71,7 +71,7 @@ Those scenarios: platform builds, microservices, scan results, vendor integratio
 - Assembly
 - Augment
 
-Let's discuss each one by one and see how sbomasm implements them.
+Let's discuss each one by one before we see how sbomasm implements them.
 
 ## 1. Hierarchical Merge
 
@@ -107,7 +107,7 @@ Final SBOM
 | Scenario | Why Hierarchical? |
 |----------|-------------------|
 | Microservices platform | Each service becomes a sub-component, maintaining service-level relationships |
-| Platform-specific builds (same primary) | Linux + Windows builds of same software merge into one sub-component |
+| Platform-specific builds (same primary) | Linux + Windows builds of same software—combined into **one sub-component** under the final SBOM because they share the same primary component (components from both platforms deduplicated under that single sub-component) |
 | Container + Application | Base image components nested separately from app components |
 | Multi-module projects | Maven/Gradle multi-module where each module is distinct |
 | Different teams' components | Services from different teams that compose a platform |
@@ -175,21 +175,21 @@ You build `cs.template` for multiple platforms, each with different dependencies
 **Hierarchical merge produces:**
 
 ```text
-cs.template v1.0.0 (Application)            ← New root
-├── cs.template v2026.2.3.0.dev5             ← Linux + Win32 merged
+cs.template v1.0.0 (Application)            <-- New root
+├── cs.template v2026.2.3.0.dev5             <-- Linux + Win32 merged
 │   ├── idna v3.11
 │   ├── multidict v6.7.1
 │   ├── propcache v0.5.2
 │   ├── urllib3 v2.7.0
 │   ├── yarl v1.24.2
-│   └── pywin32 v311        ← Windows-only (if present)
-├── cs-template-components-base v0.1.0       ← JS sub-component
+│   └── pywin32 v311        <-- Windows-only (if present)
+├── cs-template-components-base v0.1.0       <-- JS sub-component
 │   ├── buffer v6.0.3
 │   ├── base64-js v1.5.1
 │   ├── ieee754 v1.2.1
 │   └── react-highlight-words v0.21.0
-└── cs.foo v0.1.0                          ← Independent service
-    └── numpy v2.4.2      ← Shared dependency, deduplicated globally
+└── cs.foo v0.1.0                          <-- Independent service
+    └── numpy v2.4.2      <-- Shared dependency, deduplicated globally
 ```
 
 SBOMs sharing the same primary component (name + version) are automatically merged into one sub-component. Shared dependencies across different primaries are deduplicated globally.
@@ -201,7 +201,15 @@ SBOMs sharing the same primary component (name + version) are automatically merg
 - ✅ Multiple SBOMs with the **same** primary component merge into one sub-component
 - ✅ Best for combining SBOMs of **different** software components
 
+### How Dependencies Are Handled
+
+- Each input SBOM's **primary component** becomes a direct dependency of the new root SBOM
+- All original dependency relationships from input SBOMs are **preserved as-is**
+- Dependencies remain nested under their respective primary components
+
 ## 2. Flat Merge
+
+But what if you're not combining different services—you're combining the **same** software built for different platforms? You don't need to preserve separate hierarchies; you just want one clean list of components. That's where flat merge comes in.
 
 **Concept**: Everything flattened to a single level. Duplicates removed. Simplest structure.
 
@@ -220,16 +228,16 @@ Input SBOMs (Platform Variants):
 Output (Flat):
 Final SBOM
 ├── New Root (MyApp v1.0.0)
-│   ├── idna v3.11        ← FLAT (deduplicated)
-│   ├── urllib3 v2.7.0      ← FLAT (deduplicated)
-│   └── yarl v1.24.2        ← FLAT (deduplicated)
+│   ├── idna v3.11          <-- FLAT (deduplicated)
+│   ├── urllib3 v2.7.0      <-- FLAT (deduplicated)
+│   └── yarl v1.24.2        <-- FLAT (deduplicated)
 ```
 
 ### When to Use
 
 | Scenario | Why Flat? |
 |----------|-----------|
-| Platform-specific builds | Merging Linux + Windows builds of same software |
+| Platform-specific builds | Same software for Linux + Windows—**all primaries and components flattened** to the same level, no nesting (deduplication still applies, but no platform grouping) |
 | License/Compliance Inventory | Just need a list of all components for legal review |
 | Simple BOM | Quick inventory without relationship complexity |
 | Large-scale aggregation | When you don't care about which component came from where |
@@ -245,11 +253,11 @@ You have the same Python application built for Linux and Windows:
 
 ```text
 cs.template v2026.2.3.0 (Application)
-├── idna v3.11        ← From both SBOMs, deduplicated
-├── multidict v6.7.1  ← From both SBOMs, deduplicated
-├── propcache v0.5.2  ← From both SBOMs, deduplicated
-├── urllib3 v2.7.0    ← From both SBOMs, deduplicated
-└── yarl v1.24.2      ← From both SBOMs, deduplicated
+├── idna v3.11        <-- From both SBOMs, deduplicated
+├── multidict v6.7.1  <-- From both SBOMs, deduplicated
+├── propcache v0.5.2  <-- From both SBOMs, deduplicated
+├── urllib3 v2.7.0    <-- From both SBOMs, deduplicated
+└── yarl v1.24.2      <-- From both SBOMs, deduplicated
 ```
 
 **Key Characteristics**:
@@ -259,7 +267,15 @@ cs.template v2026.2.3.0 (Application)
 - ✅ All components at the same level
 - ✅ Best for merging SBOMs of the **same** software for different platforms
 
+### How Dependencies Are Handled
+
+- Each input SBOM's **primary component** becomes a direct dependency of the new root SBOM
+- Original dependencies from input SBOMs are **preserved as-is** in the dependencies section
+- No nesting—everything is at the same level in the final SBOM
+
 ## 3. Assembly Merge
+
+Flat merge works well for the same software across platforms, but what if you're combining **different** products that are related but independent? You want each product to retain its identity, but you don't need the full nesting of hierarchical. That's where assembly merge fits.
 
 **Concept**: Primary components become sub-components of the new root, but all other components stay at the top level. A middle ground between hierarchical and flat.
 
@@ -277,45 +293,22 @@ Input SBOMs:
 Output (Assembly):
 Final SBOM
 ├── New Root (Tool Suite v1.0.0)
-│   ├── tool-a (Sub-component)  ← Primary as sub-component
-│   └── tool-b (Sub-component)  ← Primary as sub-component
-├── dep1      ← TOP LEVEL
-├── dep2      ← TOP LEVEL
-├── dep3      ← TOP LEVEL
-└── dep4      ← TOP LEVEL
+│   ├── tool-a (Sub-component)  <-- Primary as sub-component
+│   └── tool-b (Sub-component)  <-- Primary as sub-component
+├── dep1      <-- TOP LEVEL
+├── dep2      <-- TOP LEVEL
+├── dep3      <-- TOP LEVEL
+└── dep4      <-- TOP LEVEL
 ```
 
 ### When to Use
 
 | Scenario | Why Assembly? |
 |----------|---------------|
-| Product Suite | Combining independent products that share some dependencies |
+| Product Suite | Combining independent products—keeps each product distinct (unlike hierarchical which nests all dependencies) |
 | Library Collection | Creating a bundle of related libraries |
 | Plugin System | Main app + plugins where plugins are first-class |
 | Distribution Package | OS package that bundles multiple independent tools |
-
-### Real-World Example: Security Toolkit
-
-You want to create an SBOM for a security toolkit containing:
-
-- cosign (container signing)
-- syft (SBOM generation)
-- grype (vulnerability scanning)
-- trivy (container scanning)
-
-**Assembly merge creates:**
-
-```text
-security-toolkit v1.0.0 (Application)
-├── cosign v2.0.0 (Sub-component)
-├── syft v0.80.0 (Sub-component)
-├── grype v0.70.0 (Sub-component)
-├── trivy v0.45.0 (Sub-component)
-├── sigstore v1.0.0        ← Top level
-├── go-containerregistry ← Top level
-├── anchore-db            ← Top level
-└── fanal                 ← Top level
-```
 
 **Key Characteristics**:
 
@@ -324,15 +317,48 @@ security-toolkit v1.0.0 (Application)
 - ✅ Good balance between hierarchy and flatness
 - ✅ Best for bundling **related but independent** products
 
+### Real-World Example: Developer Tool Suite
+
+Imagine you're shipping a development toolkit that includes:
+
+- **Docker Desktop** (container runtime)
+- **VS Code** (editor)
+- **Postman** (API testing)
+
+Each is an independent product with its own SBOM.
+
+**Assembly merge creates:**
+
+```text
+dev-toolkit v1.0.0 (Application)
+├── docker-desktop v4.25.0 (Sub-component)
+├── vscode v1.85.0 (Sub-component)
+├── postman v10.20.0 (Sub-component)
+├── docker-engine       <-- TOP LEVEL
+├── docker-compose      <-- TOP LEVEL
+├── electron            <-- TOP LEVEL
+├── nodejs              <-- TOP LEVEL
+└── shared-libs         <-- TOP LEVEL
+```
+
+Each tool keeps its identity as a sub-component, but all their dependencies are at the top level. You can see what tools are in the suite (the sub-components), but you don't need the deep nesting of each tool's internal dependency tree.
+
+### How Dependencies Are Handled
+
+- Original dependencies from input SBOMs remain **unchanged** in the final SBOM
+- Primary components are nested under the new root, but their dependency relationships stay intact
+
 ## 4. Augment Merge
 
-**Concept**: Enriches the primary SBOM with data from secondary SBOMs without creating a new root. This is fundamentally different from the other strategies.
+The three merge strategies we've covered so far—hierarchical, flat, and assembly—all combine multiple SBOMs into a new one. But what if you don't want a new SBOM? What if you just want to add more information to your existing SBOM—like vulnerability scan results or license data? That's when you use augment merge.
+
+**Concept**: Enriches the primary SBOM with data from external sources or its own vulnerability data or license scan data. This is fundamentally different from the other strategies.
 
 ### Visual Overview
 
 ```text
-Other Merges:  NEW ROOT ← SBOM A + SBOM B + SBOM C
-Augment Merge: PRIMARY ← PRIMARY + (SBOM B data) + (SBOM C data)
+Other Merges:  NEW ROOT <-- SBOM A + SBOM B + SBOM C
+Augment Merge: PRIMARY <-- PRIMARY + (vulnerability scan results) + (license scan data)
 ```
 
 **Think**: "Update/Enrich" not "Combine/Assemble"
@@ -388,23 +414,16 @@ base-sbom.cdx.json (ENRICHED)
 - ✅ Merges matching components, adds non-matching ones
 - ✅ Best for **enriching** existing SBOMs with additional data
 
-## Decision Matrix
+### How Dependencies Are Handled
 
-| Use Case | Hierarchical | Assembly | Flat | Augment |
-|----------|-------------|----------|------|---------|
-| Microservices platform | ✅ | ⚠️ | ❌ | ❌ |
-| Container + App layers | ✅ | ⚠️ | ❌ | ❌ |
-| Product suite (independent) | ❌ | ✅ | ⚠️ | ❌ |
-| Same software, multi-platform | ✅ | ❌ | ✅ | ✅ |
-| License inventory only | ❌ | ❌ | ✅ | ❌ |
-| Enrich with scan data | ❌ | ❌ | ❌ | ✅ |
-| CI/CD pipeline artifacts | ⚠️ | ⚠️ | ✅ | ❌ |
-
-**Legend**: ✅ Best | ⚠️ Works | ❌ Wrong choice
+- Only includes dependencies involving **added or merged components**
+- Dependencies from the secondary SBOMs are **filtered** to include only those relevant to merged components
+- Invalid dependency references (pointing to non-existent components) are automatically filtered out
+- All dependency references are validated against the primary SBOM
 
 ## sbomasm: Bringing Strategies to Life
 
-Now that we understand the conceptual merge strategies, let's see how **sbomasm** implements them.
+Now that we've walked through all four merge strategies conceptually—when to use each and how dependencies flow—let's put them into practice. Here's how sbomasm implements each strategy.
 
 **sbomasm** is a command-line tool from Interlynk that makes SBOM assembly, editing, and enrichment straightforward. It supports both CycloneDX and SPDX formats, and implements all four merge strategies we've discussed.
 
@@ -469,7 +488,7 @@ sbomasm assemble --assembly-merge \
   -o security-toolkit.cdx.json
 ```
 
-**Result**: Each tool is a sub-component; shared dependencies are at top level.
+**Result**: Each tool is a sub-component; all dependencies are at top level with original relationships preserved.
 
 ### Augment Merge: Adding Scan Results
 
@@ -492,6 +511,25 @@ sbomasm assemble --augmentMerge \
 | **Flat** | Yes | Merging SBOMs of the **same** software (platform variants) | `-f` |
 | **Assembly** | Yes | Bundling **related but independent** products | `-a` |
 | **Augment** | No | **Enriching** an existing SBOM with scan/vendor data | `--augmentMerge` |
+
+## Choosing Your Strategy
+
+Picking the right merge strategy comes down to one question: **what are you trying to achieve?**
+
+- **Different services/platforms** that need to stay distinct? --> Hierarchical
+- **Same software, different builds** that should combine into one list? --> Flat
+- **Independent products** bundled together? --> Assembly
+- **Add data** to an existing SBOM? --> Augment
+
+Start with your goal, and the strategy follows.
+
+## Wrapping Up
+
+If you started this post wondering how to combine multiple SBOMs into one unified document, you now have four different approaches—and you know exactly when to use each. Whether you're bringing together microservices, platform builds, product suites, or enriching with scan data, there's a merge strategy that fits.
+
+The key is matching your goal to the right approach. Start there, and sbomasm handles the rest.
+
+Ready to try it? Grab sbomasm from GitHub and start merging.
 
 ## Resources
 
