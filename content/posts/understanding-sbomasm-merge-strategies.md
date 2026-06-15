@@ -10,7 +10,9 @@ description = 'Master SBOM merge strategies: hierarchical, flat, assembly, and a
 
 Hey SBOM enthusiasts 👋,
 
-If your organization dealing with multiple SBOMs in your organization and you are wondering how to combine them into a "single sbom document" or say "unified sbom document", you're not alone. The challenge is that those SBOMs can come from very different sources, platform-specific builds, multi-service architectures, i.e. microservices architecture, or scan results that need enriching, and each source calls for a different way of merging. Without the right strategy, you end up with duplicating components, broken dependency chains, or SBOMs that don't validate.
+If your organization is dealing with multiple SBOMs and you're wondering how to combine them into a single **Unified SBOM Document**, you're not alone. Merging SBOMs sounds simple in theory, just combine the files, but in practice, it's not that straightforward.
+
+One of the challenge is that those SBOMs can come from very different sources: it could be from platform specific builds, or it could be from multi-service architectures, or even from microservices, or even scan results that need enriching. Each source calls for a different way of merging. Without the right strategy, you end up with duplicate components, broken dependency chains, or SBOMs that simply don't validate.
 
 Understanding when and how to use each strategy is essential for anyone working on SBOMs in the software supply chain transparency.
 
@@ -24,7 +26,7 @@ Let's understand the importance of single unified SBOM:
 
 ### Complete Visibility
 
-A single SBOM gives you a **complete view** of your entire product. It contains every component from all the different services, platforms, and build stages into one final document, giving you clear visibility of all the components. This represents single source of truth that answers: "List of all the components presnt in your product."
+A single SBOM gives you a **complete view** of your entire product. But a product isn't just one thing—it's made up of different components, each with its own role and uniqueness. When you have everything in one document, you bring every component from all services, platforms, and build stages into one place. This gives you clear visibility across everything and becomes your single source of truth that answers: "What are all the components in my product?"
 
 ### Faster Security Response
 
@@ -40,36 +42,36 @@ A single SBOM gives you an **accurate license inventory**. It contains every com
   
 ### Easier Distribution
 
-A single SBOM gives you **easier distribution**. It contains every component from all the different services and platforms into one final document, giving downstream consumers (customers, auditors, government agencies) a single artifact they can ingest into Dependency-Track, OWASP DefectDojo, or their internal compliance pipeline. No need to deliver multiple files, one unified SBOM is the standard deliverable.  
+A single SBOM gives you **easier distribution**. It contains every component from all the different services and platforms into one final document, giving downstream consumers (customers, auditors, government agencies) a single artifact they can ingest into Dependency-Track, OWASP DefectDojo, Interlynk platform, or their internal compliance pipeline. No need to deliver multiple files, one unified SBOM is the standard deliverable.
 
 ### Consistent Versioning
 
 A single SBOM gives you **consistent versioning**. It contains every component from all the different services and platforms into one final document, carrying one version for your entire product release. When you ship v2.3.0, the SBOM represents v2.3.0, not a collection of unrelated files with different serial numbers.
 
+Each of these benefits: visibility, security, compliance, licensing, distribution, and versioning depends on one thing: bringing multiple SBOMs together into a single document. But when does this actually happen? In what situations do you find yourself with multiple SBOMs that need merging in the first place?
+
 ## Why Merge SBOMs?
 
-Before diving into strategies, let's talk about why you'd merge SBOMs in the first place:
+So you know why a unified SBOM matters. But when do you actually find yourself needing to merge? Here are the common situations where multiple SBOMs appear and need combining:
 
-- **Platform-specific builds**: You have Linux and Windows builds of the same software
-- **Multi-service applications**: Your product consists of several microservices, each with its own SBOM
-- **Scan result enrichment**: You want to add vulnerability or license scan results to an existing SBOM
-- **Vendor integrations**: Combining your internal SBOM with third-party component SBOMs
-- **CI/CD artifacts**: Merging SBOMs from different build stages
+- **Platform-specific builds**: Your CI generates separate SBOMs for Linux and Windows builds of the same software. Same product, different artifacts.
+- **Multi-service applications**: You deploy a microservices platform where each service has its own build pipeline and its own SBOM. Now you need one view of the entire system.
+- **Scan result enrichment**: You generated a base SBOM, then ran a vulnerability scan that produced another SBOM with CVE data. You need to combine them.
+- **Vendor integrations**: You built your application and have your internal SBOM, but you also received SBOMs from third-party vendors you depend on.
+- **CI/CD artifacts**: Your pipeline generates SBOMs at different stages—build, test, release—and you need to consolidate them into the final deliverable.
 
 Each scenario calls for a different approach, and that's where merge strategies come in.
 
 ## The Four Merge Strategies
 
-There are four distinct ways to combine SBOMs, each suited for different use cases:
+Those scenarios: platform builds, microservices, scan results, vendor integrations, each need a different way of combining SBOMs. There are four distinct merge strategies, and picking the right one depends on what you're trying to achieve:
 
-| Strategy | Creates New Root? | Best For |
-|----------|------------------|----------|
-| **Hierarchical** | ✅ Yes | Different services/modules |
-| **Flat** | ✅ Yes | Same software, different platforms |
-| **Assembly** | ✅ Yes | Product suites, independent tools |
-| **Augment** | ❌ No | Enriching existing SBOMs |
+- Hierarchical
+- Flat
+- Assembly
+- Augment
 
-Let's explore each one conceptually before we see how sbomasm implements them.
+Let's discuss each one by one and see how sbomasm implements them.
 
 ## 1. Hierarchical Merge
 
@@ -90,14 +92,14 @@ Input SBOMs:
 Output (Hierarchical):
 Final SBOM
 ├── New Root (MyApp v1.0.0)
-│   ├── SBOM A Root (frontend)  ← AS SUB-COMPONENT
-│   │   ├── react               ← Nested under frontend
-│   │   ├── axios               ← Nested under frontend
-│   │   └── nginx               ← Nested under frontend
-│   └── SBOM B Root (backend)   ← AS SUB-COMPONENT
-│       ├── express             ← Nested under backend
-│       ├── mongoose            ← Nested under backend
-│       └── jwt                 ← Nested under backend
+│   ├── SBOM A Root (frontend)  <-- AS SUB-COMPONENT
+│   │   ├── react               <-- Nested under frontend
+│   │   ├── axios               <-- Nested under frontend
+│   │   └── nginx               <-- Nested under frontend
+│   └── SBOM B Root (backend)   <-- AS SUB-COMPONENT
+│       ├── express             <-- Nested under backend
+│       ├── mongoose            <-- Nested under backend
+│       └── jwt                 <-- Nested under backend
 ```
 
 ### When to Use
